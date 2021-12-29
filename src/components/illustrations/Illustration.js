@@ -1,8 +1,9 @@
-import { Box, Grid } from "@mui/core";
+import { Box, Grid } from "@mui/material";
 import { Skeleton } from "@mui/lab";
 import React, { useState } from "react";
 import { useEffect, useRef } from "react";
 import IllustrationLoader from "./illustration_loader";
+import theme from '../../Theme';
 
 
 export const Illustration = React.forwardRef((props, ref) => {
@@ -20,7 +21,7 @@ export const Illustration = React.forwardRef((props, ref) => {
       .create({...props, ref: ref })
       .load()
       .then(svg => updateContent(svg));
-  }, []);
+  }, [props, ref]);
 
   return illustration.current;
 });
@@ -64,8 +65,7 @@ Illustration.defaultProps = {
     height: '100%',
     width: '100%',
     textColor: '#fff',
-    primaryColor: Colors.primary,
-    secondaryColor: Colors.secondary,
-    tertiaryColor: Colors.tertiary,
+    primaryColor: theme.palette.primary.main,
+    secondaryColor: theme.palette.secondary.main,
   },
 };

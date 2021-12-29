@@ -1,5 +1,5 @@
-import { Box } from "@material-ui/core";
-import { SvgHtmlParser } from "./svg_html_parser";
+import { Box } from "@mui/material";
+import parse from 'html-react-parser';
 
 
 export default class IllustrationLoader {
@@ -37,7 +37,7 @@ export default class IllustrationLoader {
     return fetch(this.path)
       .then(resp => resp.text())
       .then(rawSvg => this.replaceProps(rawSvg))
-      .then(rawSvg => this.parseSvg(rawSvg))
+      .then(rawSvg => parse(rawSvg))
       .then(svg => this.storeInCache(svg));
   }
 
@@ -61,11 +61,6 @@ export default class IllustrationLoader {
     const pattern = new RegExp(`{${prop}}`, 'g');
     return curr.replace(pattern, value);
   };
-
-
-  parseSvg = (rawSvg) => {
-    return SvgHtmlParser(rawSvg);
-  }
 
 
   /**
