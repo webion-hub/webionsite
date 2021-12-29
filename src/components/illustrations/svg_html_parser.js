@@ -1,4 +1,4 @@
-import ReactHtmlParser, { processNodes } from 'react-html-parser';
+import ReactHtmlParser, { processNodes } from 'html-react-parser';
 
 
 export const SvgHtmlParser = (svg) => {
@@ -9,11 +9,13 @@ export const SvgHtmlParser = (svg) => {
 
 
 const transformSvgNode = (node, index) => {
-  if (!node.name)
+  if (!node.name) {
     return;
+  }
 
-  if (!maybeReplaceAttributes(node))
+  if (!maybeReplaceAttributes(node)) {
     return;
+  }
 
   return <node.name {...node.attribs} key={index}>
     {processNodes(node.children, transformSvgNode)}

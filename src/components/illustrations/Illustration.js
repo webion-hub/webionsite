@@ -1,8 +1,7 @@
-import { Box, Grid } from "@material-ui/core";
-import { Skeleton } from "@material-ui/lab";
+import { Box, Grid } from "@mui/core";
+import { Skeleton } from "@mui/lab";
 import React, { useState } from "react";
 import { useEffect, useRef } from "react";
-import { Colors } from "src/lib/default_values/themes/colors/main_colors";
 import IllustrationLoader from "./illustration_loader";
 
 
