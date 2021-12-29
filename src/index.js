@@ -3,34 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './Theme';
 
-
-const outerTheme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#1f4bff",
-    },
-    secondary: {
-      main: "#D6DEFF",
-    },
-    background: {
-      default: "#020612",
-      paper: "#020510"
-    }
-  },
-  typography: {
-    fontFamily: ['Rubik', 'sans-serif'],
-  }
-});
-
-export default outerTheme;
-document.body.style.backgroundColor = outerTheme.palette.background.default
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={outerTheme}>
+    <ThemeProvider theme={theme}>
       <App/>
     </ThemeProvider>
   </React.StrictMode>,
