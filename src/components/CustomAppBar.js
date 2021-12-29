@@ -15,14 +15,12 @@ export default function CustomAppBar(props) {
     >
       <Toolbar>
         <Stack
-          container
           direction="row"
           justifyContent="space-between"
           alignItems="center"
           sx={{width: "100%"}}
         >
           <Stack
-            container
             direction="row"
             alignItems="center"
             spacing={2}
