@@ -15,10 +15,7 @@ export default function IllustrationSkeleton({ boxProps, skeletonProps }) {
         justifyContent="center"
         alignItems="center"
       >
-        <Skeleton
-          animation="wave"
-          {...size}
-        />
+        <Skeleton animation="wave" {...size}/>
       </Grid>
     </Box>
   );
