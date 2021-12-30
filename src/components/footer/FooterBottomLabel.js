@@ -19,5 +19,6 @@ export default function FooterBottomLabel({children, ...props}){
 }
 
 FooterBottomLabel.defaultProps = {
-  color: "secondary"
+  color: "secondary",
+  align: "center"
 }

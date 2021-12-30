@@ -1,7 +1,6 @@
 import { Stack, useMediaQuery } from "@mui/material";
 import React from "react";
 import theme from "../../Theme";
-import FooterColumn from "./FooterColumn";
 
 export default function FooterContent({children}){
   const mobileView = useMediaQuery(theme.breakpoints.down('sm'))
