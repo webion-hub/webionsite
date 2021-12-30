@@ -23,7 +23,7 @@ jobs:
           node-version: '16'
 
       - name: Install Node.js dependencies
-        run: npm ci
+        run: npm ci --only=dev
 
       - name: Run linters
         run: npx eslint .
