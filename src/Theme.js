@@ -1,13 +1,19 @@
 import { createTheme } from "@mui/material";
+import { alpha } from '@mui/material';
+
+const colors = {
+  primary: "#1f4bff",
+  secondary: "#D6DEFF",
+}
 
 const theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#1f4bff",
-    },
+      main: colors.primary,
+    }, 
     secondary: {
-      main: "#D6DEFF",
+      main: colors.secondary,
     },
     background: {
       default: "#020612",
@@ -16,6 +22,11 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: ['Rubik', 'sans-serif'],
+  },
+  shape: {
+    border: {
+      main: `1px solid ${alpha(colors.primary, 0.25)}`
+    }
   }
 });
 
