@@ -14,7 +14,7 @@ export default class IllustrationLoader {
    * @private
    * @param {import("./typing").IllustrationProps} props
    */
-  constructor (props) {
+  constructor(props) {
     this.path = props.path;
     this.ref = props.ref;
     this.boxProps = props.boxProps;
