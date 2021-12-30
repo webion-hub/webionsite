@@ -4,7 +4,7 @@ import { Box } from '@mui/system';
 import { Grid, Typography } from '@mui/material';
 import MainImage from '../components/MainImage';
 import { alpha } from '@mui/material';
-import BlockImageAndText from '../components/BlockImageAndText.js';
+import BlockImageAndText from '../components/BlockImageAndText';
 import { Personalization, Programming, Speed } from '../components/illustrations/illustrations';
 import CenteredTitle from '../components/CenteredTitle';
 import CenteredText from '../components/CenteredText';
@@ -12,7 +12,9 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import theme from '../Theme';
 
 export default function KnowUs(props) {
-  const matches = useMediaQuery(theme.breakpoints.up('md'));
+  const matches = useMediaQuery(
+    theme.breakpoints.up('md')
+  );
 
   return (
     <Paper sx={{
@@ -21,9 +23,14 @@ export default function KnowUs(props) {
     }}>
       <Grid container sx={{ marginTop: 9 }}>
         <MainImage src="./illustrations/team.svg" />
-        <CenteredText variant={matches ? "h6" : "subtitle1"} text="Siamo un gruppo di tre ragazzi che mangiano troppo pokè e non seguono le lezioni." />
+        <CenteredText
+          variant={matches ? "h6" : "subtitle1"}
+          text="Siamo un gruppo di tre ragazzi che mangiano troppo pokè e non seguono le lezioni."
+        />
         <CenteredTitle text="Perchè sceglierci" />
-        <Grid xs={12} sx={{ 
+        <Grid
+          xs={12}
+          sx={{ 
             maxWidth: "1350px !important", 
             margin: "0 auto",
             "& > *": {
