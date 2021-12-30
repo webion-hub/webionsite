@@ -27,15 +27,15 @@ export default function KnowUs(props) {
           variant={matches ? "h6" : "subtitle1"}
           text="Siamo un gruppo di tre ragazzi che mangiano troppo pokè e non seguono le lezioni."
         />
-        <CenteredTitle text="Perchè sceglierci" />
+        <CenteredTitle text="Perché sceglierci" />
         <Grid
           xs={12}
-          sx={{ 
-            maxWidth: "1350px !important", 
+          sx={{
+            maxWidth: "1350px !important",
             margin: "0 auto",
             "& > *": {
-              padding: 1
-            }
+              padding: 1,
+            },
           }}
           justifyContent="center"
           container
