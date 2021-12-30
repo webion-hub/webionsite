@@ -1,13 +1,15 @@
-import { Box, Grid } from "@mui/material";
-import { Skeleton } from "@mui/lab";
 import React, { useState } from "react";
 import { useEffect, useRef } from "react";
 import IllustrationLoader from "./illustration_loader";
 import theme from '../../Theme';
+import IllustrationSkeleton from "./IllustrationSkeleton";
 
 
+/**
+ * @type {import("./typing").IllustrationComponent}
+ */
 export const Illustration = React.forwardRef((props, ref) => {
-  const skeleton = getIllustrationSkeleton(props.boxProps);
+  const skeleton = IllustrationSkeleton(props);
   const illustration = useRef(skeleton);
   const [, setIsLoaded] = useState(false);
 
@@ -25,26 +27,6 @@ export const Illustration = React.forwardRef((props, ref) => {
 
   return illustration.current;
 });
-
-
-const getIllustrationSkeleton = (boxProps) => {
-  return (
-    <Box {...boxProps}>
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Skeleton 
-          animation="wave" 
-          height={200} 
-          width={128}
-        />
-      </Grid>
-    </Box>
-  );
-}
 
 
 Illustration.lazy = (illustrationPath) => {

@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 
 export default class IllustrationLoader {
   /**
-   * @param {IllustrationProps} props
+   * @param {import("./typing").IllustrationProps} props
    */
   static create = (props) => {
     return new IllustrationLoader(props);
@@ -12,7 +12,7 @@ export default class IllustrationLoader {
 
   /**
    * @private
-   * @param {IllustrationProps} props 
+   * @param {import("./typing").IllustrationProps} props
    */
   constructor (props) {
     this.path = props.path;
@@ -54,7 +54,7 @@ export default class IllustrationLoader {
   /**
    * @private
    * @param {string} curr
-   * @param {[string, string]}  
+   * @param {[string, string]}
    * @returns {string}
    */
   replaceProp = (curr, [prop, value]) => {
@@ -65,7 +65,7 @@ export default class IllustrationLoader {
 
   /**
    * @private
-   * @param {JSX.Element} svg 
+   * @param {JSX.Element} svg
    */
   createSvgBox = (svg) => {
     return (
@@ -77,7 +77,7 @@ export default class IllustrationLoader {
 
 
   /**
-   * @private 
+   * @private
    */
   fetchFromCache = async () => {
     const elem = IllustrationLoader.cache.get(this.path);
@@ -85,8 +85,8 @@ export default class IllustrationLoader {
   }
 
   /**
-   * @private 
-   * @param {JSX.Element} element 
+   * @private
+   * @param {JSX.Element} element
    */
   storeInCache = (element) => {
     IllustrationLoader.cache.set(this.path, element);
@@ -99,11 +99,3 @@ export default class IllustrationLoader {
  * @type {Map<string, JSX.Element>}
  */
 IllustrationLoader.cache = new Map();
-
-/**
- * @typedef {object} IllustrationProps
- * @property {string} [path]
- * @property {React.ForwardedRef<any>} [ref]
- * @property {*} boxProps
- * @property {*} svgProps
- */
