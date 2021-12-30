@@ -6,7 +6,7 @@ import IllustrationSkeleton from "./IllustrationSkeleton";
 
 
 /**
- * @type {IllustrationComponent}
+ * @type {import("./typing").IllustrationComponent}
  */
 export const Illustration = React.forwardRef((props, ref) => {
   const skeleton = IllustrationSkeleton(props);

@@ -1,4 +1,6 @@
-type IllustrationProps = ReactRefProps & {
+import * as React from 'react';
+
+export interface IllustrationProps extends React.RefAttributes<any> {
   path?: string,
   boxProps?: {
     width?: string,
@@ -13,10 +15,10 @@ type IllustrationProps = ReactRefProps & {
     primaryColor?: string,
     secondaryColor?: string,
   },
-};
+}
 
-type IllustrationComponent = ReactForwardedComponent<IllustrationProps> & {
+export interface IllustrationComponent extends React.ForwardRefExoticComponent<IllustrationProps> {
   lazy:
     (illustrationPath: string) =>
       (props: IllustrationProps) => JSX.Element,
-};
+}

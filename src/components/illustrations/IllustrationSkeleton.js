@@ -1,7 +1,7 @@
 import { Box, Grid, Skeleton } from "@mui/material";
 
 /**
- * @param {IllustrationProps}
+ * @param {import("./typing").IllustrationProps}
  */
 export default function IllustrationSkeleton({ boxProps }) {
   return (

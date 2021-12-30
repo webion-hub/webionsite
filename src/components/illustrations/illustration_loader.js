@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 
 export default class IllustrationLoader {
   /**
-   * @param {IllustrationProps} props
+   * @param {import("./typing").IllustrationProps} props
    */
   static create = (props) => {
     return new IllustrationLoader(props);
@@ -12,7 +12,7 @@ export default class IllustrationLoader {
 
   /**
    * @private
-   * @param {IllustrationProps} props
+   * @param {import("./typing").IllustrationProps} props
    */
   constructor (props) {
     this.path = props.path;
