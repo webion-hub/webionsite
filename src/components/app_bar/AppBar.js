@@ -10,7 +10,10 @@ export default function AppBar({children}) {
       sx={{
         backdropFilter: "blur(20px)",
         background: alpha(theme.palette.primary.main, 0.03),
-        borderBottom: theme.shape.border.main
+        borderBottom: theme.shape.border.main,
+        "& + *": {
+          marginTop: theme.mixins.toolbar.minHeight + "px"
+        }
       }}
     >
       <Toolbar>

@@ -20,6 +20,11 @@ const theme = createTheme({
       paper: "#020510"
     }
   },
+  mixins: {
+    toolbar: {
+      minHeight: 64
+    }
+  },
   typography: {
     fontFamily: ['Rubik', 'sans-serif'],
   },
