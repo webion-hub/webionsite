@@ -1,9 +1,7 @@
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
-import { Box } from '@mui/system';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import MainImage from '../components/MainImage';
-import { alpha } from '@mui/material';
 import BlockImageAndText from '../components/BlockImageAndText';
 import { Personalization, Programming, Speed } from '../components/illustrations/illustrations';
 import CenteredTitle from '../components/CenteredTitle';
@@ -11,7 +9,7 @@ import CenteredText from '../components/CenteredText';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import theme from '../Theme';
 
-export default function KnowUs(props) {
+export default function KnowUs(_props) {
   const matches = useMediaQuery(
     theme.breakpoints.up('md')
   );

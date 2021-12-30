@@ -15,7 +15,7 @@ export default function MainImage(props) {
         border: "1px solid white;",
         width: {
           sm: "500px",
-          xs:"80%",
+          xs: "80%",
         },
         margin: "0 auto",
         backgroundColor: "white",
