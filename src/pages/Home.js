@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import Paper from '@mui/material/Paper';
 import theme from '../Theme';
 
-export default function Home(){
+export default function Home() {
   return (
     <>
       <Grid

@@ -1,7 +1,7 @@
 import { ButtonBase, Typography } from '@mui/material';
 import theme from '../Theme';
 
-export default function AnimatedLogo(props){
+export default function AnimatedLogo(props) {
   return (
     <ButtonBase
       onClick={props.onClick}

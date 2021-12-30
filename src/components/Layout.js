@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import AnimatedLogo from './AnimatedLogo';
 import { useNavigate } from "react-router";
 
-export default function Layout(props){
+export default function Layout(props) {
   const navigate = useNavigate();
 
   return (
