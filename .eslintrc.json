@@ -28,7 +28,16 @@
     "keyword-spacing": ["error"],
     "no-trailing-spaces": ["warn"],
     "no-whitespace-before-property": "error",
+    "arrow-spacing": "error",
+    "block-spacing": "error",
+    "space-before-blocks": "error",
+    "func-call-spacing": ["error", "never"],
 
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
 
     "comma-spacing": ["error", {
       "before": false,
