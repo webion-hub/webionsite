@@ -48,7 +48,7 @@ export default function Home(){
                 height: "1200px",
                 width: "1200px",
                 backgroundColor: alpha(theme.palette.primary.dark, 0.1),
-                transform:"rotate(45deg)",
+                transform: "rotate(45deg)",
                 borderRadius: 32,
                 boxShadow: "0px 0px 20px 0px",
               }}
