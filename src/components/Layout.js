@@ -18,7 +18,7 @@ import PrivacyTipRoundedIcon from '@mui/icons-material/PrivacyTipRounded';
 import LiveHelpRoundedIcon from '@mui/icons-material/LiveHelpRounded';
 import { InstagramIcon, LinkedinIcon } from "./illustrations/illustrations";
 
-export default function Layout(props){
+export default function Layout(props) {
   const navigate = useNavigate();
 
   return (
