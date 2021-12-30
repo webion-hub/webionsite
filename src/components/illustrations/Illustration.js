@@ -50,4 +50,7 @@ Illustration.defaultProps = {
     primaryColor: theme.palette.primary.main,
     secondaryColor: theme.palette.secondary.main,
   },
+  skeletonProps: {
+    size: 'normal',
+  },
 };
