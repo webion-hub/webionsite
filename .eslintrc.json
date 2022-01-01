@@ -52,6 +52,19 @@
       "functions": "never"
     }],
 
+    "comma-spacing": ["error", {
+      "before": false,
+      "after": true
+    }],
+
+    "comma-dangle": ["warn", {
+      "arrays": "only-multiline",
+      "objects": "always-multiline",
+      "imports": "only-multiline",
+      "exports": "only-multiline",
+      "functions": "never"
+    }],
+
     "no-unused-vars": ["error", {
       "argsIgnorePattern": "^_"
     }],
