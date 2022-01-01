@@ -11,6 +11,8 @@ jobs:
   build-project:
     name: Build project
     runs-on: ubuntu-latest
+    env:
+      DISABLE_ESLINT_PLUGIN: true
 
     steps:
       - name: Check out Git repository
