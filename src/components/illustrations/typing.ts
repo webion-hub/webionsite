@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 export interface Size {
-  width: number,
-  height: number,
+  width: number | string,
+  height: number | string,
 };
 
 
 export type SkeletonSize =
-  'small' | 'normal' | 'large' | Size;
+  'small' | 'normal' | 'large' | 'wide' | 'fill' | Size;
 
 export interface IllustrationProps extends React.RefAttributes<any> {
   path?: string,
@@ -30,7 +30,6 @@ export interface IllustrationProps extends React.RefAttributes<any> {
 }
 
 export interface IllustrationComponent extends React.ForwardRefExoticComponent<IllustrationProps> {
-  lazy:
-    (illustrationPath: string) =>
-      (props: IllustrationProps) => JSX.Element,
+  lazy: (path: string) => (props: IllustrationProps) => JSX.Element;
+  icon: (path: string) => (props: IllustrationProps) => JSX.Element;
 }

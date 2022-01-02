@@ -7,11 +7,7 @@ export default function Logo({children, leftLabel, ButtonComponent, ...others}) 
       {...others}
     >
       {leftLabel}
-      <LogoIcon
-        boxProps={{
-          display: "flex",
-        }}
-      />
+      <LogoIcon/>
       {children}
     </ButtonComponent>
   )

@@ -1,22 +1,25 @@
 import React from "react";
+import { Illustration } from "./Illustration";
 
-export default function IconContainer({Component, path}) {
-  const size = 24
-
+export default function IllustrationIcon({
+  path,
+  size = 24,
+}) {
   return (
-    <Component
+    <Illustration
       path={path}
       boxProps={{
         display: "flex",
       }}
       svgProps={{
-        ...Component.defaultProps.svgProps,
+        ...Illustration.defaultProps.svgProps,
         width: size,
       }}
       skeletonProps={{
         width: size,
         height: size,
         variant: "circular",
+        sx: {},
       }}
     />
   );

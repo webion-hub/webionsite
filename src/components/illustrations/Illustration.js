@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import IllustrationLoader from "./illustration_loader";
 import theme from '../../theme/theme';
 import IllustrationSkeleton from "./IllustrationSkeleton";
+import IllustrationIcon from "./IllustrationIcon";
 
 
 /**
@@ -29,18 +30,25 @@ export const Illustration = React.forwardRef((props, ref) => {
 });
 
 
-Illustration.lazy = (illustrationPath) => {
+Illustration.lazy = (path) => {
   return (props) => {
-    return <Illustration path={illustrationPath} {...props}/>;
+    return <Illustration path={path} {...props}/>;
   };
 };
 
 
+Illustration.icon = (path) => {
+  return (props) => {
+    return <IllustrationIcon path={path} {...props}/>;
+  }
+}
+
+
 Illustration.defaultProps = {
   boxProps: {
+    margin: 0,
     width: '100%',
     maxWidth: '100%',
-    margin: 0,
     height: '100%',
   },
   svgProps: {
