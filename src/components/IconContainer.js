@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function IconContainer({Component, path}){
+export default function IconContainer({Component, path}) {
   const size = 24
 
   return (
@@ -16,7 +16,7 @@ export default function IconContainer({Component, path}){
       skeletonProps={{
         width: size,
         height: size,
-        variant: "circular"
+        variant: "circular",
       }}
     />
   );

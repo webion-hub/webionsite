@@ -11,28 +11,28 @@ const theme = createTheme({
     mode: "dark",
     primary: {
       main: colors.primary,
-    }, 
+    },
     secondary: {
       main: colors.secondary,
     },
     background: {
       default: "#020612",
-      paper: "#020510"
-    }
+      paper: "#020510",
+    },
   },
   mixins: {
     toolbar: {
-      minHeight: 64
-    }
+      minHeight: 64,
+    },
   },
   typography: {
     fontFamily: ['Rubik', 'sans-serif'],
   },
   shape: {
     border: {
-      main: `1px solid ${alpha(colors.primary, 0.25)}`
-    }
-  }
+      main: `1px solid ${alpha(colors.primary, 0.25)}`,
+    },
+  },
 });
 
 document.body.style.backgroundColor = theme.palette.background.default

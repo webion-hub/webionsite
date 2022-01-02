@@ -11,8 +11,8 @@ export default function Home() {
         direction="row"
         sx={{width: "100vw", overflow: "hidden"}}
       >
-        <Grid 
-          item 
+        <Grid
+          item
           xs={4}
           container
           direction="column"
@@ -70,15 +70,15 @@ export default function Home() {
       <Paper
         square
         sx={{
-          width: "100vw", 
-          height: 400, 
-          borderTop: `1px solid ${alpha(theme.palette.primary.main, 0.25)}`
+          width: "100vw",
+          height: 400,
+          borderTop: `1px solid ${alpha(theme.palette.primary.main, 0.25)}`,
         }}
-      >	
+      >
         <Button variant="outlined" color="secondary">
           Scopri di più
         </Button>
-      </Paper> 
+      </Paper>
     </>
   )
 }

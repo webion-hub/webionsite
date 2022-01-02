@@ -1,5 +1,5 @@
 import AppBar from "./app_bar/AppBar";
-import { Button, Grid, Icon, IconButton, Paper, Stack } from '@mui/material';
+import { Button, IconButton, Stack } from '@mui/material';
 import AnimatedLogo from './buttons/AnimatedLogo';
 import { useNavigate } from "react-router";
 import Logo from "./buttons/Logo";
@@ -29,21 +29,21 @@ export default function Layout(props) {
             label="Webion"
             onClick={_ => navigate("/")}
           />
-          <Button 
-            color="secondary" 
+          <Button
+            color="secondary"
             onClick={_ => navigate("/chi-siamo")}
           >
             Chi siamo
           </Button>
-          <Button 
-            color="secondary" 
+          <Button
+            color="secondary"
             onClick={_ => navigate("/progetti")}
           >
             Progetti
           </Button>
         </StartAppBarSection>
-        <Button 
-          color="secondary" 
+        <Button
+          color="secondary"
           variant="outlined"
           onClick={_ => navigate("/contattaci")}
         >
@@ -54,21 +54,21 @@ export default function Layout(props) {
       <Footer>
         <FooterContent>
           <FooterColumn>
-            <Button 
+            <Button
               startIcon={<GroupsRoundedIcon/>}
               color="secondary"
               fullWidth
             >
               Chi siamo
             </Button>
-            <Button 
+            <Button
               startIcon={<DesignServicesRoundedIcon/>}
               color="secondary"
               fullWidth
             >
               Progetti
             </Button>
-            <Button 
+            <Button
               startIcon={<ContactPageRoundedIcon/>}
               color="secondary"
               fullWidth
@@ -76,7 +76,7 @@ export default function Layout(props) {
               Contattaci
             </Button>
           </FooterColumn>
-  
+
           <FooterColumn>
             <Stack
               direction="row"
@@ -87,7 +87,7 @@ export default function Layout(props) {
               <IconButton>
                 <LinkedinIcon/>
               </IconButton>
-              <Logo 
+              <Logo
                 ButtonComponent={IconButton}
                 color="secondary"
               />
@@ -109,7 +109,7 @@ export default function Layout(props) {
             </Button>
           </FooterColumn>
         </FooterContent>
-        
+
         <FooterBottomLabel
           variant="body2"
         >

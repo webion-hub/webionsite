@@ -1,14 +1,14 @@
 import { Stack, Typography } from "@mui/material";
 import theme from "../../Theme";
 
-export default function FooterBottomLabel({children, ...props}){
+export default function FooterBottomLabel({children, ...props}) {
   return (
     <Stack
       direction="row"
       justifyContent="center"
       sx={{
         borderTop: theme.shape.border.main,
-        padding: 1
+        padding: 1,
       }}
     >
       <Typography  {...props}>
@@ -20,5 +20,5 @@ export default function FooterBottomLabel({children, ...props}){
 
 FooterBottomLabel.defaultProps = {
   color: "secondary",
-  align: "center"
+  align: "center",
 }

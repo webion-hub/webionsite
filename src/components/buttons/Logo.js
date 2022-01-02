@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import { LogoIcon } from '../illustrations/illustrations';
 
-export default function Logo({children, leftLabel, ButtonComponent, ...others}){
+export default function Logo({children, leftLabel, ButtonComponent, ...others}) {
   return (
     <ButtonComponent
       {...others}
@@ -9,7 +9,7 @@ export default function Logo({children, leftLabel, ButtonComponent, ...others}){
       {leftLabel}
       <LogoIcon
         boxProps={{
-          display: "flex"
+          display: "flex",
         }}
       />
       {children}
@@ -19,5 +19,5 @@ export default function Logo({children, leftLabel, ButtonComponent, ...others}){
 
 Logo.defaultProps = {
   color: "inherit",
-  ButtonComponent: Button
+  ButtonComponent: Button,
 }

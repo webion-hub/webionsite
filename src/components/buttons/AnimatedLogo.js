@@ -1,7 +1,7 @@
 import theme from '../../Theme';
 import Logo from './Logo';
 
-export default function AnimatedLogo({label, ...others}){
+export default function AnimatedLogo({label, ...others}) {
   return (
     <Logo
       {...others}
@@ -16,7 +16,7 @@ export default function AnimatedLogo({label, ...others}){
         "&:hover > span": {
           opacity: 1,
           transform: "translate(0%, 0%)",
-        }, 
+        },
       }}
     >
       <span>

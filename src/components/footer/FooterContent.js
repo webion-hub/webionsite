@@ -2,17 +2,17 @@ import { Stack, useMediaQuery } from "@mui/material";
 import React from "react";
 import theme from "../../Theme";
 
-export default function FooterContent({children}){
+export default function FooterContent({children}) {
   const mobileView = useMediaQuery(theme.breakpoints.down('sm'))
 
   const getAlignItems = (index) => {
-    if(mobileView)
+    if (mobileView)
       return "center"
 
-    if(index === 0)
+    if (index === 0)
       return "flex-start"
 
-    if(index === children.length -1)
+    if (index === children.length -1)
       return "flex-end"
 
     return "center"
@@ -20,7 +20,7 @@ export default function FooterContent({children}){
 
   const childrenWithProps = React.Children.map(children, (child, index) => {
     return React.cloneElement(child, {
-      alignItems: getAlignItems(index)
+      alignItems: getAlignItems(index),
     });
   });
 
@@ -30,7 +30,7 @@ export default function FooterContent({children}){
       justifyContent="center"
       sx={{
         maxWidth: 900,
-        margin: "0 auto"
+        margin: "0 auto",
       }}
     >
       <Stack
@@ -43,8 +43,8 @@ export default function FooterContent({children}){
           marginTop: 2,
           marginBottom: 2,
           "& > *": {
-            width: "100%"
-          }
+            width: "100%",
+          },
         }}
       >
         {childrenWithProps}

@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
 
-export default function FooterColumn({children, width, ...props}){
+export default function FooterColumn({children, width, ...props}) {
   return (
     <Stack
       {...props}
@@ -8,8 +8,8 @@ export default function FooterColumn({children, width, ...props}){
         maxWidth: width,
         width: "100%",
         "& > button": {
-          justifyContent: props.alignItems
-        }
+          justifyContent: props.alignItems,
+        },
       }}
     >
       {children}
@@ -22,5 +22,5 @@ FooterColumn.defaultProps = {
   direction: "column",
   alignItems: "center",
   justifyContent: "center",
-  spacing: 1
+  spacing: 1,
 }

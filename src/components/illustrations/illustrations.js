@@ -1,5 +1,4 @@
 import IconContainer from "../IconContainer";
-import iconContainer from "../IconContainer";
 import { Illustration } from "./Illustration";
 
 export const LogoIcon = () => <IconContainer Component={Illustration} path="svgs/logo.svg"/>;

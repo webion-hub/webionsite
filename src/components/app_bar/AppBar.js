@@ -12,8 +12,8 @@ export default function AppBar({children}) {
         background: alpha(theme.palette.primary.main, 0.03),
         borderBottom: theme.shape.border.main,
         "& + *": {
-          marginTop: theme.mixins.toolbar.minHeight + "px"
-        }
+          marginTop: theme.mixins.toolbar.minHeight + "px",
+        },
       }}
     >
       <Toolbar>
