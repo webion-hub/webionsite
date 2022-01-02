@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import IllustrationLoader from "./illustration_loader";
 import theme from '../../theme/theme';
 import IllustrationSkeleton from "./IllustrationSkeleton";
+import IllustrationIcon from "./IllustrationIcon";
 
 
 /**
@@ -45,9 +46,9 @@ Illustration.icon = (path) => {
 
 Illustration.defaultProps = {
   boxProps: {
+    margin: 0,
     width: '100%',
     maxWidth: '100%',
-    margin: 0,
     height: '100%',
   },
   svgProps: {

@@ -21,7 +21,7 @@ export default function BlockImageAndText(props) {
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
         }}
       >
-        <props.icon />
+        <props.icon skeletonProps={{size: 'wide'}}/>
         <Typography sx={{ margin: 2 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum.
         </Typography>

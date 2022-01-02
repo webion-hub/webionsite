@@ -1,23 +1,28 @@
-import { Box, Grid, Skeleton } from "@mui/material";
+import { Grid, Skeleton } from "@mui/material";
 
 /**
  * @param {import("./typing").IllustrationProps}
  */
-export default function IllustrationSkeleton({ boxProps, skeletonProps }) {
+export default function IllustrationSkeleton({ skeletonProps }) {
   const size =
     getSkeletonSize(skeletonProps.size);
 
   return (
-    <Box {...boxProps}>
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Skeleton animation="wave" {...size} {...skeletonProps}/>
-      </Grid>
-    </Box>
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Skeleton
+        variant="rectangular"
+        animation="wave"
+        sx={{
+          borderRadius: '8px',
+        }}
+        {...size}
+        {...skeletonProps}/>
+    </Grid>
   );
 }
 
@@ -26,8 +31,8 @@ export default function IllustrationSkeleton({ boxProps, skeletonProps }) {
  * @returns {Size}
  */
 const getSkeletonSize = (size) => {
-  const normalWidth = 128;
-  const normalHeight = 200;
+  const normalWidth = 96;
+  const normalHeight = 96;
   const result = {
     'small': {
       width: normalWidth * 0.5,
@@ -38,8 +43,16 @@ const getSkeletonSize = (size) => {
       height: normalHeight,
     },
     'large': {
-      width: normalWidth * 1.5,
-      height: normalHeight * 1.5,
+      width: normalWidth * 1.8,
+      height: normalHeight * 1.8,
+    },
+    'wide': {
+      width: '100%',
+      height: '150px',
+    },
+    'fill': {
+      width: '100%',
+      height: '100%',
     },
   }[size];
 

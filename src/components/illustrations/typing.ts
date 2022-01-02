@@ -7,7 +7,7 @@ export interface Size {
 
 
 export type SkeletonSize =
-  'small' | 'normal' | 'large' | Size;
+  'small' | 'normal' | 'large' | 'wide' | 'fill' | Size;
 
 export interface IllustrationProps extends React.RefAttributes<any> {
   path?: string,

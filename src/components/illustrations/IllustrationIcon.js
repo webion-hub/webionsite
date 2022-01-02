@@ -1,7 +1,7 @@
 import React from "react";
 import { Illustration } from "./Illustration";
 
-export default function IconContainer({
+export default function IllustrationIcon({
   path,
   size = 24,
 }) {
@@ -12,13 +12,14 @@ export default function IconContainer({
         display: "flex",
       }}
       svgProps={{
-        ...Component.defaultProps.svgProps,
+        ...Illustration.defaultProps.svgProps,
         width: size,
       }}
       skeletonProps={{
         width: size,
         height: size,
         variant: "circular",
+        sx: {},
       }}
     />
   );
