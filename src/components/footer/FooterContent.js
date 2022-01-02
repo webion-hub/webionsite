@@ -29,7 +29,7 @@ export default function FooterContent({children}) {
       direction="row"
       justifyContent="center"
       sx={{
-        maxWidth: 900,
+        maxWidth: 1800,
         margin: "0 auto",
       }}
     >
