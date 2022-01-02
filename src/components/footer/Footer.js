@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import theme from '../../Theme';
+import theme from '../../theme/theme';
 
 export default function Footer({children}) {
   return (

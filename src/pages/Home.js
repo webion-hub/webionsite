@@ -1,7 +1,7 @@
 import { Grid, Typography, alpha, Button } from '@mui/material';
 import { Box } from '@mui/system';
 import Paper from '@mui/material/Paper';
-import theme from '../Theme';
+import theme from '../theme/theme';
 
 export default function Home() {
   return (
@@ -50,7 +50,7 @@ export default function Home() {
                 backgroundColor: alpha(theme.palette.primary.dark, 0.1),
                 transform: "rotate(45deg)",
                 borderRadius: 32,
-                boxShadow: "0px 0px 20px 0px",
+                boxShadow: "0px 0px 20px 0px black",
               }}
             >
               <Box

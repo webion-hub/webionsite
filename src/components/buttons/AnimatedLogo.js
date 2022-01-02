@@ -1,4 +1,4 @@
-import theme from '../../Theme';
+import theme from '../../theme/theme';
 import Logo from './Logo';
 
 export default function AnimatedLogo({label, ...others}) {
