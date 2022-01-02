@@ -14,6 +14,10 @@ const theme = createTheme({
   components: componentsStyles,
 });
 
-document.body.style.backgroundColor = theme.palette.background.default
+
+export const initPageBackground = () => {
+  document.body.style.backgroundColor =
+    theme.palette.background.default
+}
 
 export default theme;
