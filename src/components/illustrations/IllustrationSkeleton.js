@@ -21,7 +21,8 @@ export default function IllustrationSkeleton({ skeletonProps }) {
           borderRadius: '8px',
         }}
         {...size}
-        {...skeletonProps}/>
+        {...skeletonProps}
+      />
     </Grid>
   );
 }
