@@ -7,13 +7,13 @@ export default function AnimatedLogo({label, ...others}) {
       {...others}
       sx={{
         paddingRight: 1,
-        "& span.webion-logo--label": {
+        "& .webion-logo--label": {
           paddingLeft: 1,
           transition: `${theme.transitions.duration.short}ms all`,
           opacity: 0,
           transform: "translate(-100%, 0%)",
         },
-        "&:hover > span.webion-logo--label": {
+        "&:hover > .webion-logo--label": {
           opacity: 1,
           transform: "translate(0%, 0%)",
         },
