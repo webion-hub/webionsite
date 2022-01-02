@@ -1,9 +1,6 @@
 import { createTheme } from "@mui/material";
 
-import mixins from "./mixins";
-import palette from "./palette";
-import shape from "./shape";
-import typography from "./typography";
+import { mixins, palette, shape, typography } from "./theme_impl/index";
 import componentsStyles from "./components_styles/componentsStyles";
 
 const theme = createTheme({
@@ -14,6 +11,10 @@ const theme = createTheme({
   components: componentsStyles,
 });
 
-document.body.style.backgroundColor = theme.palette.background.default
+
+export const initPageBackground = () => {
+  document.body.style.backgroundColor =
+    theme.palette.background.default
+}
 
 export default theme;

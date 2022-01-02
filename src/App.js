@@ -2,7 +2,10 @@ import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import KnowUs from './pages/KnowUs'
-function App() {
+import { initPageBackground } from './theme/theme';
+
+export default function App() {
+  initPageBackground();
   return (
     <BrowserRouter>
       <Layout>
@@ -15,5 +18,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;

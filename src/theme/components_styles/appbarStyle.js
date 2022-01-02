@@ -1,9 +1,6 @@
 import { alpha } from "@mui/material";
 import zIndex from "@mui/material/styles/zIndex";
-
-import mixins from "../mixins";
-import palette from "../palette";
-import shape from "../shape";
+import { mixins, palette, shape } from "../theme_impl/index";
 
 const appBarStyle = {
   styleOverrides: {
