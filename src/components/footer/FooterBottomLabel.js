@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import theme from "../../Theme";
+import theme from "../../theme/theme";
 
 export default function FooterBottomLabel({children, ...props}) {
   return (
