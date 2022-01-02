@@ -1,16 +1,19 @@
-import AppBar from '@mui/material/AppBar';
+import { AppBar as MuiAppBar } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import { alpha, Stack } from '@mui/material';
-import theme from '../Theme';
+import theme from '../../theme/theme';
 
-export default function CustomAppBar(props) {
+export default function AppBar({children}) {
   return (
-    <AppBar 
+    <MuiAppBar
       position="fixed"
       sx={{
         backdropFilter: "blur(20px)",
         background: alpha(theme.palette.primary.main, 0.03),
-        borderBottom: `1px solid ${alpha(theme.palette.primary.main, 0.25)}`
+        borderBottom: theme.shape.border.main,
+        "& + *": {
+          marginTop: theme.mixins.toolbar.minHeight + "px",
+        },
       }}
     >
       <Toolbar>
@@ -20,16 +23,9 @@ export default function CustomAppBar(props) {
           alignItems="center"
           sx={{width: "100%"}}
         >
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={2}
-          >
-            {props.children}
-          </Stack>
-          {props.rightChildren}
+          {children}
         </Stack>
       </Toolbar>
-    </AppBar>
+    </MuiAppBar>
   );
 }

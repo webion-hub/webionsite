@@ -1,7 +1,7 @@
 import { Grid, Typography, alpha, Button } from '@mui/material';
 import { Box } from '@mui/system';
 import Paper from '@mui/material/Paper';
-import theme from '../Theme';
+import theme from '../theme/theme';
 
 export default function Home() {
   return (
@@ -11,8 +11,8 @@ export default function Home() {
         direction="row"
         sx={{width: "100vw", overflow: "hidden"}}
       >
-        <Grid 
-          item 
+        <Grid
+          item
           xs={4}
           container
           direction="column"
@@ -50,7 +50,7 @@ export default function Home() {
                 backgroundColor: alpha(theme.palette.primary.dark, 0.1),
                 transform: "rotate(45deg)",
                 borderRadius: 32,
-                boxShadow: "0px 0px 20px 0px",
+                boxShadow: "0px 0px 20px 0px black",
               }}
             >
               <Box
@@ -70,15 +70,15 @@ export default function Home() {
       <Paper
         square
         sx={{
-          width: "100vw", 
-          height: 400, 
-          borderTop: `1px solid ${alpha(theme.palette.primary.main, 0.25)}`
+          width: "100vw",
+          height: 400,
+          borderTop: `1px solid ${alpha(theme.palette.primary.main, 0.25)}`,
         }}
-      >	
+      >
         <Button variant="outlined" color="secondary">
           Scopri di più
         </Button>
-      </Paper> 
+      </Paper>
     </>
   )
 }
