@@ -1,6 +1,6 @@
 import { Stack, useMediaQuery } from "@mui/material";
 import React from "react";
-import theme from "../../Theme";
+import theme from "../../theme/theme";
 
 export default function FooterContent({children}) {
   const mobileView = useMediaQuery(theme.breakpoints.down('sm'))
@@ -29,7 +29,7 @@ export default function FooterContent({children}) {
       direction="row"
       justifyContent="center"
       sx={{
-        maxWidth: 900,
+        maxWidth: 1800,
         margin: "0 auto",
       }}
     >

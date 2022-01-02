@@ -1,7 +1,7 @@
 import { AppBar as MuiAppBar } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import { alpha, Stack } from '@mui/material';
-import theme from '../../Theme';
+import theme from '../../theme/theme';
 
 export default function AppBar({children}) {
   return (
