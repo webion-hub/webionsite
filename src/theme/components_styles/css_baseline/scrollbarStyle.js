@@ -1,6 +1,6 @@
-import colors from "./colors";
+import colors from "../../colors";
 
-const scrollbar = {
+const scrollbarStyle = {
   '&::-webkit-scrollbar': {
     width: '4px',
     height: '4px',
@@ -11,4 +11,4 @@ const scrollbar = {
   },
 }
 
-export default scrollbar
+export default scrollbarStyle

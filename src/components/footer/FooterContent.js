@@ -3,10 +3,10 @@ import React from "react";
 import theme from "../../theme/theme";
 
 export default function FooterContent({children}) {
-  const mobileView = useMediaQuery(theme.breakpoints.down('sm'))
+  const isMobileView = useMediaQuery(theme.breakpoints.down('sm'))
 
   const getAlignItems = (index) => {
-    if (mobileView)
+    if (isMobileView)
       return "center"
 
     if (index === 0)
@@ -34,7 +34,7 @@ export default function FooterContent({children}) {
       }}
     >
       <Stack
-        direction={mobileView ? "column-reverse" : "row"}
+        direction={isMobileView ? "column-reverse" : "row"}
         justifyContent="space-around"
         alignItems="center"
         spacing={2}
