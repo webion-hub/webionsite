@@ -7,7 +7,7 @@ import { Personalization, Programming, Speed } from '../components/illustrations
 import CenteredTitle from '../components/CenteredTitle';
 import CenteredText from '../components/CenteredText';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import theme from '../Theme';
+import theme from '../theme/theme';
 
 export default function KnowUs(_props) {
   const matches = useMediaQuery(

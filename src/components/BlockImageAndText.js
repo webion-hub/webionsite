@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import { Grid, Typography } from '@mui/material';
-import theme from '../Theme';
+import theme from '../theme/theme';
 import { alpha } from '@mui/material';
 
 export default function BlockImageAndText(props) {
