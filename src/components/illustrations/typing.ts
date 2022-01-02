@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 export interface Size {
-  width: number,
-  height: number,
+  width: number | string,
+  height: number | string,
 };
 
 
