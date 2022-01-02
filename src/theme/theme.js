@@ -1,9 +1,6 @@
 import { createTheme } from "@mui/material";
 
-import mixins from "./theme_impl/mixins";
-import palette from "./theme_impl/palette";
-import shape from "./theme_impl/shape";
-import typography from "./theme_impl/typography";
+import { mixins, palette, shape, typography } from "./theme_impl/index";
 import componentsStyles from "./components_styles/componentsStyles";
 
 const theme = createTheme({
