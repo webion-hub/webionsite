@@ -30,7 +30,6 @@ export interface IllustrationProps extends React.RefAttributes<any> {
 }
 
 export interface IllustrationComponent extends React.ForwardRefExoticComponent<IllustrationProps> {
-  lazy:
-    (illustrationPath: string) =>
-      (props: IllustrationProps) => JSX.Element,
+  lazy: (path: string) => (props: IllustrationProps) => JSX.Element;
+  icon: (path: string) => (props: IllustrationProps) => JSX.Element;
 }

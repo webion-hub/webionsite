@@ -29,11 +29,18 @@ export const Illustration = React.forwardRef((props, ref) => {
 });
 
 
-Illustration.lazy = (illustrationPath) => {
+Illustration.lazy = (path) => {
   return (props) => {
-    return <Illustration path={illustrationPath} {...props}/>;
+    return <Illustration path={path} {...props}/>;
   };
 };
+
+
+Illustration.icon = (path) => {
+  return (props) => {
+    return <IllustrationIcon path={path} {...props}/>;
+  }
+}
 
 
 Illustration.defaultProps = {

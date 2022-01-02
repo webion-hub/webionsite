@@ -1,10 +1,12 @@
 import React from "react";
+import { Illustration } from "./Illustration";
 
-export default function IconContainer({Component, path}) {
-  const size = 24
-
+export default function IconContainer({
+  path,
+  size = 24,
+}) {
   return (
-    <Component
+    <Illustration
       path={path}
       boxProps={{
         display: "flex",
