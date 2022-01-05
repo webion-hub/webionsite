@@ -18,7 +18,7 @@ export default function AppBarSection({children, hideOnMobile, ...props}) {
 }
 
 AppBarSection.defaultProps = {
-  sectionAlignment: "start",
+  alignment: "start",
   hideOnMobile: false,
   direction: "row",
   alignItems: "center",
