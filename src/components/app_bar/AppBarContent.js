@@ -9,7 +9,7 @@ export default function AppBarContent({children}) {
     const sectionPosition = {
       "start": _ => startSection.push(child),
       "end": _ => endSection.push(child),
-    }[child.props.sectionAlignment]
+    }[child.props.alignment]
 
     sectionPosition?.();
   });

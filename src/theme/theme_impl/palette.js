@@ -9,8 +9,7 @@ const palette = {
     main: colors.secondary,
   },
   background: {
-    default: "#020612",
-    paper: "#020510",
+    default: "#000829",
   },
 }
 
