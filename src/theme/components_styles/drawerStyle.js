@@ -10,6 +10,10 @@ const drawerStyle = {
       background: alpha(palette.primary.main, 0.3),
       backdropFilter: "blur(20px)",
       borderLeft: shape.border.dark,
+      borderRadius: 0,
+      borderRight: "none",
+      borderTop: "none",
+      borderBottom: "none",
     },
   },
 }
