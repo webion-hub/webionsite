@@ -8,10 +8,6 @@ const appBarStyle = {
       zIndex: zIndex.drawer + 1,
       backdropFilter: "blur(20px)",
       background: alpha(palette.primary.main, 0.03),
-      borderRadius: 0,
-      borderRight: "none",
-      borderLeft: "none",
-      borderTop: "none",
       borderBottom: shape.border.main,
       "& + *": {
         marginTop: mixins.toolbar.minHeight + "px",

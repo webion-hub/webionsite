@@ -3,7 +3,7 @@ import { Grid, Skeleton } from "@mui/material";
 /**
  * @param {import("./typing").IllustrationProps}
  */
-export default function IllustrationSkeleton({ skeletonProps }) {
+export default function IllustrationSkeleton({ skeletonProps, boxProps }) {
   const size =
     getSkeletonSize(skeletonProps.size);
 
@@ -13,6 +13,7 @@ export default function IllustrationSkeleton({ skeletonProps }) {
       direction="row"
       justifyContent="center"
       alignItems="center"
+      {...boxProps}
     >
       <Skeleton
         variant="rectangular"
