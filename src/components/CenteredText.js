@@ -7,13 +7,17 @@ export default function CenteredText(props) {
       xs={12}
       item
       container
-      justifyContent="center"
-      sx={{ margin: 4 }}
+      direction="column"
+      justifyContent="center"      
     >
       <Typography
         variant= {props.variant}
-        color="secondary"
+        color={props.color}
         align="center"
+        sx={{
+          fontWeight: 300,
+          textAlign: "justify",
+        }} 
       >
         {props.text}
       </Typography>

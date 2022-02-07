@@ -3,8 +3,7 @@ import { useEffect, useRef } from "react";
 import IllustrationLoader from "./illustration_loader";
 import theme from '../../theme/theme';
 import IllustrationSkeleton from "./IllustrationSkeleton";
-import IllustrationIcon from "./IllustrationIcon";
-
+import IllustrationIcon from "./IllustrationIcon"
 
 /**
  * @type {import("./typing").IllustrationComponent}

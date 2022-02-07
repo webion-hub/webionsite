@@ -1,55 +1,60 @@
-import { Stack, Grid, useMediaQuery } from "@mui/material";
-import CircleBox from "../../components/CircleBox";
-import { CodeThinking } from "../../components/illustrations/illustrations";
-import MaybeShow from "../../components/MaybeShow";
-import TitleParagraph from "../../components/TitleParagraph";
-import theme from "../../theme/theme";
-import homeBackgroundStyle from "./styles/homeBackgroundStyle";
-import homeTitleParagraphStyle from "./styles/homeTitleParagraphStyle";
+import { Box, Button, Typography } from "@mui/material";
+import { BlobAndIllustration } from "../../components/illustrations/illustrations";
+import { leftPart, rightPart, container } from "./styles/homeCss";
 
 export default function Home() {
-  const isMobileView = useMediaQuery(theme.breakpoints.down('md'))
-
   return (
-    <Stack
-      direction="column"
-    >
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        sx={homeBackgroundStyle}
-      >
-        <MaybeShow show={!isMobileView}>
-          <CircleBox
-            Component={Grid}
-            xs={12}
-            md={6}
-            item
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="flex-end"
+    <>
+      <br /><br /><br />
+      <Box sx={container}>
+        <Box sx={leftPart}>
+          {/* Per ragioni di SEO secondo conviene metterci un h1 per; potrebbe essere troppo grande. nel caso cambiamo dimensione noi ma io lascerei un h1. Dimmi tu*/}
+          <Typography            
+            variant="h1" 
+            sx={{
+              fontSize: {xs: "50px", md: "80px"},
+              fontWeight: 400,
+              textAlign: "justify",
+              color: "#001466", //se i colori vanno bene li mettiamo nel theme. Usando il blu del blob stanno male perciò secondo me è meglio un colore tipo questo
+              marginTop: {xs: "100px", lg: 0},
+              marginBottom: {xs: "40px", lg: 0},
+            }}
           >
-            <CodeThinking boxProps={{width: "80%"}}/>
-          </CircleBox>
-        </MaybeShow>
-        <TitleParagraph
-          xs={12}
-          md={6}
-          item
-
-          title="Titolo webion"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a dignissim neque, vitae elementum orci. Donec molestie non ex vitae ullamcorper."
-          buttonLabel="Scopri di più"
-
-          buttonProps={{
-            onClick: _ => {},
-          }}
-
-          sx={homeTitleParagraphStyle(isMobileView)}
-        />
-      </Grid>
-    </Stack>
+            Sviluppiamo applicazioni web
+          </Typography>
+          <center>
+            <Typography 
+              color="#000C3D"  
+              variant="h6" 
+              sx={{
+                width: "clamp(250px, 100%, 900px)",
+                fontWeight: 400,
+                textAlign: "justify",
+              }}
+            >
+              Siamo sviluppatori di applicazioni web e questo è un paragrafo in cui verrà scritto qualcosa di sensato prima o poi. Siamo bravissimi a scrivere codice, ma tipo davvero bravi eh...
+            </Typography>
+          </center>
+          <br />
+          <center>
+            <Button variant="contained">
+              {/* Sempre per ragioni di SEO */}
+              <Typography variant="subtitle1">
+                {"Perchè sceglierci?"}
+              </Typography>
+            </Button>
+          </center>
+        </Box>
+        <Box sx={rightPart}>
+          <BlobAndIllustration boxProps={{
+            width: "100%",
+            //box-shadow: ;
+            filter: "drop-shadow(.5rem .5rem 1rem #e23)",
+          }}/>
+        </Box>
+      </Box>
+      {/* Si poi queste ovviamente le togliamo quando mettiamo le altre pagine sotto */}
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </>
   )
 }

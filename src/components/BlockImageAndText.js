@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
-import { Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 export default function BlockImageAndText(props) {
   return (
@@ -10,17 +10,35 @@ export default function BlockImageAndText(props) {
       md={4}
       xs={12}
       sx={{
-        maxWidth: "400px",
+        maxWidth: "450px",
         marginTop: 1,
       }}
     >
       <Paper
         elevation={6}
       >
-        <props.icon skeletonProps={{size: 'wide'}}/>
-        <Typography sx={{ margin: 2 }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum.
-        </Typography>
+        <Box sx={{
+          margin: {
+            xs: 1,
+            sm: 3,
+          }
+        }}
+        >
+          <Box sx={{
+            paddingInline: { xs: 1, sm: "6%" },
+            maxWidth: "300px",
+            margin: "0 auto",
+          }}>
+            <props.icon svgProps={{ 
+              height: "300px", 
+            }} 
+            skeletonProps={{ size: 'wide' }} />
+          </Box>
+          <Typography
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum.
+          </Typography>
+        </Box>
       </Paper>
     </Grid>
   );

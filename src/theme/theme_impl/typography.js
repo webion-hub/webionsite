@@ -1,5 +1,5 @@
 const typography = {
-  fontFamily: ['Rubik', 'sans-serif'],
+  fontFamily: ['IBM Plex Sans Thai Looped'],
 }
 
 export default typography

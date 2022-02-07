@@ -9,13 +9,14 @@ export default function CenteredTitle(props) {
       justifyContent="center"
       sx={{
         margin: {
-          xs: 0,
-          md: 10,
+          xs: 1,
+          md: 1,
         },
       }}>
       <Typography
-        variant="h3"
-        color="secondary"
+        variant={props.variant}
+        color={props.color}
+        sx={{fontWeight: 400}}
         align="center"
       >
         {props.text}

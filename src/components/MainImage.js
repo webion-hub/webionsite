@@ -10,6 +10,9 @@ export default function MainImage(props) {
       container
       direction="column"
       justifyContent="center"
+      sx={{
+        margin: 3,
+      }}
     >
       <Img src={props.src} sx={{
         border: "1px solid white;",

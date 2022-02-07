@@ -12,10 +12,8 @@ const homeTitleParagraphStyle = (isMobileView) => {
     "&::after": {
       content: '""',
       position: "absolute",
-
       top: "-20%",
       right: 0,
-
       width: isMobileView ? "120%" : "95%",
       height: "100%",
       borderBottomLeftRadius: "100%",
