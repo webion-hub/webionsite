@@ -13,7 +13,10 @@ export default function CenteredText(props) {
       <Typography
         variant= {props.variant}
         color={props.color}
-        align="justify"
+        align="justify"        
+        sx={{
+          marginTop: 4,
+        }}
       >
         {props.text}
       </Typography>

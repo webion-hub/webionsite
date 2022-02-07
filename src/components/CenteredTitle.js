@@ -9,8 +9,8 @@ export default function CenteredTitle(props) {
       justifyContent="center"
       sx={{
         margin: {
-          xs: 1,
-          md: 1,
+          xs: 2,
+          md: 5,
         },
       }}>
       <Typography

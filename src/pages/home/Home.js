@@ -34,10 +34,13 @@ export default function Home() {
             >
               Siamo sviluppatori di applicazioni web e questo è un paragrafo in cui verrà scritto qualcosa di sensato prima o poi. Siamo bravissimi a scrivere codice, ma tipo davvero bravi eh...
             </Typography>
-          </center>
-          <br />
-          <center>
-            <Button variant="contained" size="large">
+            <Button
+              variant="contained"
+              size="large"
+              sx={{
+                marginTop: 3,
+              }}
+            >
               {"Perchè sceglierci?"}
             </Button>
           </center>
