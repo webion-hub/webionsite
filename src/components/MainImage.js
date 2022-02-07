@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Grid } from '@mui/material';
 import Img from './Img';
+import theme from '../theme/theme';
 
 export default function MainImage(props) {
   return (
@@ -10,9 +11,6 @@ export default function MainImage(props) {
       container
       direction="column"
       justifyContent="center"
-      sx={{
-        margin: 3,
-      }}
     >
       <Img src={props.src} sx={{
         border: "1px solid white;",
@@ -22,9 +20,9 @@ export default function MainImage(props) {
         },
         margin: "0 auto",
         backgroundColor: "white",
-        padding: "20px",
-        borderRadius: "20px",
-        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        padding: 3,
+        borderRadius: theme.shape.borderRadius,
+        boxShadow: theme.shadows[1],
       }} />
     </Grid>
   );

@@ -21,19 +21,21 @@ export default function BlockImageAndText(props) {
           margin: {
             xs: 1,
             sm: 3,
-          }
+          },
         }}
         >
-          <Box sx={{
-            paddingInline: { xs: 1, sm: "6%" },
-            maxWidth: "300px",
-            margin: "0 auto",
-          }}>
-            <props.icon svgProps={{ 
-              height: "300px", 
-            }} 
-            skeletonProps={{ size: 'wide' }} />
-          </Box>
+          <props.icon svgProps={{
+            height: "300px",
+          }}
+          skeletonProps={{ size: 'wide' }}
+          boxProps={{
+            sx: {
+              paddingInline: { xs: 1, sm: "6%" },
+              maxWidth: "300px",
+              margin: "0 auto",
+            },
+          }}
+          />
           <Typography
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum.

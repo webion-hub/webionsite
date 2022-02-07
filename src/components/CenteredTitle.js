@@ -16,7 +16,6 @@ export default function CenteredTitle(props) {
       <Typography
         variant={props.variant}
         color={props.color}
-        sx={{fontWeight: 400}}
         align="center"
       >
         {props.text}

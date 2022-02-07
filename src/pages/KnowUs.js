@@ -17,12 +17,14 @@ export default function KnowUs(_props) {
     <Grid container sx={{ marginTop: 9 }} justifyContent="center">
       <MainImage src="./illustrations/team.svg" />
       <center>
+        <br />
         <CenteredText
           variant={matches ? "h6" : "subtitle1"}
           text="Siamo un gruppo di tre ragazzi che mangiano troppo pokè e non seguono le lezioni."
         />
+        <br />
+        <CenteredTitle color="secondary" variant="h3" text="Perché sceglierci" />
       </center>
-      <CenteredTitle color="secondary" variant="h3" text="Perché sceglierci" />
       <Grid
         container
         item

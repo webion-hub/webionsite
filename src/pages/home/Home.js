@@ -9,8 +9,8 @@ export default function Home() {
       <Box sx={container}>
         <Box sx={leftPart}>
           {/* Per ragioni di SEO secondo conviene metterci un h1 per; potrebbe essere troppo grande. nel caso cambiamo dimensione noi ma io lascerei un h1. Dimmi tu*/}
-          <Typography            
-            variant="h1" 
+          <Typography
+            variant="h1"
             sx={{
               fontSize: {xs: "50px", md: "80px"},
               fontWeight: 400,
@@ -23,9 +23,9 @@ export default function Home() {
             Sviluppiamo applicazioni web
           </Typography>
           <center>
-            <Typography 
-              color="#000C3D"  
-              variant="h6" 
+            <Typography
+              color="#000C3D"
+              variant="h6"
               sx={{
                 width: "clamp(250px, 100%, 900px)",
                 fontWeight: 400,
@@ -37,19 +37,13 @@ export default function Home() {
           </center>
           <br />
           <center>
-            <Button variant="contained">
-              {/* Sempre per ragioni di SEO */}
-              <Typography variant="subtitle1">
-                {"Perchè sceglierci?"}
-              </Typography>
+            <Button variant="contained" size="large">
+              {"Perchè sceglierci?"}
             </Button>
           </center>
         </Box>
         <Box sx={rightPart}>
           <BlobAndIllustration boxProps={{
-            width: "100%",
-            //box-shadow: ;
-            filter: "drop-shadow(.5rem .5rem 1rem #e23)",
           }}/>
         </Box>
       </Box>
