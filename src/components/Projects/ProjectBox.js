@@ -17,12 +17,14 @@ export default function ProjectBox(props) {
       }}
       elevation={6}
       >
-        <center>            
-          <Img src={props.src} sx={{
-            width: "100%",
-            maxWidth: 480,
-            borderRadius: theme.shape.borderRadius,
-          }}/>
+        <center>
+          <a rel="noreferrer" target= "_blank" href={props.link}>    
+            <Img src={props.src} sx={{
+              width: "100%",
+              maxWidth: 480,
+              borderRadius: theme.shape.borderRadius,
+            }}/>
+          </a>
           <Typography variant="h6">
             {props.title}
           </Typography>
