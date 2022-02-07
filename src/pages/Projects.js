@@ -7,7 +7,6 @@ export default function Projects() {
       <br /><br /><br />
       <Stack sx={{
         backgroundColor: "white",
-        height: "100vh",
         padding: {xs: 2, md: 8},
       }}>
         <center>
@@ -21,13 +20,15 @@ export default function Projects() {
             flexWrap: "wrap",
             justifyContent: "space-around",
           }}>
-            <ProjectBox src="https://i1.wp.com/potafiori.com/wp-content/uploads/2020/04/placeholder.png?ssl=1" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum."/>
-            <ProjectBox src="https://i1.wp.com/potafiori.com/wp-content/uploads/2020/04/placeholder.png?ssl=1" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum."/>
-            <ProjectBox src="https://i1.wp.com/potafiori.com/wp-content/uploads/2020/04/placeholder.png?ssl=1" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum."/>
-            <ProjectBox src="https://i1.wp.com/potafiori.com/wp-content/uploads/2020/04/placeholder.png?ssl=1" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum."/>
+            <ProjectBox src="https://i.ibb.co/f0PvHZ5/yoga-Website.png" title="Yoga corfu Holidays" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum."/>
+            <ProjectBox src="https://i.ibb.co/0FYZ41z/Mentorz.png" title="Mentorz" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum."/>
+            <ProjectBox src="https://i1.wp.com/potafiori.com/wp-content/uploads/2020/04/placeholder.png?ssl=1" title="Title" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum."/>
+            <ProjectBox src="https://i1.wp.com/potafiori.com/wp-content/uploads/2020/04/placeholder.png?ssl=1" title="Title" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ex, accumsan non enim porttitor, mattis faucibus arcu. Curabitur lobortis vehicula fermentum."/>
           </Box>
         </center>
+        <br /><br /><br />
       </Stack>
+      
     </>
   );
 }

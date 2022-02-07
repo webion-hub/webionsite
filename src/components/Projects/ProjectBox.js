@@ -20,9 +20,12 @@ export default function ProjectBox(props) {
         <center>            
           <Img src={props.src} sx={{
             width: "100%",
-            maxWidth: 400,
+            maxWidth: 480,
             borderRadius: theme.shape.borderRadius,
           }}/>
+          <Typography variant="h6">
+            {props.title}
+          </Typography>
           <Typography sx={{
             textAlign: "justify",
           }}>
