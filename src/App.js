@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import KnowUs from './pages/KnowUs';
 import Faq from './pages/Faq';
 import { initPageBackground } from './theme/theme';
+import Projects from './pages/Projects';
 
 export default function App() {
   initPageBackground();
@@ -12,8 +13,8 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/prova" element={<></>}/>
           <Route path="/chi-siamo" element={<KnowUs />}/>
+          <Route path="/progetti" element={<Projects />}/>
           <Route path="/faq" element={<Faq />}/>
         </Routes>
       </Layout>
