@@ -35,6 +35,12 @@ export default function WebionAppBar() {
             >
               Progetti
             </Button>
+            <Button
+              color="secondary"
+              onClick={_ => navigate("/faq")}
+            >
+              FAQ
+            </Button>
           </AppBarSection>
         </AppBarSection>
 
