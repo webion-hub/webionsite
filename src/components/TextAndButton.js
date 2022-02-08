@@ -13,7 +13,7 @@ export default function TextAndButton(props) {
         marginTop: 5,
         marginBottom: 18,
       }}>
-      <Typography>
+      <Typography sx={{color: props.color}} >
         {props.text}
       </Typography>
       <Button variant="contained" sx={{
