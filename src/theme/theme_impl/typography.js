@@ -1,5 +1,5 @@
 const typography = {
-  fontFamily: ['Rubik', 'sans-serif'],
+  fontFamily: ['Roboto Slab'],
 }
 
 export default typography

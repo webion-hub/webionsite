@@ -1,6 +1,6 @@
 import { alpha } from "@mui/material";
 import zIndex from "@mui/material/styles/zIndex";
-import { mixins, palette, shape } from "../theme_impl/index";
+import { palette, shape } from "../theme_impl/index";
 
 const appBarStyle = {
   styleOverrides: {
@@ -9,9 +9,6 @@ const appBarStyle = {
       backdropFilter: "blur(20px)",
       background: alpha(palette.primary.main, 0.03),
       borderBottom: shape.border.main,
-      "& + *": {
-        marginTop: mixins.toolbar.minHeight + "px",
-      },
     },
   },
 }

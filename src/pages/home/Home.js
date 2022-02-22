@@ -1,55 +1,61 @@
-import { Stack, Grid, useMediaQuery } from "@mui/material";
-import CircleBox from "../../components/CircleBox";
-import { CodeThinking } from "../../components/illustrations/illustrations";
-import MaybeShow from "../../components/MaybeShow";
-import TitleParagraph from "../../components/TitleParagraph";
-import theme from "../../theme/theme";
-import homeBackgroundStyle from "./styles/homeBackgroundStyle";
-import homeTitleParagraphStyle from "./styles/homeTitleParagraphStyle";
+import { Grid, Stack, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import ButtonCircled from "../../components/buttons/ButtonCircled";
+import { Worker } from "../../components/illustrations/illustrations";
+import SquareSvg from "./Square";
 
 export default function Home() {
-  const isMobileView = useMediaQuery(theme.breakpoints.down('md'))
-
   return (
     <Stack
       direction="column"
+      justifyContent="space-between"
+      sx={{
+        height: "100vh",
+        maxHeight: 900,
+      }}
     >
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        sx={homeBackgroundStyle}
+      <Box height="33%">
+        <SquareSvg/>
+      </Box>
+      <Box
+        height="33%"
+        sx={{
+          margin: "0 auto",
+        }}
       >
-        <MaybeShow show={!isMobileView}>
-          <CircleBox
-            Component={Grid}
-            xs={12}
-            md={6}
-            item
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="flex-end"
-          >
-            <CodeThinking boxProps={{width: "80%"}}/>
-          </CircleBox>
-        </MaybeShow>
-        <TitleParagraph
-          xs={12}
-          md={6}
-          item
-
-          title="Titolo webion"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a dignissim neque, vitae elementum orci. Donec molestie non ex vitae ullamcorper."
-          buttonLabel="Scopri di più"
-
-          buttonProps={{
-            onClick: _ => {},
+        <Typography variant="h4" component="h1">
+          Webion,
+        </Typography>
+        <Typography variant="h2" component="h1">
+          gli artigiani del software
+        </Typography>
+        <ButtonCircled
+          variant="contained"
+          sx={{
+            marginTop: 4,
           }}
-
-          sx={homeTitleParagraphStyle(isMobileView)}
-        />
-      </Grid>
+        >
+         Scopri perchè
+        </ButtonCircled>
+      </Box>
+      <Box height="33%">
+        <Grid
+          sx={{height: "100%"}}
+          container
+          direction="row"
+          justifyContent="space-between"
+        >
+          <Worker boxProps={{
+            width: "auto",
+            sx: {
+              transform: "scale(1.5)",
+              marginLeft: 8,
+            },
+          }}
+          ></Worker>
+          <SquareSvg flip/>
+        </Grid>
+      </Box>
     </Stack>
   )
 }

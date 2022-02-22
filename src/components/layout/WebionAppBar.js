@@ -16,11 +16,14 @@ export default function WebionAppBar() {
     <AppBar>
       <AppBarContent>
 
-        <AppBarSection spacing={0}>
+        <AppBarSection alignment="start" spacing={0}>
           <AnimatedLogo
             label="Webion"
             onClick={_ => navigate("/")}
           />
+        </AppBarSection>
+
+        <AppBarSection alignment="end" justifyContent="flex-end">
           <AppBarSection hideOnMobile>
             <Button
               color="secondary"
@@ -34,11 +37,6 @@ export default function WebionAppBar() {
             >
               Progetti
             </Button>
-          </AppBarSection>
-        </AppBarSection>
-
-        <AppBarSection alignment="end">
-          <AppBarSection hideOnMobile>
             <Button
               color="secondary"
               variant="outlined"

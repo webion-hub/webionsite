@@ -8,9 +8,13 @@ export default function AppBarSection({children, hideOnMobile, ...props}) {
   if (isMobileView && hideOnMobile)
     return <EmptyComponent/>;
 
+  if (props.alignment == "")
+    return children;
+
   return (
     <Stack
       {...props}
+      width="100%"
     >
       {children}
     </Stack>
@@ -18,7 +22,7 @@ export default function AppBarSection({children, hideOnMobile, ...props}) {
 }
 
 AppBarSection.defaultProps = {
-  alignment: "start",
+  alignment: "",
   hideOnMobile: false,
   direction: "row",
   alignItems: "center",

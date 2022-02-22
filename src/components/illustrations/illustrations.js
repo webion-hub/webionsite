@@ -6,6 +6,7 @@ export const Speed = Illustration.lazy('illustrations/speed2.svg');
 export const CodeThinking = Illustration.lazy('illustrations/code_thinking.svg');
 export const Programmer = Illustration.lazy('illustrations/programmer.svg');
 export const Website = Illustration.lazy('illustrations/website.svg');
+export const Worker = Illustration.lazy('illustrations/worker.svg');
 
 export const LogoIcon = Illustration.icon("icons/logo.svg");
 export const LinkedinIcon = Illustration.icon("icons/linkedin.svg");
