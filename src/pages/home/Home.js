@@ -1,18 +1,14 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import ButtonCircled from "../../components/buttons/ButtonCircled";
 import { Worker } from "../../components/illustrations/illustrations";
+import Page from "../../components/Page";
 import SquareSvg from "./Square";
 
 export default function Home() {
   return (
-    <Stack
-      direction="column"
+    <Page
       justifyContent="space-between"
-      sx={{
-        height: "100vh",
-        maxHeight: 900,
-      }}
     >
       <Box height="33%">
         <SquareSvg/>
@@ -56,6 +52,6 @@ export default function Home() {
           <SquareSvg flip/>
         </Grid>
       </Box>
-    </Stack>
+    </Page>
   )
 }
