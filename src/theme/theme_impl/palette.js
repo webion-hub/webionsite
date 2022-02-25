@@ -1,3 +1,4 @@
+import { alpha } from "@mui/material";
 import colors from "./colors";
 
 const palette = {
@@ -11,6 +12,7 @@ const palette = {
   background: {
     default: "#020512",
     dark: "#00051a",
+    paper: alpha(colors.primary, 0.1),
   },
 }
 
