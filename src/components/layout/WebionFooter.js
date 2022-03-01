@@ -24,7 +24,7 @@ export default function WebionFooter() {
         <FooterColumn>
           <Button
             startIcon={<GroupsRoundedIcon/>}
-            color="secondary"
+            color="info"
             fullWidth
             onClick={_ => navigate("/chi-siamo")}
           >
@@ -32,7 +32,7 @@ export default function WebionFooter() {
           </Button>
           <Button
             startIcon={<DesignServicesRoundedIcon/>}
-            color="secondary"
+            color="info"
             fullWidth
             onClick={_ => navigate("/progetti")}
           >
@@ -40,7 +40,7 @@ export default function WebionFooter() {
           </Button>
           <Button
             startIcon={<ContactPageRoundedIcon/>}
-            color="secondary"
+            color="info"
             fullWidth
             onClick={_ => navigate("/contattaci")}
           >
@@ -60,20 +60,20 @@ export default function WebionFooter() {
             </IconButton>
             <Logo
               ButtonComponent={IconButton}
-              color="secondary"
+              color="info"
             />
           </Stack>
 
           <Button
             endIcon={<PrivacyTipRoundedIcon/>}
-            color="secondary"
+            color="info"
             fullWidth
           >
             Privacy
           </Button>
           <Button
             endIcon={<LiveHelpRoundedIcon/>}
-            color="secondary"
+            color="info"
             fullWidth
           >
             Faq

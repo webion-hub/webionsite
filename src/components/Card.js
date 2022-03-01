@@ -1,8 +1,9 @@
-import { darken, Grid, Paper, Typography } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import theme from "../theme/theme";
 import MaybeShow from "./MaybeShow";
 
-export default function Card({title, description, children, sx, Icon}) {
+export default function Card({title, description, children, sx}) {
   return (
     <Paper
       sx={{...sx}}
@@ -15,25 +16,36 @@ export default function Card({title, description, children, sx, Icon}) {
           container
           direction="row"
           alignItems="center"
+          justifyContent="center"
           gap={2}
           sx={{
-            padding: 2,
-            borderTopLeftRadius: 28,
-            borderTopRightRadius: 28,
-            background: darken(theme.palette.background.default, 0.05),
+            paddingInline: 2,
+            paddingBlock: 1,
+            borderTopLeftRadius: theme.components.MuiPaper.styleOverrides.rounded.borderRadius,
+            borderTopRightRadius: theme.components.MuiPaper.styleOverrides.rounded.borderRadius,
+            background: theme.palette.background.default,
           }}
         >
-          {Icon && <Icon color="primary"/>}
-          <Typography variant="h5">
-            {title}
+          <Typography variant="h6">
+            <strong>
+              {title}
+            </strong>
           </Typography>
         </Grid>
-        <MaybeShow show={description}>
-          <Typography sx={{padding: 2}}>
-            {description}
-          </Typography>
-        </MaybeShow>
-        {children}
+        <Box
+          sx={{
+            padding: 2,
+            paddingTop: 2,
+          }}
+        >
+          <MaybeShow show={description}>
+            <Typography align="center" variant="body2">
+              {description}
+            </Typography>
+          </MaybeShow>
+          {children}
+        </Box>
+
       </Grid>
     </Paper>
   )

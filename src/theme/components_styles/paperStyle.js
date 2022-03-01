@@ -4,10 +4,11 @@ const paperStyle = {
   styleOverrides: {
     root: {
       backgroundImage: "none",
+      backdropFilter: "blur(64px)",
     },
     rounded: {
       border: shape.border.main,
-      borderRadius: 28,
+      borderRadius: 16,
     },
   },
 }

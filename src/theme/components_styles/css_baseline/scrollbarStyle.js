@@ -6,7 +6,7 @@ const scrollbarStyle = {
     height: '4px',
   },
   '&::-webkit-scrollbar-thumb': {
-    background: colors.secondary,
+    background: colors.tertiary,
     borderRadius: '2px',
   },
 }

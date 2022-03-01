@@ -5,6 +5,7 @@ export default function AnimatedLogo({label, ...others}) {
   return (
     <Logo
       {...others}
+      color="info"
       sx={{
         paddingRight: 1,
         "& .webion-logo--label": {

@@ -8,7 +8,6 @@ import AppBar from "../app_bar/AppBar";
 import AppBarContent from "../app_bar/AppBarContent";
 import AppBarSection from "../app_bar/AppBarSection";
 
-
 export default function WebionAppBar() {
   const navigate = useNavigate();
 
@@ -26,19 +25,19 @@ export default function WebionAppBar() {
         <AppBarSection alignment="end" justifyContent="flex-end">
           <AppBarSection hideOnMobile>
             <Button
-              color="secondary"
+              color="info"
               onClick={_ => navigate("/chi-siamo")}
             >
               Chi siamo
             </Button>
             <Button
-              color="secondary"
+              color="info"
               onClick={_ => navigate("/progetti")}
             >
               Progetti
             </Button>
             <Button
-              color="secondary"
+              color="info"
               variant="outlined"
               onClick={_ => navigate("/contattaci")}
             >

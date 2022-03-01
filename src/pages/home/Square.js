@@ -15,96 +15,94 @@ const getAnimation = () => {
   }
 }
 
-const getTextColumn = (x, y) => {
-  return (
-    <text
-      xmlSpace="preserve"
-      x={x}
-      y={y}
-      transform="translate(-1.058)"
-    >
-      {
-        [...Array(11)].map((_, key) => {
-          return (
-            <tspan
-              key={KeyGenerator.generate(key)}
-              className="text-style"
-              style={getAnimation()}
-              x={x}
-              y={y + key * 5.469}
-            >
-              {randomValue()}
-            </tspan>
-          )
-        })
-      }
-    </text>
-  )
-}
 
-const SquareSvg = ({flip, ...props}) => {
+
+const SquareSvg = ({scale, position, ...props}) => {
+  const size = scale * 256;
+
+  const getTextColumn = (x, y) => {
+    return (
+      <text
+        style={{
+          fontSize: 18,
+        }}
+        x={x}
+        y={y}
+      >
+        {
+          [...Array(13 * scale)].map((_, key) => {
+            return (
+              <tspan
+                key={KeyGenerator.generate(key)}
+                className="text-style"
+                style={getAnimation()}
+                x={x}
+                y={y + key * 22}
+              >
+                {randomValue()}
+              </tspan>
+            )
+          })
+        }
+      </text>
+    )
+  }
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="100%"
-      viewBox="0 0 114 58"
+      viewBox={`0 0 ${size} ${size}`}
       {...props}
+      transform={`scale(${scale})`}
     >
       <defs>
         <filter
           style={{
             colorInterpolationFilters: "sRGB",
           }}
-          id="a"
-          x={-0.019}
-          y={-0.036}
-          width={1.039}
-          height={1.073}
+          id="b"
+          x={-0.038}
+          y={-0.038}
+          width={1.072}
+          height={1.072}
         >
-          <feGaussianBlur stdDeviation={0.973} />
+          <feFlood floodOpacity={0.698} floodColor="#000" result="flood" />
+          <feComposite
+            in="flood"
+            in2="SourceGraphic"
+            operator="in"
+            result="composite1"
+          />
+          <feGaussianBlur in="composite1" stdDeviation={4} result="blur" />
+          <feOffset dx={-1} dy={-1} result="offset" />
+          <feComposite in="SourceGraphic" in2="offset" result="composite2" />
         </filter>
       </defs>
       <path
         style={{
           fill: "#060f37",
-          fillOpacity: 1,
-          strokeWidth: 0.180621,
         }}
-        d="M0 36V0h128v72H0Z"
+        d={`M0 0h${size}v${size}H0z`}
       />
       {
-        [...Array(24)].map((_, key) => {
+        [...Array(16 * scale)].map((_, key) => {
           return (
             <React.Fragment key={key}>
-              {getTextColumn(-0.282 + key*5, 3.511)}
+              {getTextColumn(-0.282 + key*16, 3.511)}
             </React.Fragment>
           )
         })
       }
       <path
-        className={flip ? "flip" : ""}
-        style={{
-          fill: "#000",
-          fillOpacity: 1,
-          stroke: "none",
-          strokeWidth: 0.26049,
-          strokeOpacity: 1,
-          paintOrder: "stroke fill markers",
-          filter: "url(#a)",
-        }}
-        d="M111-1v32a24 24 0 0 1-23.981 24H-1v8h120V-1Z"
-      />
-      <path
-        className={flip ? "flip" : ""}
         style={{
           fill: "#020512",
-          fillOpacity: 1,
-          stroke: "none",
-          strokeWidth: 0.26049,
-          strokeOpacity: 1,
+          strokeWidth: 1,
           paintOrder: "stroke fill markers",
+          filter: "url(#b)",
+          transform: `translate(${position}) scale(${scale*2})`,
         }}
-        d="M112 0v32a24 24 0 0 1-23.981 24H0v16h128V0Z"
+        d={`M0 0v${size}h${size}V0H0zm128 4a124 124 0 0 1 124 124 124 124 0 0 1-124 124A124 124 0 0 1 4 128 124 124 0 0 1 128 4z`}
       />
       <text
         xmlSpace="preserve"
@@ -126,4 +124,10 @@ const SquareSvg = ({flip, ...props}) => {
   )
 }
 
+SquareSvg.defaultProps = {
+  position: "-100%, -100%",
+}
+
 export default SquareSvg
+
+

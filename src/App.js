@@ -3,7 +3,7 @@ import Home from './pages/home/Home';
 import { BrowserRouter, Routes } from "react-router-dom";
 import { initPageBackground } from './theme/theme';
 import Services from './pages/services/Services';
-import Projects from './pages/projects/Projects';
+//import Projects from './pages/projects/Projects';
 
 export default function App() {
   initPageBackground();
@@ -12,7 +12,8 @@ export default function App() {
       <Layout>
         <Home></Home>
         <Services></Services>
-        <Projects></Projects>
+        {/*<Services></Services>
+        <Projects></Projects>*/}
         <Routes>
 
           {/*
