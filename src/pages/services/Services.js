@@ -1,4 +1,4 @@
-import { Grid, Typography, useMediaQuery } from "@mui/material";
+import { alpha, Grid, Typography, useMediaQuery } from "@mui/material";
 import Page from "../../components/Page";
 import theme from "../../theme/theme";
 
@@ -10,6 +10,10 @@ export default function Services() {
     <Page
       justifyContent="center"
       alignItems="center"
+      sx={{
+        background: alpha(theme.palette.primary.main, 0.05),
+        paddingBlock: 6
+      }}
     >
       <Grid
         container
