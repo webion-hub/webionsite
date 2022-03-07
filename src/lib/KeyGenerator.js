@@ -16,16 +16,16 @@ export class KeyGenerator {
     const fromDate = this.getKeyFromDate()
     const fromRandom = this.getKeyFromRandom(actualKey)
 
-    const optionalWord = word 
-      ? `${word}-` 
+    const optionalWord = word
+      ? `${word}-`
       : ""
 
-    const uniqueSeed = 
+    const uniqueSeed =
       optionalWord
-      + fromDate 
-      + "-" 
-      + fromRandom 
-      + "-" 
+      + fromDate
+      + "-"
+      + fromRandom
+      + "-"
       + actualKey
 
     actualKey++;
