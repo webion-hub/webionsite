@@ -1,82 +1,33 @@
 import { Typography, useMediaQuery } from "@mui/material";
 import { alpha } from "@mui/material";
 import { Box } from "@mui/system";
+import BinaryBackground from "../../components/backgrounds/BinaryBackground.js";
 import ButtonCircled from "../../components/buttons/ButtonCircled";
-import { Worker } from "../../components/illustrations/illustrations";
 import Page from "../../components/Page";
+import RotatingDashedCirlce from "../../components/RotatingDashedCirlce";
 import theme from "../../theme/theme";
-import "./styles/square.css"
 
 export default function Home() {
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
-  const isSm = useMediaQuery(theme.breakpoints.down('sm'))
-
-  const getSlideAnimation = (time) => {
-    return {
-      animation: `slide 1s ease-in-out forwards`,
-      animationDelay: `${time / 10}s`,
-    }
-  }
-
-  const getAnimation = () => {
-    return {
-      animation: `flicker ${Math.random() + 2}s ease-in-out alternate infinite`,
-      animationDelay: `-${Math.random()*4}s`,
-    }
-  }
-
-  const getTextColumn = (x, height) => {
-    const y = 18
-
-    return (
-      <text
-        style={{
-          transform: "translate(0, -100%)",
-          ...getSlideAnimation((x - 6)/14),
-          fontSize: 18,
-        }}
-        x={x}
-        y={y}
-        textAnchor="middle"
-      >
-        {
-          [...Array(height)].map((_, i) => (
-            <tspan
-              key={i}
-              style={{
-                ...getAnimation(),
-                fontSize: "18px",
-                fontFamily: 'Roboto Slab',
-                fill: "#0cca4a",
-              }}
-              x={x}
-              y={y * (i + 1)}
-            >
-              {Math.random() > .5 ? 1 : 0}
-            </tspan>
-          ))
-        }
-      </text>
-    )
-
-
-  }
 
   return (
     <Page
       justifyContent="center"
       sx={{
         minHeight: "90vh",
+        overflow: "hidden",
       }}
     >
       <Box
         sx={{
+          boxShadow: theme.shadows[5],
           margin: "0 auto",
           backdropFilter: "blur(16px)",
           background: alpha(theme.palette.primary.main, 0.05),
           padding: 4,
-          borderRadius: isSm ? 0 : theme.shape.borderRadius,
-          width: isSm ? "100%" : "auto",
+          borderRadius: theme.shape.borderRadius,
+          width: isMd ? "90%" : "auto",
+          maxWidth: 800,
         }}
       >
         <Typography
@@ -93,47 +44,86 @@ export default function Home() {
         >
           gli artigiani del software
         </Typography>
+        <Typography
+          variant="subtitle1"
+          component="p"
+          color="textSecondary"
+          sx={{marginTop: 2}}
+          align={isMd ? "center" : "left"}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu lorem at libero commodo ultricies in vel sem.
+        </Typography>
         <ButtonCircled
+          size="large"
           variant="contained"
           sx={{
             marginTop: 4,
-            marginInline: "auto",
+            width: isMd ? "100%" : "auto",
+            justifyContent: isMd ? "center" : "flex-start",
+            borderRadius: 26,
           }}
         >
          Scopri perchè
         </ButtonCircled>
       </Box>
-      <svg
-        style={{
+      <BinaryBackground
+        elements={[9, 7, 5, 6, 5, 7, 4, 3, 1]}
+        height={180}
+        sx={{
           position: "absolute",
           top: 0,
-          height: "90vh",
+          height: "80%",
           zIndex: -1,
         }}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 200 200"
-      >
-        {getTextColumn(6, 9)}
-        {getTextColumn(20, 7)}
-        {getTextColumn(34, 5)}
-        {getTextColumn(48, 6)}
-        {getTextColumn(62, 5)}
-        {getTextColumn(76, 7)}
-        {getTextColumn(90, 4)}
-        {getTextColumn(104, 3)}
-        {getTextColumn(118, 1)}
-      </svg>
-      <Worker
-        boxProps={{
-          sx: {
-            position: "absolute",
-            bottom: 0,
-            right: 0,
-            transform: "scaleX(-1)",
-            height: 400
-          }
+      />
+      <HomeRotaingCirlce
+        animationDuration="180s"
+        size={1500}
+        strokeWidth={16}
+        strokeColor={alpha(theme.palette.primary.main, 0.05)}
+        strokeDasharray="200 80"
+      />
+      <HomeRotaingCirlce
+        animationDuration="30s"
+        size={1000}
+        strokeWidth={4}
+        strokeColor={alpha(theme.palette.primary.main, 0.1)}
+        strokeDasharray="300 400"
+      />
+      <HomeRotaingCirlce
+        animationDuration="240s"
+        size={900}
+        strokeWidth={8}
+        strokeColor={alpha(theme.palette.primary.main, 0.2)}
+        strokeDasharray="200 80"
+      />
+      <BinaryBackground
+        elements={[1, 3, 2, 4]}
+        height={180}
+        position="bottom"
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          height: "80%",
+          zIndex: -1,
         }}
-      ></Worker>
+      />
     </Page>
+  )
+}
+
+function HomeRotaingCirlce(props) {
+  return (
+    <RotatingDashedCirlce
+      {...props}
+      sx={{
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+        transform: "translate(50%, 50%)",
+        zIndex: -1,
+      }}
+    />
   )
 }

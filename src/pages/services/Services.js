@@ -1,6 +1,8 @@
 import { alpha, Grid, Typography, useMediaQuery } from "@mui/material";
+import StyleRoundedIcon from '@mui/icons-material/StyleRounded';
 import Page from "../../components/Page";
 import theme from "../../theme/theme";
+import Line from "../../components/Line";
 
 export default function Services() {
   const isLg = useMediaQuery(theme.breakpoints.down('lg'))
@@ -12,7 +14,7 @@ export default function Services() {
       alignItems="center"
       sx={{
         background: alpha(theme.palette.primary.main, 0.05),
-        paddingBlock: 6
+        paddingBlock: 6,
       }}
     >
       <Grid
@@ -27,13 +29,6 @@ export default function Services() {
           alignItems="center"
           md={6}
           xs={12}
-          sx={{
-            maxWidth: isMd ? "80% !important" : "100% !important",
-            paddingRight: isMd ? 0 : 4,
-            paddingBottom: isMd ? 2 : 0,
-            borderRight: isMd ? "" : `8px solid ${theme.palette.secondary.main}`,
-            borderBottom: isMd ? `8px solid ${theme.palette.secondary.main}` : "",
-          }}
         >
           <Typography
             variant={isLg ? "h2" : "h1"}
@@ -44,6 +39,14 @@ export default function Services() {
               sceglierci?
             </strong>
           </Typography>
+          <Line
+            orientation={isMd ? "vertical" : "horizontal"}
+            sx={{
+              maxWidth: isMd ? "80% !important" : "100% !important",
+              marginLeft: isMd ? 0 : 4,
+              marginTop: isMd ? 2 : 0,
+            }}
+          />
         </Grid>
 
         <Grid
@@ -61,14 +64,17 @@ export default function Services() {
           }}
         >
           <Paragraph
+            Icon={StyleRoundedIcon}
             title="Versatilità"
             description="La nostra offerta comprende siti e applicazioni web, IOT per l'automazione mediante il web e software multipiattaforma."
           ></Paragraph>
           <Paragraph
+            Icon={StyleRoundedIcon}
             title="Personalizzazione"
             description="Offriamo una completa personalizzazione dell'interfaccia grafica e facciamo tutto su misura del cliente."
           ></Paragraph>
           <Paragraph
+            Icon={StyleRoundedIcon}
             title="Ottimizzazione"
             description="Crediamo sia fondamentale consegnare risultati di alta qualità. Per questo motivo ci concentriamo su una totale ottimizzazione ed un perfezionamento del prodotto finale."
           ></Paragraph>
@@ -78,7 +84,7 @@ export default function Services() {
   )
 }
 
-function Paragraph({title, description}) {
+function Paragraph({title, Icon, description}) {
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
@@ -91,11 +97,20 @@ function Paragraph({title, description}) {
         maxWidth: 500,
       }}
     >
-      <Typography variant="h5">
-        <strong>
-          {title}
-        </strong>
-      </Typography>
+      <Grid
+        container
+        direction="row"
+        alignItems="center"
+        justifyContent={isMd ? "center" : "flex-start"}
+        gap={1}
+      >
+        <Icon/>
+        <Typography variant="h5">
+          <strong>
+            {title}
+          </strong>
+        </Typography>
+      </Grid>
       <Typography 
         variant="body2"
         align={isMd ? "center" : "left"}
@@ -105,37 +120,3 @@ function Paragraph({title, description}) {
     </Grid>
   )
 }
-
-/*
-function DashedCircle({sx, ...props}) {
-  return (
-    <Svg
-      {...props}
-      height="100"
-      width="100"
-      sx={{
-        ...sx,
-        animation: 'rotate 64s infinite linear',
-        "@keyframes rotate": {
-          "0%": {
-            transform: "rotate(0deg)",
-          },
-          "100%": {
-            transform: "rotate(360deg)",
-          },
-        },
-      }}
-    >
-      <circle
-        cx="50"
-        cy="50"
-        r="40"
-        stroke={theme.palette.info.main}
-        strokeWidth="0.5"
-        strokeDasharray="10,20,20,20"
-        strokeLinecap="round"
-        fill="transparent"
-      />
-    </Svg>
-  )
-}*/
