@@ -1,4 +1,4 @@
-import { alpha, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
 import StyleRoundedIcon from '@mui/icons-material/StyleRounded';
 import Page from "../../components/Page";
 import theme from "../../theme/theme";
@@ -13,8 +13,8 @@ export default function Services() {
       justifyContent="center"
       alignItems="center"
       sx={{
-        background: alpha(theme.palette.primary.main, 0.05),
-        paddingBlock: 6,
+        background: theme.palette.background.paper,
+        paddingBlock: 12,
       }}
     >
       <Grid

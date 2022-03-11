@@ -1,9 +1,10 @@
-import { Typography, useMediaQuery } from "@mui/material";
+import { Paper, Typography, useMediaQuery } from "@mui/material";
 import { alpha } from "@mui/material";
-import { Box } from "@mui/system";
+import React from "react";
 import BinaryBackground from "../../components/backgrounds/BinaryBackground.js";
 import ButtonCircled from "../../components/buttons/ButtonCircled";
 import Page from "../../components/Page";
+import RotatingCirleGroup from "../../components/RotatingCirlceGroup.js";
 import RotatingDashedCirlce from "../../components/RotatingDashedCirlce";
 import theme from "../../theme/theme";
 
@@ -18,14 +19,10 @@ export default function Home() {
         overflow: "hidden",
       }}
     >
-      <Box
+      <Paper
         sx={{
-          boxShadow: theme.shadows[5],
           margin: "0 auto",
-          backdropFilter: "blur(16px)",
-          background: alpha(theme.palette.primary.main, 0.05),
           padding: 4,
-          borderRadius: theme.shape.borderRadius,
           width: isMd ? "90%" : "auto",
           maxWidth: 800,
         }}
@@ -65,7 +62,7 @@ export default function Home() {
         >
          Scopri perchè
         </ButtonCircled>
-      </Box>
+      </Paper>
       <BinaryBackground
         elements={[9, 7, 5, 6, 5, 7, 4, 3, 1]}
         height={180}
@@ -76,27 +73,30 @@ export default function Home() {
           zIndex: -1,
         }}
       />
-      <HomeRotaingCirlce
-        animationDuration="180s"
-        size={1500}
-        strokeWidth={16}
-        strokeColor={alpha(theme.palette.primary.main, 0.05)}
-        strokeDasharray="200 80"
-      />
-      <HomeRotaingCirlce
-        animationDuration="30s"
-        size={1000}
-        strokeWidth={4}
-        strokeColor={alpha(theme.palette.primary.main, 0.1)}
-        strokeDasharray="300 400"
-      />
-      <HomeRotaingCirlce
-        animationDuration="240s"
-        size={900}
-        strokeWidth={8}
-        strokeColor={alpha(theme.palette.primary.main, 0.2)}
-        strokeDasharray="200 80"
-      />
+      <RotatingCirleGroup bottom={0} right={0} transform="translate(50%, 50%)">
+        <RotatingDashedCirlce
+          animationDuration="180s"
+          size={1500}
+          strokeWidth={16}
+          strokeColor={alpha(theme.palette.primary.main, 0.05)}
+          strokeDasharray="200 80"
+        />
+        <RotatingDashedCirlce
+          animationDuration="30s"
+          size={1000}
+          strokeWidth={4}
+          strokeColor={alpha(theme.palette.primary.main, 0.1)}
+          strokeDasharray="300 400"
+        />
+        <RotatingDashedCirlce
+          animationDuration="240s"
+          size={900}
+          strokeWidth={8}
+          strokeColor={alpha(theme.palette.primary.main, 0.2)}
+          strokeDasharray="200 80"
+        />
+      </RotatingCirleGroup>
+
       <BinaryBackground
         elements={[1, 3, 2, 4]}
         height={180}
@@ -110,20 +110,5 @@ export default function Home() {
         }}
       />
     </Page>
-  )
-}
-
-function HomeRotaingCirlce(props) {
-  return (
-    <RotatingDashedCirlce
-      {...props}
-      sx={{
-        position: "absolute",
-        bottom: 0,
-        right: 0,
-        transform: "translate(50%, 50%)",
-        zIndex: -1,
-      }}
-    />
   )
 }
