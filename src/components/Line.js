@@ -15,7 +15,6 @@ export default function Line({lineWidth, orientation, color, sx}) {
       : lineWidth
   }
 
-  console.log(getWidth())
   return (
     <Box
       sx={{

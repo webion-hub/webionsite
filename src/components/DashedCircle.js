@@ -9,7 +9,7 @@ export default function DashedCircle({
 }) {
 
   const getRadius = () => {
-    return (size / 2) - strokeWidth * 2
+    return (size / 2) - strokeWidth
   }
 
   return (

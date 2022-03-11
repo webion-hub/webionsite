@@ -10,6 +10,7 @@ export default function RotatingDashedCirlce({animationDuration, sx, ...props}) 
   const animationName = KeyGenerator.generate('rotation')
   const keyFrame = `@keyframes ${animationName}`
 
+
   return (
     <DashedCircle
       {...props}
@@ -19,10 +20,10 @@ export default function RotatingDashedCirlce({animationDuration, sx, ...props}) 
         animationDuration: animationDuration,
         [keyFrame]: {
           "0%": {
-            transform: `${transform} rotate(0)`,
+            transform: transform ? `${transform} rotate(0)` : 'rotate(0)',
           },
           "100%": {
-            transform: `${transform} rotate(360deg)`,
+            transform: transform ? `${transform} rotate(360deg)` : 'rotate(360deg)',
           },
         },
       }}

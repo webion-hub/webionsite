@@ -12,10 +12,17 @@ export default function BinaryBackground({height, elements, position, ...svgProp
   const getWidth = () => elements.length * columnStep
   const isPosBottom = () => position == "bottom"
 
+  const getTranslation = () => {
+    return {
+      top: 'translate(0, -100%)',
+      bottom: 'translate(0, 100%)',
+      left: 'translate(100%, 0%)',
+      right: 'translate(-100%, 0%)',
+    }[position]
+  }
+
   const getSlideAnimation = (time) => {
-    const translate = isPosBottom()
-      ? "translate(0, 100%)"
-      : "translate(0, -100%)"
+    const translate = getTranslation()
 
     const animationName = KeyGenerator.generate('slide')
     const keyFrame = `@keyframes ${animationName}`

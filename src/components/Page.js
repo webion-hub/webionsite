@@ -8,8 +8,7 @@ export default function Page({children, sx, ...props}) {
       sx={{
         ...sx,
         width: "100vw",
-        overflowX: "hidden",
-        position: "relative"
+        position: "relative",
       }}
     >
       {children}
