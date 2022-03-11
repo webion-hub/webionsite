@@ -1,4 +1,4 @@
-import { colors } from "../../theme_impl/index";
+import { colors } from "../theme_impl/index";
 
 const scrollbarStyle = {
   '&::-webkit-scrollbar': {

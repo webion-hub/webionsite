@@ -15,7 +15,7 @@ const palette = {
   background: {
     default: "#020512",
     dark: "#00051a",
-    paper: alpha(colors.primary, 0.1),
+    paper: alpha(colors.primary, 0.05),
   },
 }
 

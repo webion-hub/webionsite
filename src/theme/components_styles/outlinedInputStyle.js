@@ -1,13 +1,13 @@
 import { spacing } from "../theme_impl/spacing"
 
-const buttonStyle = {
+const outlinedInputStyle = {
   styleOverrides: {
     root: {
-      borderRadius: 2 * spacing,
+      borderRadius: 1 * spacing,
     },
   },
 }
 
 
 
-export default buttonStyle
+export default outlinedInputStyle
