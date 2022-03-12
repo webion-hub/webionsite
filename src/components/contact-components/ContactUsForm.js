@@ -4,36 +4,38 @@ import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
-import React, { useEffect } from "react";
+import React from "react";
 import useForm from "../../hooks/useForm";
 import Validators from "../../lib/Validators";
+import FormGroup from "../FormGroup";
+import PrivacyCheckBox from "../PrivacyCheckBox";
 
 export default function ContactUsForm() {
-  const form = useForm()
-
-  useEffect(() => {
-    form.setValues({
-      name: {
-        value: '',
-        validators: [Validators.required],
-      },
-      company: {
-        value: '',
-      },
-      telephone: {
-        value: '',
-        validators: [Validators.isATelephoneNumber],
-      },
-      email: {
-        value: '',
-        validators: [Validators.required, Validators.isAnEmail],
-      },
-      message: {
-        value: '',
-        validators: [Validators.required],
-      },
-    })
-  }, [])
+  const form = useForm({
+    name: {
+      value: '',
+      validators: [Validators.required],
+    },
+    company: {
+      value: '',
+    },
+    telephone: {
+      value: '',
+      validators: [Validators.isATelephoneNumber],
+    },
+    email: {
+      value: '',
+      validators: [Validators.required, Validators.isAnEmail],
+    },
+    message: {
+      value: '',
+      validators: [Validators.required],
+    },
+    privacy: {
+      value: false,
+      validators: [Validators.required],
+    },
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -41,9 +43,8 @@ export default function ContactUsForm() {
   }
 
   return (
-    <Grid
-      noValidate
-      component="form"
+    <FormGroup
+      form={form}
       onSubmit={handleSubmit}
       container
       direction="column"
@@ -60,13 +61,12 @@ export default function ContactUsForm() {
       </Typography>
       <Divider></Divider>
       <TextField
+        formControlName="name"
         type="text"
         required
         variant="outlined"
         color="primary"
         label="Nome e cognome"
-        error={!form.isValid('name')}
-        onChange={form.setValue('name')}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -76,12 +76,11 @@ export default function ContactUsForm() {
         }}
       />
       <TextField
+        formControlName="company"
         type="text"
         variant="outlined"
         color="primary"
         label="Azienda"
-        error={!form.isValid('company')}
-        onChange={form.setValue('company')}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -91,12 +90,11 @@ export default function ContactUsForm() {
         }}
       />
       <TextField
+        formControlName="telephone"
         type="tel"
         variant="outlined"
         color="primary"
         label="Numero di telefono"
-        error={!form.isValid('telephone')}
-        onChange={form.setValue('telephone')}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -106,13 +104,12 @@ export default function ContactUsForm() {
         }}
       />
       <TextField
+        formControlName="email"
         type="email"
         required
         variant="outlined"
         color="primary"
         label="Email"
-        error={!form.isValid('email')}
-        onChange={form.setValue('email')}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -122,15 +119,17 @@ export default function ContactUsForm() {
         }}
       />
       <TextField
+        formControlName="message"
         type="text"
         required
         label="Messaggio"
-        error={!form.isValid('message')}
-        onChange={form.setValue('message')}
         multiline
         rows={4}
         variant="outlined"
         color="primary"
+      />
+      <PrivacyCheckBox
+        formControlName="privacy"
       />
       <Grid
         container
@@ -149,6 +148,7 @@ export default function ContactUsForm() {
           Invia
         </Button>
       </Grid>
-    </Grid>
+    </FormGroup>
+
   )
 }

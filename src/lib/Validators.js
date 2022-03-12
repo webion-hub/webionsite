@@ -1,11 +1,9 @@
 export default class Validators {
   static validate(validators, value) {
-    if (!validators)
-      return true
-
     return validators
-      .map(validator => validator(value))
-      .every(v => v)
+      ?.map(validator => validator(value))
+      ?.every(v => v)
+      ?? true
   }
 
   static required(value) {

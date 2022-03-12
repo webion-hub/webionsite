@@ -2,9 +2,9 @@ import Validators from "./Validators";
 
 export default class Form {
 
-  constructor(setter) {
+  constructor(setter, values) {
     this.setter = setter;
-    this.values = {}
+    this.values = values;
   }
 
   setValues = (value) => {
@@ -20,6 +20,10 @@ export default class Form {
         value: e.target.value,
       },
     })
+  }
+
+  getValue = (key) => {
+    return this.values[key]?.value
   }
 
   getValues = () => this.values
