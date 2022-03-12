@@ -1,10 +1,11 @@
-import { Grid, Typography, useMediaQuery } from "@mui/material";
+import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import StyleRoundedIcon from '@mui/icons-material/StyleRounded';
 import Page from "../../components/Page";
 import theme from "../../theme/theme";
 import Line from "../../components/Line";
+import Paragraph from "../../components/Paragraph";
 
-export default function Services() {
+export default function WhyChooseUs() {
   const isLg = useMediaQuery(theme.breakpoints.down('lg'))
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
 
@@ -80,43 +81,25 @@ export default function Services() {
           ></Paragraph>
         </Grid>
       </Grid>
-    </Page>
-  )
-}
-
-function Paragraph({title, Icon, description}) {
-  const isMd = useMediaQuery(theme.breakpoints.down('md'))
-
-  return (
-    <Grid
-      container
-      direction="column"
-      alignItems={isMd ? "center" : "flex-start"}
-      gap={2}
-      sx={{
-        maxWidth: 500,
-      }}
-    >
       <Grid
         container
         direction="row"
         alignItems="center"
-        justifyContent={isMd ? "center" : "flex-start"}
+        justifyContent="center"
         gap={1}
+        sx={{
+          marginTop: 6,
+        }}
       >
-        <Icon/>
-        <Typography variant="h5">
-          <strong>
-            {title}
-          </strong>
+        <Typography>
+          Sei interessato?
         </Typography>
+        <Button
+          variant="contained"
+        >
+          Contattaci
+        </Button>
       </Grid>
-      <Typography 
-        variant="body2"
-        align={isMd ? "center" : "left"}
-      >
-        {description}
-      </Typography>
-    </Grid>
+    </Page>
   )
 }
