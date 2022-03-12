@@ -5,6 +5,7 @@ import { initPageBackground } from './theme/theme';
 //import Projects from './pages/projects/Projects';
 import ContactUs from './pages/contact-us/ContactUs';
 import WhyChooseUs from './pages/why-choose-us/WhyChooseUs';
+import HowWeWork from './pages/how-we-work/HowWeWork';
 
 export default function App() {
   initPageBackground();
@@ -13,6 +14,7 @@ export default function App() {
       <Layout>
         <Home></Home>
         <WhyChooseUs></WhyChooseUs>
+        <HowWeWork></HowWeWork>
         {/*<Projects></Projects>*/}
         <ContactUs></ContactUs>
         <Routes>

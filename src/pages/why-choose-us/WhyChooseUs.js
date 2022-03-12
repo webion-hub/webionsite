@@ -1,4 +1,4 @@
-import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
 import StyleRoundedIcon from '@mui/icons-material/StyleRounded';
 import Page from "../../components/Page";
 import theme from "../../theme/theme";
@@ -8,6 +8,16 @@ import Paragraph from "../../components/Paragraph";
 export default function WhyChooseUs() {
   const isLg = useMediaQuery(theme.breakpoints.down('lg'))
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
+
+  const getTitleVariant = () => {
+    if (isMd)
+      return "h3"
+
+    if (isLg)
+      return "h2"
+
+    return "h1"
+  }
 
   return (
     <Page
@@ -32,7 +42,8 @@ export default function WhyChooseUs() {
           xs={12}
         >
           <Typography
-            variant={isLg ? "h2" : "h1"}
+            component="h2"
+            variant={getTitleVariant()}
             align={isMd ? "center" : "right"}
           >
             <strong>
@@ -80,25 +91,6 @@ export default function WhyChooseUs() {
             description="Crediamo sia fondamentale consegnare risultati di alta qualità. Per questo motivo ci concentriamo su una totale ottimizzazione ed un perfezionamento del prodotto finale."
           ></Paragraph>
         </Grid>
-      </Grid>
-      <Grid
-        container
-        direction="row"
-        alignItems="center"
-        justifyContent="center"
-        gap={1}
-        sx={{
-          marginTop: 6,
-        }}
-      >
-        <Typography>
-          Sei interessato?
-        </Typography>
-        <Button
-          variant="contained"
-        >
-          Contattaci
-        </Button>
       </Grid>
     </Page>
   )

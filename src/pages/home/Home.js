@@ -28,7 +28,7 @@ export default function Home() {
         }}
       >
         <Typography
-          variant={isMd ? "h5" : "h4"}
+          variant={isMd ? "h4" : "h3"}
           component="h1"
           align={isMd ? "center" : "left"}
         >
