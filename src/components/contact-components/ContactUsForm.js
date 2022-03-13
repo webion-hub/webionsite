@@ -61,7 +61,7 @@ export default function ContactUsForm() {
       </Typography>
       <Divider></Divider>
       <TextField
-        formControlName="name"
+        formcontrolname="name"
         type="text"
         required
         variant="outlined"
@@ -76,7 +76,7 @@ export default function ContactUsForm() {
         }}
       />
       <TextField
-        formControlName="company"
+        formcontrolname="company"
         type="text"
         variant="outlined"
         color="primary"
@@ -90,7 +90,7 @@ export default function ContactUsForm() {
         }}
       />
       <TextField
-        formControlName="telephone"
+        formcontrolname="telephone"
         type="tel"
         variant="outlined"
         color="primary"
@@ -104,7 +104,7 @@ export default function ContactUsForm() {
         }}
       />
       <TextField
-        formControlName="email"
+        formcontrolname="email"
         type="email"
         required
         variant="outlined"
@@ -119,7 +119,7 @@ export default function ContactUsForm() {
         }}
       />
       <TextField
-        formControlName="message"
+        formcontrolname="message"
         type="text"
         required
         label="Messaggio"
@@ -129,7 +129,7 @@ export default function ContactUsForm() {
         color="primary"
       />
       <PrivacyCheckBox
-        formControlName="privacy"
+        formcontrolname="privacy"
       />
       <Grid
         container

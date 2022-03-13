@@ -4,7 +4,7 @@ import React from "react";
 export default function FormGroup({form, onSubmit, children, ...props}) {
 
   const childrenWithProps = React.Children.map(children, (child) => {
-    const formControlName = child.props.formControlName
+    const formControlName = child.props.formcontrolname
 
     if (!formControlName)
       return child
