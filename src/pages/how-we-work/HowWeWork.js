@@ -1,5 +1,6 @@
 import { ArrowDownwardRounded, ArrowForwardRounded, CodeRounded, DesignServicesRounded, EditRounded, FlagRounded } from "@mui/icons-material";
 import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import EmptyComponent from "../../components/EmptyComponent";
 import IconWithDescription from "../../components/IconWithDescription";
 import Page from "../../components/Page";
 import PageContent from "../../components/PageContent";
@@ -86,6 +87,7 @@ export default function HowWeWork() {
 }
 
 function DynamicArrow() {
+  const isMd = useMediaQuery(theme.breakpoints.down('md'))
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
 
   const getIcon = () => {
@@ -93,6 +95,13 @@ function DynamicArrow() {
       ? <ArrowDownwardRounded/>
       : <ArrowForwardRounded/>
   }
+
+  const isBetweenMdAndSm = () => {
+    return isMd && !isSm
+  }
+
+  if (isBetweenMdAndSm())
+    return <EmptyComponent/>
 
   return (
     <Grid

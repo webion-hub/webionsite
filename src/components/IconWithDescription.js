@@ -9,7 +9,7 @@ export default function IconWithDescription({Icon, title, description}) {
       alignItems="center"
       gap={1}
       sx={{
-        maxWidth: 200,
+        maxWidth: 180,
       }}
     >
       <Icon
