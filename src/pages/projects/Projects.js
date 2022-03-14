@@ -4,18 +4,24 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { ButtonBase, Grid, IconButton, Paper, Typography } from "@mui/material";
+import { ButtonBase, Grid, Paper, Typography, useMediaQuery } from "@mui/material";
 import Card from "../../components/Card";
 import Page from "../../components/Page";
-import { alpha, Box } from '@mui/system';
+import { alpha } from '@mui/system';
 import PageContent from '../../components/PageContent';
 import theme from '../../theme/theme';
-import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
-import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
-import { useEffect, useRef } from 'react';
-import MaybeShow from '../../components/MaybeShow';
+import Slider from '../../components/Slider';
 
 export default function Projects() {
+  const isLg = useMediaQuery(theme.breakpoints.down('lg'))
+  const isMd = useMediaQuery(theme.breakpoints.down('md'))
+
+  const getSliderElements = () => {
+    if (isMd) return 1
+    if (isLg) return 2
+    return 3
+  }
+
   return (
     <Page
       sx={{
@@ -51,7 +57,7 @@ export default function Projects() {
           >
             <MainProjectCard></MainProjectCard>
 
-            <Slider elementsShown={3}>
+            <Slider elementsShown={getSliderElements()}>
               <SideProjectCard
                 imgSrc="./images/mentorz.png"
                 href="https://mentorz.fr/"
@@ -78,115 +84,6 @@ export default function Projects() {
     </Page>
   )
 }
-
-
-function Slider({children, elementsShown}) {
-  const sliderRef = useRef()
-  const sliderIndexRef = useRef(0)
-
-  useEffect(() => {
-    window.addEventListener('resize', reset)
-
-    return () => window.removeEventListener('resize', reset)
-  }, [])
-
-  const reset = () => {
-    sliderRef.current.scrollLeft = 0
-    sliderIndexRef.current = 0
-  }
-
-  const back = () => {
-    sliderIndexRef.current --;
-    if (sliderIndexRef.current < 0) {
-      sliderIndexRef.current = getChildrenNumber() - elementsShown; 
-    }    
-    
-    sliderRef.current.scrollLeft += getScrollLeftPos(sliderIndexRef.current)
-  }
-
-  const next = () => {
-    sliderIndexRef.current ++;
-    if (sliderIndexRef.current > getChildrenNumber() - elementsShown) {
-      sliderIndexRef.current = 0; 
-    }
-
-    sliderRef.current.scrollLeft += getScrollLeftPos(sliderIndexRef.current)
-  }
-
-  const getScrollLeftPos = (index) => {
-    const parentLeftPos = sliderRef.current.getBoundingClientRect().x
-    const childLeftPos = sliderRef.current.childNodes[index].getBoundingClientRect().x
-
-    return childLeftPos - parentLeftPos
-  }
-
-  const getChildrenNumber = () => {
-    return children.length
-  }
-
-  const shoudlShowArrows = () => {
-    return getChildrenNumber() != elementsShown
-  }
-
-  return (
-    <Grid
-      container
-      direction="row"
-      flexWrap="nowrap"
-      alignItems="center"
-    >
-
-      <MaybeShow show={shoudlShowArrows()}>
-        <IconButton
-          aria-label="Indietro"
-          size="large"
-          onClick={back}
-        >
-          <ArrowBackIosRoundedIcon/>
-        </IconButton>
-      </MaybeShow>
-
-      <Grid
-        ref={sliderRef}
-        container
-        direction="row"
-        flexWrap="nowrap"
-        sx={{
-          width: "100%",
-          whiteSpace: "nowrap",
-          overflow: "hidden",
-          scrollBehavior: "smooth",
-          "& > *": {
-            display: "inline-block",
-            minWidth: `${100 / elementsShown}%`,
-          }
-        }}
-      >
-        {
-          children.map((child, key) => {
-            return (
-              <Box key={key} p={0.5}>
-                {child}
-              </Box>
-            )
-          })
-        }
-      </Grid>
-
-      <MaybeShow show={shoudlShowArrows()}>
-        <IconButton
-          aria-label="Avanti"
-          size="large"
-          onClick={next}
-        >
-          <ArrowForwardIosRoundedIcon/>
-        </IconButton>
-      </MaybeShow>
-
-    </Grid>
-  )
-}
-
 
 function MainProjectCard() {
   return (

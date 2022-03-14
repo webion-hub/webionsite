@@ -1,5 +1,6 @@
 import { ArrowDownwardRounded, ArrowForwardRounded, CodeRounded, DesignServicesRounded, EditRounded, FlagRounded } from "@mui/icons-material";
-import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
+import AreYouInterested from "../../components/AreYouIntersted";
 import EmptyComponent from "../../components/EmptyComponent";
 import IconWithDescription from "../../components/IconWithDescription";
 import Page from "../../components/Page";
@@ -63,25 +64,7 @@ export default function HowWeWork() {
           />
         </Grid>
       </PageContent>
-      <Grid
-        container
-        direction="row"
-        alignItems="center"
-        justifyContent="center"
-        gap={1}
-        sx={{
-          marginTop: 6,
-        }}
-      >
-        <Typography>
-          Sei interessato?
-        </Typography>
-        <Button
-          variant="contained"
-        >
-          Contattaci
-        </Button>
-      </Grid>
+      <AreYouInterested/>
     </Page>
   )
 }
