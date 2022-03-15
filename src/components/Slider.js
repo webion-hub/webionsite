@@ -23,7 +23,7 @@ export default function Slider({children, elementsShown}) {
   const back = () => {
     sliderIndexRef.current --;
     if (sliderIndexRef.current < 0) {
-      sliderIndexRef.current = getChildrenNumber() - elementsShown; 
+      sliderIndexRef.current = getChildrenNumber() - elementsShown;
     }
 
     sliderRef.current.scrollLeft += getScrollLeftPos(sliderIndexRef.current)
@@ -32,7 +32,7 @@ export default function Slider({children, elementsShown}) {
   const next = () => {
     sliderIndexRef.current ++;
     if (sliderIndexRef.current > getChildrenNumber() - elementsShown) {
-      sliderIndexRef.current = 0; 
+      sliderIndexRef.current = 0;
     }
 
     sliderRef.current.scrollLeft += getScrollLeftPos(sliderIndexRef.current)
