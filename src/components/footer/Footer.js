@@ -6,7 +6,7 @@ export default function Footer({children}) {
     <Box
       sx={{
         width: "100vw",
-        background: theme.palette.background.dark,
+        background: theme.palette.background.paper,
       }}
     >
       {children}

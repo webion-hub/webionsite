@@ -1,37 +1,49 @@
-import { Button } from "@mui/material";
+import { Button, alpha } from "@mui/material";
+import { Box } from "@mui/system";
+import React from "react";
+import theme from "../../theme/theme";
+import RotatingDashedCirlce from "../RotatingDashedCirlce";
 
 export default function ButtonCircled({children, sx, ...props}) {
+  const [hover, setHover] = React.useState(false);
+
   return (
-    <Button
-      {...props}
-      sx={{
-        ...sx,
-        "&:hover::after": {
-          width: 100,
-          animationDuration: "1.5s",
-        },
-        "&::after": {
-          content: "''",
-          position: "absolute",
-          aspectRatio: '1',
-          width: 200,
-          transition: "1s width",
-          backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%23ffffff' stroke-opacity='0.2' stroke-width='3' stroke-dasharray='50%25%2c 13%25' stroke-dashoffset='100' stroke-linecap='round'/%3e%3c/svg%3e")`,
-          borderRadius: '100px',
-          zIndex: -1,
-          animation: 'rotation 4s infinite linear',
-          "@keyframes rotation": {
-            "0%": {
-              transform: "rotate(0)",
-            },
-            "100%": {
-              transform: "rotate(360deg)",
-            },
-          },
-        },
-      }}
+    <Box
+      {...sx}
+      position="relative"
+      display="inline-flex"
     >
-      {children}
-    </Button>
+      <Button
+        {...props}
+        onMouseEnter={_ => setHover(true)}
+        onMouseLeave={_ => setHover(false)}
+        onTouchStart={_ => setHover(true)}
+        onTouchEnd={_ => setHover(false)}
+      >
+        {children}
+      </Button>
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          zIndex: -1,
+          display: "flex",
+          transition: "0.5s all ease-in-out",
+          transform: `
+            translate(-50%, -50%) 
+            ${hover ? "scale(0.5)" : "scale(1)"}
+          `,
+        }}
+      >
+        <RotatingDashedCirlce
+          animationDuration={hover ? "1.5s" : "10s"}
+          size={250}
+          strokeWidth={2}
+          strokeColor={alpha(theme.palette.info.main, 0.1)}
+          strokeDasharray="100 40"
+        />
+      </Box>
+    </Box>
   )
 }

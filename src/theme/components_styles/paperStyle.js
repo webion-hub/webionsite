@@ -1,13 +1,14 @@
-import { shape } from "../theme_impl";
+import { shape } from "../theme_impl"
+import { spacing } from "../theme_impl/spacing"
 
 const paperStyle = {
   styleOverrides: {
     root: {
       backgroundImage: "none",
+      backdropFilter: "blur(16px)",
     },
     rounded: {
-      border: shape.border.main,
-      borderRadius: 28,
+      borderRadius: shape.borderRadius * spacing,
     },
   },
 }

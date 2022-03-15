@@ -1,4 +1,4 @@
-import { colors } from "../../theme_impl/index";
+import { colors } from "../theme_impl/index";
 
 const scrollbarStyle = {
   '&::-webkit-scrollbar': {
@@ -6,7 +6,7 @@ const scrollbarStyle = {
     height: '4px',
   },
   '&::-webkit-scrollbar-thumb': {
-    background: colors.secondary,
+    background: colors.tertiary,
     borderRadius: '2px',
   },
 }

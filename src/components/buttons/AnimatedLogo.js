@@ -5,8 +5,9 @@ export default function AnimatedLogo({label, ...others}) {
   return (
     <Logo
       {...others}
+      color="info"
       sx={{
-        paddingRight: 1,
+        paddingRight: 2,
         "& .webion-logo--label": {
           paddingLeft: 1,
           transition: `${theme.transitions.duration.short}ms all`,

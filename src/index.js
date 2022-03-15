@@ -6,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme/theme';
 import { CssBaseline } from '@mui/material';
+import { GlobalStyles } from '@mui/styled-engine';
+import scrollbarStyle from './theme/components_styles/scrollbarStyle';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline/>
+      <GlobalStyles styles={scrollbarStyle}></GlobalStyles>
       <App/>
     </ThemeProvider>
   </React.StrictMode>,

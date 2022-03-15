@@ -4,34 +4,31 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { alpha, Grid, Typography } from "@mui/material";
+import { ButtonBase, Grid, Paper, Typography, useMediaQuery } from "@mui/material";
 import Card from "../../components/Card";
 import Page from "../../components/Page";
-import theme from "../../theme/theme";
-import TopBorder from './TopBorder';
-import { Box } from '@mui/system';
+import { alpha } from '@mui/system';
 import PageContent from '../../components/PageContent';
+import theme from '../../theme/theme';
+import Slider from '../../components/Slider';
 
 export default function Projects() {
+  const isLg = useMediaQuery(theme.breakpoints.down('lg'))
+  const isMd = useMediaQuery(theme.breakpoints.down('md'))
+
+  const getSliderElements = () => {
+    if (isMd) return 1
+    if (isLg) return 2
+    return 3
+  }
+
   return (
     <Page
       sx={{
-        background: theme.palette.background.paper,
-        paddingInline: 16,
+        paddingInline: 2,
         position: "relative",
       }}
     >
-      <Box
-        sx={{
-          position: "absolute",
-          left: 0,
-          top: 0,
-          width: "100vw",
-          transform: "translate(0px, -100%)",
-        }}
-      >
-        <TopBorder height="125px"></TopBorder>
-      </Box>
       <PageContent
         direction="column"
         justifyContent="center"
@@ -44,27 +41,42 @@ export default function Projects() {
           wrap="nowrap"
           sx={{height: "100%"}}
         >
-          <Typography variant="h3" sx={{marginBlock: 4}}>Progetti</Typography>
+          <Typography
+            variant="h3"
+            sx={{marginBlock: 4}}
+          >
+            Progetti
+          </Typography>
           <Grid
             container
-            direction="row"
+            direction="column"
             wrap="nowrap"
             gap={2}
             alignItems="center"
-            sx={{height: "100%", width: "auto", marginBottom: 16}}
+            sx={{width: "auto", marginBottom: 16}}
           >
             <MainProjectCard></MainProjectCard>
-            <Grid
-              container
-              direction="column"
-              wrap="nowrap"
-              gap={2}
-              sx={{height: "100%", width: "50%"}}
-            >
-              <SideProjectCard></SideProjectCard>
-              <SideProjectCard></SideProjectCard>
-              <SideProjectCard></SideProjectCard>
-            </Grid>
+
+            <Slider elementsShown={getSliderElements()}>
+              <SideProjectCard
+                imgSrc="./images/mentorz.png"
+                href="https://mentorz.fr/"
+                title="Mentorz"
+                description="Mentorz è una startup francese che offre  agli influencer gli strumenti di cui hanno bisogno per avere consultazioni 1-1 con i loro follower."
+              />
+              <SideProjectCard
+                imgSrc="./images/yoga.png"
+                href="https://www.yogacorfuholidays.com/"
+                title="Yoga Holidays"
+                description="Yoga holidays è un sito per viaggi a Corfu. I loro pacchetti vacanza danno l'opportunità di ritrovarti sul tappetino da yoga circondato da un paesaggio mozzafiato insieme a divertenti attività all'aperto e avventure intorno all'isola incluse nel pacchetto."
+              />
+              <SideProjectCard
+                imgSrc="./images/kaire.png"
+                href="https://kaire-automation.it/"
+                title="Kaire automation (sito)"
+                description="Kaire automation è una azienda specializzata nella reaizzazione e supervisione di impianti industriali"
+              />
+            </Slider>
           </Grid>
         </Grid>
       </PageContent>
@@ -76,11 +88,11 @@ export default function Projects() {
 function MainProjectCard() {
   return (
     <Card
-      title="Progetto"
+      title="Kaire Automation"
+      titleVariant="h5"
       sx={{
         height: "100%",
         width: "100%",
-        background: alpha(theme.palette.background.default, 0.6),
       }}
     >
       <Timeline>
@@ -96,14 +108,59 @@ function MainProjectCard() {
   )
 }
 
-function SideProjectCard() {
+function SideProjectCard({title, description, href, imgSrc}) {
   return (
-    <Card
-      title="Progetto"
+    <ButtonBase
       sx={{
-        height: "fill-available",
-        background: alpha(theme.palette.background.default, 0.6),
+        borderRadius: 2,
+        display: "block",
       }}
-    ></Card>
+      href={href}
+      target="_blank"
+    >
+      <Paper
+        sx={{
+          borderRadius: 2,
+          backgroundImage: `url('${imgSrc}')`,
+          backgroundSize: "cover",
+          aspectRatio: `${16/9}`,
+          "&:hover > .card-overlay": {
+            opacity: 1,
+          },
+        }}
+      >
+        <Grid
+          className="card-overlay"
+          container
+          direction="column"
+          alignItems="center"
+          sx={{
+            whiteSpace: "normal",
+            width: "100%",
+            height: "100%",
+            borderRadius: 2,
+            backdropFilter: "blur(8px)",
+            background: alpha(theme.palette.primary.dark, 0.5),
+            opacity: 0,
+            transition: "0.25s all",
+            padding: 2,
+          }}
+        >
+          <Typography
+            variant="h6"
+            component="p"
+          >
+            {title}
+          </Typography>
+          <Typography
+            variant="body2"
+            component="p"
+            align="center"
+          >
+            {description}
+          </Typography>
+        </Grid>
+      </Paper>
+    </ButtonBase>
   )
 }

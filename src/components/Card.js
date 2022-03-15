@@ -1,8 +1,14 @@
-import { darken, Grid, Paper, Typography } from "@mui/material";
-import theme from "../theme/theme";
+import { Grid, Paper, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import MaybeShow from "./MaybeShow";
 
-export default function Card({title, description, children, sx, Icon}) {
+export default function Card({
+  title,
+  titleVariant,
+  description,
+  children,
+  sx,
+}) {
   return (
     <Paper
       sx={{...sx}}
@@ -11,30 +17,32 @@ export default function Card({title, description, children, sx, Icon}) {
         container
         direction="column"
       >
-        <Grid
-          container
-          direction="row"
-          alignItems="center"
-          gap={2}
+        <Typography
+          variant={titleVariant}
+          align="center"
+          sx={{marginBlock: 1}}
+        >
+          {title}
+        </Typography>
+        <Box
           sx={{
-            padding: 2,
-            borderTopLeftRadius: 28,
-            borderTopRightRadius: 28,
-            background: darken(theme.palette.background.default, 0.05),
+            padding: 4,
+            paddingTop: 2,
           }}
         >
-          {Icon && <Icon color="primary"/>}
-          <Typography variant="h5">
-            {title}
-          </Typography>
-        </Grid>
-        <MaybeShow show={description}>
-          <Typography sx={{padding: 2}}>
-            {description}
-          </Typography>
-        </MaybeShow>
-        {children}
+          <MaybeShow show={description}>
+            <Typography align="center" variant="body2">
+              {description}
+            </Typography>
+          </MaybeShow>
+          {children}
+        </Box>
+
       </Grid>
     </Paper>
   )
+}
+
+Card.defaultProps = {
+  titleVariant: "subtitle1",
 }

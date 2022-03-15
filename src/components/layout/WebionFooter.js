@@ -1,4 +1,4 @@
-import { Button, IconButton, Stack } from '@mui/material';
+import { alpha, Button, Grid, IconButton, Link, Stack } from '@mui/material';
 import { useNavigate } from "react-router";
 
 import Footer from "../footer/Footer";
@@ -10,10 +10,13 @@ import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import DesignServicesRoundedIcon from '@mui/icons-material/DesignServicesRounded';
 import ContactPageRoundedIcon from '@mui/icons-material/ContactPageRounded';
 import PrivacyTipRoundedIcon from '@mui/icons-material/PrivacyTipRounded';
-import LiveHelpRoundedIcon from '@mui/icons-material/LiveHelpRounded';
+import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
+import { EmailRounded } from '@mui/icons-material';
 
 import { InstagramIcon, LinkedinIcon } from "../illustrations/illustrations";
 import Logo from "../buttons/Logo";
+import { openEmail, openTelephone } from '../../lib/openContact';
+import theme from '../../theme/theme';
 
 export default function WebionFooter() {
   const navigate = useNavigate();
@@ -24,7 +27,7 @@ export default function WebionFooter() {
         <FooterColumn>
           <Button
             startIcon={<GroupsRoundedIcon/>}
-            color="secondary"
+            color="info"
             fullWidth
             onClick={_ => navigate("/chi-siamo")}
           >
@@ -32,7 +35,7 @@ export default function WebionFooter() {
           </Button>
           <Button
             startIcon={<DesignServicesRoundedIcon/>}
-            color="secondary"
+            color="info"
             fullWidth
             onClick={_ => navigate("/progetti")}
           >
@@ -40,7 +43,7 @@ export default function WebionFooter() {
           </Button>
           <Button
             startIcon={<ContactPageRoundedIcon/>}
-            color="secondary"
+            color="info"
             fullWidth
             onClick={_ => navigate("/contattaci")}
           >
@@ -60,32 +63,79 @@ export default function WebionFooter() {
             </IconButton>
             <Logo
               ButtonComponent={IconButton}
-              color="secondary"
+              color="info"
             />
           </Stack>
 
           <Button
             endIcon={<PrivacyTipRoundedIcon/>}
-            color="secondary"
+            color="info"
             fullWidth
           >
             Privacy
           </Button>
-          <Button
-            endIcon={<LiveHelpRoundedIcon/>}
-            color="secondary"
-            fullWidth
-          >
-            Faq
-          </Button>
+          <FooterLink
+            Icon={EmailRounded}
+            label="amministrazione@webion.it"
+            onClick={() => {
+              openEmail('amministrazione@webion.it')
+            }}
+          />
+          <FooterLink
+            Icon={LocalPhoneRoundedIcon}
+            label="+39 389 008 6632"
+            onClick={() => {
+              openTelephone('+39 389 008 6632')
+            }}
+          />
         </FooterColumn>
       </FooterContent>
 
       <FooterBottomLabel
         variant="body2"
       >
-        Codice ateco 33.20.03 C.F. e P. Iva 03634570364 C.C.I.A.A. MO -404681
+        C.F. e P. Iva 04013210366, PEC
+        <Link
+          href=""
+          sx={{
+            marginLeft: 1,
+          }}
+          color="inherit"
+          onClick={() => {
+            openEmail('webionsrl@legalmail.it')
+          }}
+        >
+          webionsrl@legalmail.it
+        </Link>
       </FooterBottomLabel>
     </Footer>
+  )
+}
+
+function FooterLink({label, Icon, onClick}) {
+  return (
+    <Grid
+      container
+      direction="row"
+      justifyContent="flex-end"
+      alignItems="center"
+      gap={1}
+    >
+      <Link
+        href=""
+        sx={{
+          color: theme.palette.info.main,
+          textDecorationColor: alpha(theme.palette.info.main, 0.4),
+        }}
+        onClick={onClick}
+      >
+        {label}
+      </Link>
+      <Icon
+        fontSize="small"
+        sx={{marginRight: "3px"}}
+        color="info"
+      />
+    </Grid>
   )
 }

@@ -2,6 +2,7 @@ import { createTheme } from "@mui/material";
 
 import { mixins, palette, shape, typography } from "./theme_impl/index";
 import componentsStyles from "./components_styles/componentsStyles";
+import { spacing } from "./theme_impl/spacing";
 
 const theme = createTheme({
   palette: palette,
@@ -9,6 +10,7 @@ const theme = createTheme({
   typography: typography,
   shape: shape,
   components: componentsStyles,
+  spacing: spacing,
 });
 
 

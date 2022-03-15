@@ -7,8 +7,8 @@ export default function Page({children, sx, ...props}) {
       direction="column"
       sx={{
         ...sx,
-        height: "100vh",
-        maxHeight: 900,
+        width: "100vw",
+        position: "relative",
       }}
     >
       {children}
