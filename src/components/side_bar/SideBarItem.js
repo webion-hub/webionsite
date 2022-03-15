@@ -1,11 +1,15 @@
-import { ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { Link, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import useSidebar from "./useSideBar";
 
+export default function SideBarItem({text, icon, href}) {
+  const {setSideBarOpen} = useSidebar();
 
-export default function SideBarItem({text, icon, onClick}) {
   return (
     <ListItem
       button
-      onClick={onClick}
+      component={Link}
+      href={href}
+      onClick={_ => setSideBarOpen(false)}
     >
       <ListItemIcon>
         {icon}

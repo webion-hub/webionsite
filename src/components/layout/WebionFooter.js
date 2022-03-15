@@ -117,22 +117,20 @@ export default function WebionFooter() {
 function FooterLink({label, Icon, onClick}) {
   return (
     <Grid
+      component={Link}
+      href=""
+      sx={{
+        color: theme.palette.info.main,
+        textDecorationColor: alpha(theme.palette.info.main, 0.4),
+      }}
+      onClick={onClick}
       container
       direction="row"
       justifyContent="flex-end"
       alignItems="center"
       gap={1}
     >
-      <Link
-        href=""
-        sx={{
-          color: theme.palette.info.main,
-          textDecorationColor: alpha(theme.palette.info.main, 0.4),
-        }}
-        onClick={onClick}
-      >
-        {label}
-      </Link>
+      {label}
       <Icon
         fontSize="small"
         sx={{marginRight: "3px"}}

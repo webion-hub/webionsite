@@ -2,8 +2,13 @@ import { alpha } from "@mui/material";
 import { Svg, TextSvg, TspanSvg } from "../SvgComponents";
 import { KeyGenerator } from "../../lib/KeyGenerator";
 import theme from "../../theme/theme";
+import useOnScreen from "../../hooks/useOnScreen";
+import { useRef } from "react";
 
 export default function BinaryBackground({height, elements, position, ...svgProps}) {
+  const ref = useRef()
+  const isVisible = useOnScreen(ref)
+
   const columnStep = 14;
   const rowStep = 18;
   const bottomOffset = 2;
@@ -27,8 +32,12 @@ export default function BinaryBackground({height, elements, position, ...svgProp
     const animationName = KeyGenerator.generate('slide')
     const keyFrame = `@keyframes ${animationName}`
 
+    const animation = isVisible
+      ? `${animationName} 1s ease-in-out forwards`
+      : ''
+
     return {
-      animation: `${animationName} 1s ease-in-out forwards`,
+      animation: animation,
       animationDelay: `${time / 10}s`,
       [keyFrame]: {
         "0%": {
@@ -104,6 +113,7 @@ export default function BinaryBackground({height, elements, position, ...svgProp
 
   return (
     <Svg
+      ref={ref}
       {...svgProps}
       xmlns="http://www.w3.org/2000/svg"
       viewBox={`0 0 ${getWidth()} ${height}`}
