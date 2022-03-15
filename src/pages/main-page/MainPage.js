@@ -1,26 +1,14 @@
-import { Box } from "@mui/system";
-import theme from "../../theme/theme";
-
 import Home from "./sections/Home";
 import OurServices from "./sections/OurServices";
 import WhyChooseUs from "./sections/WhyChooseUs";
 import Projects from "./sections/Projects";
 import HowWeWork from "./sections/HowWeWork";
 import ContactUs from "./sections/ContactUs";
+import Sections from "../../components/Sections";
 
 export default function MainPage() {
   return (
-    <Box
-      sx={{
-        "& > section::before": {
-          display: 'block',
-          content: "''",
-          marginTop: -theme.mixins.toolbar.minHeight + "px",
-          height: theme.mixins.toolbar.minHeight + "px",
-          visibility: 'hidden',
-        },
-      }}
-    >
+    <Sections>
       <section id="home">
         <Home/>
       </section>
@@ -44,6 +32,6 @@ export default function MainPage() {
       <section id="contattaci">
         <ContactUs/>
       </section>
-    </Box>
+    </Sections>
   )
 }

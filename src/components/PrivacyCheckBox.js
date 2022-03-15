@@ -40,11 +40,8 @@ export default function PrivacyCheckBox({onChange, value, error}) {
         Ho preso visione dell&apos;
         <Link
           color="inherit"
-          href='/privacy-licenze'
-          onClick={e => {
-            e.preventDefault()
-            navigate('/privacy-licenze')
-          }}
+          href='/policies-licenze#sections'
+          onClick={_ => navigate('/policies-licenze#sections')}
         >
           informativa sull privacy
         </Link>

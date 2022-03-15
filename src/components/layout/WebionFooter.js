@@ -82,13 +82,10 @@ export default function WebionFooter() {
             endIcon={<PrivacyTipRoundedIcon/>}
             color="info"
             fullWidth
-            href='/privacy-licenze'
-            onClick={e => {
-              e.preventDefault()
-              navigate('/privacy-licenze')
-            }}
+            href='/policies-licenze#sections'
+            onClick={_ => navigate('/policies-licenze#sections')}
           >
-            Privacy & Licenze
+            Policies & Licenze
           </Button>
 
           <FooterLink

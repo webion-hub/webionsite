@@ -2,7 +2,7 @@ import Layout from './components/layout/Layout';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { initPageBackground } from './theme/theme';
 import MainPage from './pages/main-page/MainPage';
-import PrivacyAndLicences from './pages/main-page/PrivacyAndLicences';
+import PoliciesAndLicenses from './pages/policies-and-licenses/PoliciesAndLicenses';
 
 export default function App() {
   initPageBackground();
@@ -11,7 +11,7 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<MainPage/>}/>
-          <Route path="/privacy-licenze" element={<PrivacyAndLicences/>}/>
+          <Route path="/policies-licenze" element={<PoliciesAndLicenses/>}/>
         </Routes>
       </Layout>
     </BrowserRouter>

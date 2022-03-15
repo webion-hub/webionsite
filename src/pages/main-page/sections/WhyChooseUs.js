@@ -3,7 +3,7 @@ import StyleRoundedIcon from '@mui/icons-material/StyleRounded';
 import Page from "../../../components/page-components/Page";
 import theme from "../../../theme/theme";
 import Line from "../../../components/Line";
-import Paragraph from "../../../components/text-boxes/Paragraph";
+import SmallParagraph from "../../../components/text-boxes/SmallParagraph";
 import AreYouInterested from "../../../components/buttons/AreYouIntersted";
 
 export default function WhyChooseUs() {
@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
             </strong>
           </Typography>
           <Line
-            orientation={isMd ? "vertical" : "horizontal"}
+            orientation={isMd ? "horizontal" : "vertical"}
             sx={{
               maxWidth: isMd ? "80% !important" : "100% !important",
               marginLeft: isMd ? 0 : 4,
@@ -76,21 +76,21 @@ export default function WhyChooseUs() {
             paddingInline: 4,
           }}
         >
-          <Paragraph
+          <SmallParagraph
             Icon={StyleRoundedIcon}
             title="Versatilità"
             description="La nostra offerta comprende siti e applicazioni web, IOT per l'automazione mediante il web e software multipiattaforma."
-          ></Paragraph>
-          <Paragraph
+          />
+          <SmallParagraph
             Icon={StyleRoundedIcon}
             title="Personalizzazione"
             description="Offriamo una completa personalizzazione dell'interfaccia grafica e facciamo tutto su misura del cliente."
-          ></Paragraph>
-          <Paragraph
+          />
+          <SmallParagraph
             Icon={StyleRoundedIcon}
             title="Ottimizzazione"
             description="Crediamo sia fondamentale consegnare risultati di alta qualità. Per questo motivo ci concentriamo su una totale ottimizzazione ed un perfezionamento del prodotto finale."
-          ></Paragraph>
+          />
         </Grid>
       </Grid>
       <AreYouInterested/>

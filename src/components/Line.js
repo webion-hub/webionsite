@@ -3,13 +3,13 @@ import theme from "../theme/theme";
 
 export default function Line({lineWidth, orientation, color, sx}) {
 
-  const getHeight = () => {
+  const getWidth = () => {
     return orientation == "vertical"
       ? lineWidth
       : "100%"
   }
 
-  const getWidth = () => {
+  const getHeight = () => {
     return orientation == "vertical"
       ? "100%"
       : lineWidth
