@@ -1,5 +1,5 @@
 import { Link, ListItem, ListItemIcon, ListItemText } from "@mui/material";
-import useSidebar from "./useSideBar";
+import useSidebar from "../../hooks/useSideBar";
 
 export default function SideBarItem({text, icon, href}) {
   const {setSideBarOpen} = useSidebar();

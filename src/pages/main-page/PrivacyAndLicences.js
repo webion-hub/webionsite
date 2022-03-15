@@ -1,6 +1,6 @@
 import React from "react";
-import Page from "../../components/Page";
-import PageContent from "../../components/PageContent";
+import Page from "../../components/page-components/Page";
+import PageContent from "../../components/page-components/PageContent";
 
 export default function PrivacyAndLicences() {
   return (

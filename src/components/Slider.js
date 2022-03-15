@@ -2,7 +2,7 @@ import { Box, Grid, IconButton } from "@mui/material";
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import { useEffect, useRef } from 'react';
-import MaybeShow from './/MaybeShow';
+import MaybeShow from './utils/MaybeShow';
 import theme from "../theme/theme";
 
 export default function Slider({children, elementsShown}) {

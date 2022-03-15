@@ -1,12 +1,11 @@
 import { Grid, Paper, Typography } from "@mui/material";
-import AreYouInterested from "../../../components/AreYouIntersted";
-import Page from "../../../components/Page";
-import PageContent from "../../../components/PageContent";
 import theme from "../../../theme/theme";
 
 import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
 import ComputerRoundedIcon from '@mui/icons-material/ComputerRounded';
 import WebAssetRoundedIcon from '@mui/icons-material/WebAssetRounded';
+import Page from "../../../components/page-components/Page";
+import PageContent from "../../../components/page-components/PageContent";
 
 export default function OurServices() {
   return (
@@ -55,7 +54,6 @@ export default function OurServices() {
             Icon={WebAssetRoundedIcon}
           />
         </Grid>
-        <AreYouInterested/>
       </PageContent>
     </Page>
   )

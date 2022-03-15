@@ -1,5 +1,5 @@
 import { alpha } from "@mui/material";
-import { Svg, TextSvg, TspanSvg } from "../SvgComponents";
+import { Svg, TextSvg, TspanSvg } from "../svgs/SvgComponents";
 import { KeyGenerator } from "../../lib/KeyGenerator";
 import theme from "../../theme/theme";
 import useOnScreen from "../../hooks/useOnScreen";

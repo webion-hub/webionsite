@@ -3,9 +3,9 @@ import { alpha } from "@mui/material";
 import React from "react";
 import BinaryBackground from "../../../components/backgrounds/BinaryBackground.js";
 import ButtonCircled from "../../../components/buttons/ButtonCircled";
-import Page from "../../../components/Page";
-import RotatingCirleGroup from "../../../components/RotatingCirlceGroup.js";
-import RotatingDashedCirlce from "../../../components/RotatingDashedCirlce";
+import Page from "../../../components/page-components/Page.js";
+import RotatingCirleGroup from "../../../components/svgs/RotatingCirlceGroup.js";
+import RotatingDashedCirlce from "../../../components/svgs/RotatingDashedCirlce";
 import theme from "../../../theme/theme";
 
 export default function Home() {
@@ -53,6 +53,7 @@ export default function Home() {
         <ButtonCircled
           size="large"
           variant="contained"
+          href="/#sceglierci"
           sx={{
             marginTop: 4,
             width: isMd ? "100%" : "auto",

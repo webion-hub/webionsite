@@ -2,7 +2,7 @@ import { Button, alpha } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import theme from "../../theme/theme";
-import RotatingDashedCirlce from "../RotatingDashedCirlce";
+import RotatingDashedCirlce from "../svgs/RotatingDashedCirlce";
 
 export default function ButtonCircled({children, sx, ...props}) {
   const [hover, setHover] = React.useState(false);

@@ -1,4 +1,4 @@
-import { KeyGenerator } from "../lib/KeyGenerator";
+import { KeyGenerator } from "../../lib/KeyGenerator";
 import DashedCircle from "./DashedCircle";
 
 export default function RotatingDashedCirlce({animationDuration, sx, ...props}) {

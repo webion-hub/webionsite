@@ -1,10 +1,10 @@
 import { alpha, Grid, Typography, useMediaQuery } from "@mui/material";
 import BinaryBackground from "../../../components/backgrounds/BinaryBackground";
-import Page from "../../../components/Page";
-import PageContent from "../../../components/PageContent";
+import Page from "../../../components/page-components/Page";
+import PageContent from "../../../components/page-components/PageContent";
 import theme from "../../../theme/theme";
-import RotatingDashedCirlce from "../../../components/RotatingDashedCirlce";
-import RotatingCirleGroup from "../../../components/RotatingCirlceGroup";
+import RotatingDashedCirlce from "../../../components/svgs/RotatingDashedCirlce";
+import RotatingCirleGroup from "../../../components/svgs/RotatingCirlceGroup";
 import ContactUsCard from "../../../components/contact-components/ContactUsCard";
 
 export default function ContactUs() {

@@ -1,6 +1,6 @@
 import { Stack, useMediaQuery } from "@mui/material";
 import theme from "../../theme/theme";
-import EmptyComponent from "../EmptyComponent";
+import EmptyComponent from "../utils/EmptyComponent";
 
 export default function AppBarSection({children, hideOnMobile, ...props}) {
   const isMobileView = useMediaQuery(theme.breakpoints.down('sm'))

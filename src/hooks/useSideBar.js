@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { EventsDispatcher } from "../../lib/EventsDispatcher"
+import { EventsDispatcher } from "../lib/EventsDispatcher"
 import useSideBarButton from "./useSideBarButton";
 
 const useSidebar = () => {

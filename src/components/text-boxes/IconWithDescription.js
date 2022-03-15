@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import theme from "../theme/theme";
+import theme from "../../theme/theme";
 
 export default function IconWithDescription({Icon, title, description}) {
   return (

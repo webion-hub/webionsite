@@ -1,5 +1,5 @@
 import { Grid, Typography, useMediaQuery } from "@mui/material";
-import theme from "../theme/theme";
+import theme from "../../theme/theme";
 
 export default function Paragraph({title, Icon, description}) {
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
@@ -28,7 +28,7 @@ export default function Paragraph({title, Icon, description}) {
           </strong>
         </Typography>
       </Grid>
-      <Typography 
+      <Typography
         variant="body2"
         align={isMd ? "center" : "left"}
       >

@@ -1,8 +1,8 @@
 import { List, SwipeableDrawer, useMediaQuery } from '@mui/material';
 import React, { useEffect } from 'react';
 import theme from '../../theme/theme';
-import EmptyComponent from '../EmptyComponent';
-import useSidebar from './useSideBar';
+import useSidebar from '../../hooks/useSideBar';
+import EmptyComponent from '../utils/EmptyComponent';
 
 export default function SideBar({children, showOnlyOnMobile}) {
   const isMobileView = useMediaQuery(theme.breakpoints.down('sm'))

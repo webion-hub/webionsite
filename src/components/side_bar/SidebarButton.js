@@ -1,8 +1,8 @@
 import { IconButton } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import React from 'react';
-import useSidebar from './useSideBar';
-import EmptyComponent from '../EmptyComponent';
+import useSidebar from '../../hooks/useSideBar';
+import EmptyComponent from '../utils/EmptyComponent';
 
 export default function SideBarButton() {
   const {toggleSidebar, shouldShowButton} = useSidebar();
