@@ -38,6 +38,7 @@ export default function WebionAppBar() {
           <AnimatedLogo
             open={openLogo}
             label="Webion"
+            href="/#home"
             onClick={_ => navigate("/")}
           />
         </AppBarSection>
@@ -46,20 +47,20 @@ export default function WebionAppBar() {
           <AppBarSection hideOnMobile>
             <Button
               color="info"
-              onClick={_ => navigate("/chi-siamo")}
+              href="/#servizi"
             >
-              Chi siamo
+              Servizi
             </Button>
             <Button
               color="info"
-              onClick={_ => navigate("/progetti")}
+              href="/#progetti"
             >
               Progetti
             </Button>
             <Button
               color="info"
               variant="outlined"
-              onClick={_ => navigate("/contattaci")}
+              href="/#contattaci"
             >
               Contattaci
             </Button>

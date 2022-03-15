@@ -1,30 +1,17 @@
 import Layout from './components/layout/Layout';
-import Home from './pages/home/Home';
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { initPageBackground } from './theme/theme';
-import Projects from './pages/projects/Projects';
-import ContactUs from './pages/contact-us/ContactUs';
-import WhyChooseUs from './pages/why-choose-us/WhyChooseUs';
-import HowWeWork from './pages/how-we-work/HowWeWork';
-import OurServices from './pages/our-services/OurServices';
+import MainPage from './pages/main-page/MainPage';
+import PrivacyAndLicences from './pages/main-page/PrivacyAndLicences';
 
 export default function App() {
   initPageBackground();
   return (
     <BrowserRouter>
       <Layout>
-        <Home></Home>
-        <OurServices></OurServices>
-        <WhyChooseUs></WhyChooseUs>
-        <Projects></Projects>
-        <HowWeWork></HowWeWork>
-        <ContactUs></ContactUs>
         <Routes>
-
-          {/*
-          <Route path="/" element={<Home/>}/>
-          <Route path="/prova" element={<></>}/>
-          <Route path="/chi-siamo" element={<KnowUs />}/>*/}
+          <Route path="/" element={<MainPage/>}/>
+          <Route path="/privacy-licenze" element={<PrivacyAndLicences/>}/>
         </Routes>
       </Layout>
     </BrowserRouter>

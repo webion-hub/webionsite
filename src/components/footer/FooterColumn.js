@@ -10,6 +10,9 @@ export default function FooterColumn({children, width, ...props}) {
         "& > button": {
           justifyContent: props.alignItems,
         },
+        "& > a": {
+          justifyContent: props.alignItems,
+        },
       }}
     >
       {children}

@@ -1,7 +1,9 @@
-export function openEmail(email) {
+export const openEmail = (email) => (e) => {
+  e.preventDefault()
   document.location = "mailto:"+email
 }
 
-export function openTelephone(telephone) {
+export const openTelephone = (telephone) => (e) => {
+  e.preventDefault()
   window.open(`tel:${telephone}`);
 }

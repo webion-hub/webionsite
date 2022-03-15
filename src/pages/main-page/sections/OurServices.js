@@ -1,8 +1,8 @@
 import { Grid, Paper, Typography } from "@mui/material";
-import AreYouInterested from "../../components/AreYouIntersted";
-import Page from "../../components/Page";
-import PageContent from "../../components/PageContent";
-import theme from "../../theme/theme";
+import AreYouInterested from "../../../components/AreYouIntersted";
+import Page from "../../../components/Page";
+import PageContent from "../../../components/PageContent";
+import theme from "../../../theme/theme";
 
 import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
 import ComputerRoundedIcon from '@mui/icons-material/ComputerRounded';

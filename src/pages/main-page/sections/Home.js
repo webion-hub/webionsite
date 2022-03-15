@@ -1,12 +1,12 @@
 import { Paper, Typography, useMediaQuery } from "@mui/material";
 import { alpha } from "@mui/material";
 import React from "react";
-import BinaryBackground from "../../components/backgrounds/BinaryBackground.js";
-import ButtonCircled from "../../components/buttons/ButtonCircled";
-import Page from "../../components/Page";
-import RotatingCirleGroup from "../../components/RotatingCirlceGroup.js";
-import RotatingDashedCirlce from "../../components/RotatingDashedCirlce";
-import theme from "../../theme/theme";
+import BinaryBackground from "../../../components/backgrounds/BinaryBackground.js";
+import ButtonCircled from "../../../components/buttons/ButtonCircled";
+import Page from "../../../components/Page";
+import RotatingCirleGroup from "../../../components/RotatingCirlceGroup.js";
+import RotatingDashedCirlce from "../../../components/RotatingDashedCirlce";
+import theme from "../../../theme/theme";
 
 export default function Home() {
   const isMd = useMediaQuery(theme.breakpoints.down('md'))

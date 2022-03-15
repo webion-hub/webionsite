@@ -1,10 +1,10 @@
 import { ArrowDownwardRounded, ArrowForwardRounded, CodeRounded, DesignServicesRounded, EditRounded, FlagRounded } from "@mui/icons-material";
 import { Grid, Typography, useMediaQuery } from "@mui/material";
-import EmptyComponent from "../../components/EmptyComponent";
-import IconWithDescription from "../../components/IconWithDescription";
-import Page from "../../components/Page";
-import PageContent from "../../components/PageContent";
-import theme from "../../theme/theme";
+import EmptyComponent from "../../../components/EmptyComponent";
+import IconWithDescription from "../../../components/IconWithDescription";
+import Page from "../../../components/Page";
+import PageContent from "../../../components/PageContent";
+import theme from "../../../theme/theme";
 
 export default function HowWeWork() {
   const isMd = useMediaQuery(theme.breakpoints.down('md'))

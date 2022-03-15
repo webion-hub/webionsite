@@ -16,16 +16,12 @@ export default function ContactInfo() {
       <ContactItem
         Icon={EmailRoundedIcon}
         label="amministrazione@webion.it"
-        onClick={() => {
-          openEmail('amministrazione@webion.it')
-        }}
+        onClick={openEmail('amministrazione@webion.it')}
       />
       <ContactItem
         Icon={LocalPhoneRoundedIcon}
         label="+39 389 008 6632"
-        onClick={() => {
-          openEmail('+39 389 008 6632')
-        }}
+        onClick={openEmail('+39 389 008 6632')}
       />
     </Grid>
   )

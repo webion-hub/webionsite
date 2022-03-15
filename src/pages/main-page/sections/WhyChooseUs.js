@@ -1,9 +1,9 @@
 import { Grid, Typography, useMediaQuery } from "@mui/material";
 import StyleRoundedIcon from '@mui/icons-material/StyleRounded';
-import Page from "../../components/Page";
-import theme from "../../theme/theme";
-import Line from "../../components/Line";
-import Paragraph from "../../components/Paragraph";
+import Page from "../../../components/Page";
+import theme from "../../../theme/theme";
+import Line from "../../../components/Line";
+import Paragraph from "../../../components/Paragraph";
 
 export default function WhyChooseUs() {
   const isLg = useMediaQuery(theme.breakpoints.down('lg'))

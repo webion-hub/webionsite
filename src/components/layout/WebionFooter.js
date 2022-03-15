@@ -29,15 +29,15 @@ export default function WebionFooter() {
             startIcon={<GroupsRoundedIcon/>}
             color="info"
             fullWidth
-            onClick={_ => navigate("/chi-siamo")}
+            href="/#servizi"
           >
-            Chi siamo
+            Servizi
           </Button>
           <Button
             startIcon={<DesignServicesRoundedIcon/>}
             color="info"
             fullWidth
-            onClick={_ => navigate("/progetti")}
+            href="/#progetti"
           >
             Progetti
           </Button>
@@ -45,7 +45,7 @@ export default function WebionFooter() {
             startIcon={<ContactPageRoundedIcon/>}
             color="info"
             fullWidth
-            onClick={_ => navigate("/contattaci")}
+            href="/#contattaci"
           >
             Contattaci
           </Button>
@@ -62,6 +62,8 @@ export default function WebionFooter() {
               <LinkedinIcon/>
             </IconButton>
             <Logo
+              href="/#home"
+              onClick={_ => navigate("/#home")}
               ButtonComponent={IconButton}
               color="info"
             />
@@ -71,22 +73,24 @@ export default function WebionFooter() {
             endIcon={<PrivacyTipRoundedIcon/>}
             color="info"
             fullWidth
+            href='/privacy-licenze'
+            onClick={e => {
+              e.preventDefault()
+              navigate('/privacy-licenze')
+            }}
           >
-            Privacy
+            Privacy & Licenze
           </Button>
+
           <FooterLink
             Icon={EmailRounded}
             label="amministrazione@webion.it"
-            onClick={() => {
-              openEmail('amministrazione@webion.it')
-            }}
+            onClick={openEmail('amministrazione@webion.it')}
           />
           <FooterLink
             Icon={LocalPhoneRoundedIcon}
             label="+39 389 008 6632"
-            onClick={() => {
-              openTelephone('+39 389 008 6632')
-            }}
+            onClick={openTelephone('+39 389 008 6632')}
           />
         </FooterColumn>
       </FooterContent>
@@ -101,9 +105,7 @@ export default function WebionFooter() {
             marginLeft: 1,
           }}
           color="inherit"
-          onClick={() => {
-            openEmail('webionsrl@legalmail.it')
-          }}
+          onClick={openEmail('webionsrl@legalmail.it')}
         >
           webionsrl@legalmail.it
         </Link>
