@@ -17,6 +17,7 @@ export default function AreYouInterested() {
       </Typography>
       <Button
         variant="contained"
+        href="/#contattaci"
       >
         Contattaci
       </Button>
