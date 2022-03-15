@@ -7,9 +7,11 @@ import Page from "../../../components/page-components/Page.js";
 import RotatingCirleGroup from "../../../components/svgs/RotatingCirlceGroup.js";
 import RotatingDashedCirlce from "../../../components/svgs/RotatingDashedCirlce";
 import theme from "../../../theme/theme";
+import { useNavigate } from "react-router";
 
 export default function Home() {
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
+  const navigate = useNavigate();
 
   return (
     <Page
@@ -54,6 +56,7 @@ export default function Home() {
           size="large"
           variant="contained"
           href="/#sceglierci"
+          onClick={_ => navigate("/#sceglierci")}
           sx={{
             marginTop: 4,
             width: isMd ? "100%" : "auto",

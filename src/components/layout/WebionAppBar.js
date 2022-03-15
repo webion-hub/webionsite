@@ -39,7 +39,7 @@ export default function WebionAppBar() {
             open={openLogo}
             label="Webion"
             href="/#home"
-            onClick={_ => navigate("/")}
+            onClick={_ => navigate("/#home")}
           />
         </AppBarSection>
 
@@ -48,12 +48,14 @@ export default function WebionAppBar() {
             <Button
               color="info"
               href="/#servizi"
+              onClick={_ => navigate("/#servizi")}
             >
               Servizi
             </Button>
             <Button
               color="info"
               href="/#progetti"
+              onClick={_ => navigate("/#progetti")}
             >
               Progetti
             </Button>
@@ -61,6 +63,7 @@ export default function WebionAppBar() {
               color="info"
               variant="outlined"
               href="/#contattaci"
+              onClick={_ => navigate("/#contattaci")}
             >
               Contattaci
             </Button>

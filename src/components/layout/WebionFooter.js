@@ -30,6 +30,7 @@ export default function WebionFooter() {
             color="info"
             fullWidth
             href="/#servizi"
+            onClick={_ => navigate("/#servizi")}
           >
             Servizi
           </Button>
@@ -38,6 +39,7 @@ export default function WebionFooter() {
             color="info"
             fullWidth
             href="/#progetti"
+            onClick={_ => navigate("/#progetti")}
           >
             Progetti
           </Button>
@@ -46,6 +48,7 @@ export default function WebionFooter() {
             color="info"
             fullWidth
             href="/#contattaci"
+            onClick={_ => navigate("/#contattaci")}
           >
             Contattaci
           </Button>
