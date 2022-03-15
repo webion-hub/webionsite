@@ -3,6 +3,7 @@ import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import { useEffect, useRef } from 'react';
 import MaybeShow from './/MaybeShow';
+import theme from "../theme/theme";
 
 export default function Slider({children, elementsShown}) {
   const sliderRef = useRef()
@@ -22,7 +23,7 @@ export default function Slider({children, elementsShown}) {
   const back = () => {
     sliderIndexRef.current --;
     if (sliderIndexRef.current < 0) {
-      sliderIndexRef.current = getChildrenNumber() - elementsShown; 
+      sliderIndexRef.current = getChildrenNumber() - elementsShown;
     }
 
     sliderRef.current.scrollLeft += getScrollLeftPos(sliderIndexRef.current)
@@ -31,7 +32,7 @@ export default function Slider({children, elementsShown}) {
   const next = () => {
     sliderIndexRef.current ++;
     if (sliderIndexRef.current > getChildrenNumber() - elementsShown) {
-      sliderIndexRef.current = 0; 
+      sliderIndexRef.current = 0;
     }
 
     sliderRef.current.scrollLeft += getScrollLeftPos(sliderIndexRef.current)
@@ -55,21 +56,10 @@ export default function Slider({children, elementsShown}) {
   return (
     <Grid
       container
-      direction="row"
+      direction="column"
       flexWrap="nowrap"
       alignItems="center"
     >
-
-      <MaybeShow show={shoudlShowArrows()}>
-        <IconButton
-          aria-label="Indietro"
-          size="large"
-          onClick={back}
-        >
-          <ArrowBackIosRoundedIcon/>
-        </IconButton>
-      </MaybeShow>
-
       <Grid
         ref={sliderRef}
         container
@@ -97,16 +87,36 @@ export default function Slider({children, elementsShown}) {
         }
       </Grid>
 
-      <MaybeShow show={shoudlShowArrows()}>
-        <IconButton
-          aria-label="Avanti"
-          size="large"
-          onClick={next}
-        >
-          <ArrowForwardIosRoundedIcon/>
-        </IconButton>
-      </MaybeShow>
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-between"
+        sx={{
+          marginTop: 0.5,
+          background: theme.palette.background.paper,
+          borderRadius: "17px",
+        }}
+      >
+        <MaybeShow show={shoudlShowArrows()}>
+          <IconButton
+            aria-label="Indietro"
+            size="small"
+            onClick={back}
+          >
+            <ArrowBackIosRoundedIcon/>
+          </IconButton>
+        </MaybeShow>
 
+        <MaybeShow show={shoudlShowArrows()}>
+          <IconButton
+            aria-label="Avanti"
+            size="small"
+            onClick={next}
+          >
+            <ArrowForwardIosRoundedIcon/>
+          </IconButton>
+        </MaybeShow>
+      </Grid>
     </Grid>
   )
 }

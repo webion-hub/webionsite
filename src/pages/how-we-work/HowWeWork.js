@@ -1,6 +1,5 @@
 import { ArrowDownwardRounded, ArrowForwardRounded, CodeRounded, DesignServicesRounded, EditRounded, FlagRounded } from "@mui/icons-material";
 import { Grid, Typography, useMediaQuery } from "@mui/material";
-import AreYouInterested from "../../components/AreYouIntersted";
 import EmptyComponent from "../../components/EmptyComponent";
 import IconWithDescription from "../../components/IconWithDescription";
 import Page from "../../components/Page";
@@ -64,7 +63,6 @@ export default function HowWeWork() {
           />
         </Grid>
       </PageContent>
-      <AreYouInterested/>
     </Page>
   )
 }
