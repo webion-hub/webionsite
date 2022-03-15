@@ -4,20 +4,22 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { ButtonBase, Grid, Paper, Typography, useMediaQuery } from "@mui/material";
-import Card from "../../components/Card";
+import { ButtonBase, Divider, Grid, IconButton, Paper, Typography, useMediaQuery } from "@mui/material";
 import Page from "../../components/Page";
 import { alpha } from '@mui/system';
 import PageContent from '../../components/PageContent';
 import theme from '../../theme/theme';
 import Slider from '../../components/Slider';
+import { TimelineOppositeContent } from '@mui/lab';
+import { CodeRounded } from '@mui/icons-material';
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 
 export default function Projects() {
   const isLg = useMediaQuery(theme.breakpoints.down('lg'))
-  const isMd = useMediaQuery(theme.breakpoints.down('md'))
+  const isSm = useMediaQuery(theme.breakpoints.down('sm'))
 
   const getSliderElements = () => {
-    if (isMd) return 1
+    if (isSm) return 1
     if (isLg) return 2
     return 3
   }
@@ -45,7 +47,7 @@ export default function Projects() {
             variant="h3"
             sx={{marginBlock: 4}}
           >
-            Progetti
+            <strong>Progetti</strong>
           </Typography>
           <Grid
             container
@@ -68,7 +70,7 @@ export default function Projects() {
                 imgSrc="./images/yoga.png"
                 href="https://www.yogacorfuholidays.com/"
                 title="Yoga Holidays"
-                description="Yoga holidays è un sito per viaggi a Corfu. I loro pacchetti vacanza danno l'opportunità di ritrovarti sul tappetino da yoga circondato da un paesaggio mozzafiato insieme a divertenti attività all'aperto e avventure intorno all'isola incluse nel pacchetto."
+                description="Yoga holidays è un sito per viaggi a Corfu. I loro pacchetti vacanza danno l'opportunità di ritrovarti sul tappetino da yoga circondato da un paesaggio mozzafiato."
               />
               <SideProjectCard
                 imgSrc="./images/kaire.png"
@@ -87,24 +89,82 @@ export default function Projects() {
 
 function MainProjectCard() {
   return (
-    <Card
-      title="Kaire Automation"
-      titleVariant="h5"
+    <Paper
       sx={{
         height: "100%",
         width: "100%",
+        paddingInline: 4,
+        paddingBlock: 2,
       }}
     >
+      <Grid
+        container
+        direction="row"
+        alignItems="center"
+        gap={1}
+      >
+        <Typography
+          variant="h5"
+        >
+          <strong>Kaire Automation</strong>
+        </Typography>
+        <IconButton
+          color="secondary"
+          target="_blank"
+          href="https://kaire-automation.it/"
+        >
+          <OpenInNewRoundedIcon/>
+        </IconButton>
+      </Grid>
+
+      <Typography
+        sx={{marginBlock: 1}}
+        variant="body2"
+        color="textSecondary"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nibh quam, gravida vel facilisis quis, sollicitudin vel dui. Suspendisse a semper metus.
+      </Typography>
+      <Divider/>
       <Timeline>
-        <TimelineItem>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>Eat</TimelineContent>
-        </TimelineItem>
+        <TimelineStep Icon={CodeRounded} description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nibh quam, gravida vel facilisis quis, sollicitudin vel dui. Suspendisse a semper metus." stepTitle="step1"/>
+        <TimelineStep Icon={CodeRounded} description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nibh quam, gravida vel facilisis quis, sollicitudin vel dui. Suspendisse a semper metus." stepTitle="step2" lastStep/>
       </Timeline>
-    </Card>
+    </Paper>
+  )
+}
+
+function TimelineStep({
+  lastStep,
+  stepTitle,
+  description,
+  Icon,
+}) {
+  return (
+    <TimelineItem position="right">
+      <TimelineOppositeContent
+        sx={{flex: 0}}
+      />
+      <TimelineSeparator>
+        <TimelineDot color='primary'>
+          <Icon/>
+        </TimelineDot>
+        {!lastStep && <TimelineConnector />}
+      </TimelineSeparator>
+      <TimelineContent sx={{paddingTop: 0, paddingBottom: 4}}>
+        <Typography
+          variant="h6"
+        >
+          {stepTitle}
+        </Typography>
+        <Typography
+          variant='body2'
+          color="textSecondary"
+          sx={{maxWidth: 500}}
+        >
+          {description}
+        </Typography>
+      </TimelineContent>
+    </TimelineItem>
   )
 }
 
@@ -140,14 +200,14 @@ function SideProjectCard({title, description, href, imgSrc}) {
             height: "100%",
             borderRadius: 2,
             backdropFilter: "blur(8px)",
-            background: alpha(theme.palette.primary.dark, 0.5),
+            background: alpha(theme.palette.primary.dark, 0.75),
             opacity: 0,
             transition: "0.25s all",
-            padding: 2,
+            padding: 1,
           }}
         >
           <Typography
-            variant="h6"
+            variant="subtitle1"
             component="p"
           >
             {title}
@@ -155,6 +215,7 @@ function SideProjectCard({title, description, href, imgSrc}) {
           <Typography
             variant="body2"
             component="p"
+            color="textSecondary"
             align="center"
           >
             {description}
