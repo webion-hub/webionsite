@@ -13,7 +13,7 @@ import PrivacyTipRoundedIcon from '@mui/icons-material/PrivacyTipRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
 import { EmailRounded } from '@mui/icons-material';
 
-import { InstagramIcon, LinkedinIcon } from "../illustrations/illustrations";
+import { GitHubIcon, LinkedinIcon } from "../illustrations/illustrations";
 import Logo from "../buttons/Logo";
 import { openEmail, openTelephone } from '../../lib/openContact';
 import theme from '../../theme/theme';
@@ -55,10 +55,16 @@ export default function WebionFooter() {
           <Stack
             direction="row"
           >
-            <IconButton>
-              <InstagramIcon/>
+            <IconButton
+              href="https://github.com/webion-hub"
+              target="_blank"
+            >
+              <GitHubIcon/>
             </IconButton>
-            <IconButton>
+            <IconButton
+              href="https://www.linkedin.com/company/webion-srl"
+              target="_blank"
+            >
               <LinkedinIcon/>
             </IconButton>
             <Logo

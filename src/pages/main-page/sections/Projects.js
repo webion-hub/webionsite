@@ -13,6 +13,7 @@ import Slider from '../../../components/Slider';
 import { TimelineOppositeContent } from '@mui/lab';
 import { CodeRounded } from '@mui/icons-material';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import DiscoverOnGitHub from '../../../components/buttons/DiscoverOnGitHub';
 
 export default function Projects() {
   const isLg = useMediaQuery(theme.breakpoints.down('lg'))
@@ -82,6 +83,8 @@ export default function Projects() {
           </Grid>
         </Grid>
       </PageContent>
+
+      <DiscoverOnGitHub/>
 
     </Page>
   )
