@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
             align={isMd ? "center" : "right"}
           >
             <strong>
-              Perchè <br/>
+              Perché <br/>
               sceglierci?
             </strong>
           </Typography>

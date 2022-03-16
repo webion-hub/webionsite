@@ -64,7 +64,7 @@ export default function Home() {
             borderRadius: 26,
           }}
         >
-         Scopri perchè
+         Scopri perché
         </ButtonCircled>
       </Paper>
       <BinaryBackground

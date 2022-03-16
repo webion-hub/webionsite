@@ -41,7 +41,7 @@ export default function HowWeWork() {
           <IconWithDescription
             Icon={FlagRounded}
             title="Obiettivi"
-            description="Ti facciamo domande per conoscere la tua attività e il tuo marchio. Definiamo chiaramente quali sono i tuoi obiettivi e perchè."
+            description="Ti facciamo domande per conoscere la tua attività e il tuo marchio. Definiamo chiaramente quali sono i tuoi obiettivi e perché."
           />
           <DynamicArrow/>
           <IconWithDescription

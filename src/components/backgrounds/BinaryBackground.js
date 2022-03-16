@@ -2,53 +2,28 @@ import { alpha } from "@mui/material";
 import { Svg, TextSvg, TspanSvg } from "../svgs/SvgComponents";
 import { KeyGenerator } from "../../lib/KeyGenerator";
 import theme from "../../theme/theme";
-import useOnScreen from "../../hooks/useOnScreen";
-import { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function BinaryBackground({height, elements, position, ...svgProps}) {
+  const [refresh, setRefresh] = useState(true);
+  const mainSvg = useRef()
   const ref = useRef()
-  const isVisible = useOnScreen(ref)
 
   const columnStep = 14;
   const rowStep = 18;
   const bottomOffset = 2;
   const leftOffset = 6;
 
+  useEffect(() => {
+    mainSvg.current = elements.map((element, key) => {
+      return getTextColumn(key * columnStep + leftOffset, element)
+    })
+
+    setRefresh(!refresh)
+  }, [])
+
   const getWidth = () => elements.length * columnStep
   const isPosBottom = () => position == "bottom"
-
-  const getTranslation = () => {
-    return {
-      top: 'translate(0, -100%)',
-      bottom: 'translate(0, 100%)',
-      left: 'translate(100%, 0%)',
-      right: 'translate(-100%, 0%)',
-    }[position]
-  }
-
-  const getSlideAnimation = (time) => {
-    const translate = getTranslation()
-
-    const animationName = KeyGenerator.generate('slide')
-    const keyFrame = `@keyframes ${animationName}`
-
-    const animation = isVisible
-      ? `${animationName} 1s ease-in-out forwards`
-      : ''
-
-    return {
-      animation: animation,
-      animationDelay: `${time / 10}s`,
-      [keyFrame]: {
-        "0%": {
-          transform: translate,
-        },
-        "100%": {
-          transform: "translate(0, 0%)",
-        },
-      },
-    }
-  }
 
   const getAnimation = () => {
     return {
@@ -83,8 +58,6 @@ export default function BinaryBackground({height, elements, position, ...svgProp
       <TextSvg
         key={KeyGenerator.generate()}
         sx={{
-          ...getSlideAnimation((x - 6)/14),
-          transform: "translate(0, -100%)",
           fontSize: 18,
         }}
         x={x}
@@ -118,11 +91,7 @@ export default function BinaryBackground({height, elements, position, ...svgProp
       xmlns="http://www.w3.org/2000/svg"
       viewBox={`0 0 ${getWidth()} ${height}`}
     >
-      {
-        elements.map((element, key) => {
-          return getTextColumn(key * columnStep + leftOffset, element)
-        })
-      }
+      {mainSvg.current}
     </Svg>
   )
 }
