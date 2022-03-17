@@ -36,7 +36,7 @@ export default function OurServices() {
           direction="row"
           justifyContent="center"
           alignItems="stretch"
-          gap={1}
+          gap={4}
         >
           <CardWithIcon
             title="Applicazioni IOS & Android"

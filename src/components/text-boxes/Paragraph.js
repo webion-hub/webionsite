@@ -13,9 +13,7 @@ export default function Paragraph({title, children}) {
       <Typography variant="h4">
         {title}
       </Typography>
-      <Typography variant="body1" color="textSecondary">
-        {children}
-      </Typography>
+      {children}
     </Grid>
   )
 }
