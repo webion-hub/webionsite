@@ -7,7 +7,7 @@ import AnimatedLogo from '../buttons/AnimatedLogo';
 import AppBar from "../app_bar/AppBar";
 import AppBarContent from "../app_bar/AppBarContent";
 import AppBarSection from "../app_bar/AppBarSection";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function WebionAppBar() {
   const [openLogo, setOpenLogo] = useState(false)
