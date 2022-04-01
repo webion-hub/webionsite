@@ -1,4 +1,4 @@
-import { ArrowDownwardRounded, ArrowForwardRounded, CodeRounded, DesignServicesRounded, EditRounded, FlagRounded } from "@mui/icons-material";
+import { ArrowDownwardRounded, ArrowForwardRounded, CodeRounded, EditRounded, FlagRounded, CheckCircleRounded } from "@mui/icons-material";
 import { Grid, Typography, useMediaQuery } from "@mui/material";
 import IconWithDescription from "../../../components/text-boxes/IconWithDescription";
 import Page from "../../../components/page-components/Page";
@@ -41,25 +41,25 @@ export default function HowWeWork() {
           <IconWithDescription
             Icon={FlagRounded}
             title="Obiettivi"
-            description="Ti facciamo domande per conoscere la tua attività e il tuo marchio. Definiamo chiaramente quali sono i tuoi obiettivi e perché."
+            description="Individuiamo il tuo problema e definiamo chiaramente quali sono i tuoi obiettivi."
           />
           <DynamicArrow/>
           <IconWithDescription
             Icon={EditRounded}
             title="Bozza"
-            description="Dopo una analisi approfondita dei compepitor e dell'utente finale, facciamo una bozza del sito insieme."
-          />
-          <DynamicArrow/>
-          <IconWithDescription
-            Icon={DesignServicesRounded}
-            title="Design"
-            description="Progettiamo la grafica del sito web, in una versione intermedia, così puoi dirci se siamo sulla strada giusta."
+            description="Realizziamo prima una bozza low-fidelity continuando a refinirlo fino ad arrivare alla tua UI ideale."
           />
           <DynamicArrow/>
           <IconWithDescription
             Icon={CodeRounded}
             title="Sviluppo"
-            description="Sviluppiamo il sito web e utilizziamo tecniche SEO per portare la tua azienda a più clienti possibile."
+            description="Iniziamo lo sviluppo step-by-step, continuando a rimanere in contatto per non uscire dalle linee guida."
+          />
+          <DynamicArrow/>
+          <IconWithDescription
+            Icon={CheckCircleRounded}
+            title="Consegna"
+            description="Dopo un riscontro finale ti consegnamo il prodotto finito, rimanendo disponibili per un'assistenza post-vendita. "
           />
         </Grid>
       </PageContent>

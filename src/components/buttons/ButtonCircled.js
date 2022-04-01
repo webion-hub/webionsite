@@ -29,7 +29,7 @@ export default function ButtonCircled({children, sx, ...props}) {
           left: "50%",
           zIndex: -1,
           display: "flex",
-          transition: "0.5s all ease-in-out",
+          transition: "0.5s transform ease-in-out",
           transform: `
             translate(-50%, -50%) 
             ${hover ? "scale(0.5)" : "scale(1)"}

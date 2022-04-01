@@ -50,7 +50,7 @@ export default function Home() {
           sx={{marginTop: 2}}
           align={isMd ? "center" : "left"}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu lorem at libero commodo ultricies in vel sem.
+          Sviluppiamo con accuratezza e minuziosità, il software di cui hai bisogno.
         </Typography>
         <ButtonCircled
           size="large"

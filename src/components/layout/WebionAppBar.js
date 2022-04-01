@@ -7,7 +7,7 @@ import AnimatedLogo from '../buttons/AnimatedLogo';
 import AppBar from "../app_bar/AppBar";
 import AppBarContent from "../app_bar/AppBarContent";
 import AppBarSection from "../app_bar/AppBarSection";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function WebionAppBar() {
   const [openLogo, setOpenLogo] = useState(false)
@@ -18,7 +18,7 @@ export default function WebionAppBar() {
 
     return () => window.removeEventListener("scroll", updateAppBar)
   }, [])
-
+  
   const updateAppBar = () => {
     const screenHeight = window.outerHeight / 2
     const yPos = window.scrollY

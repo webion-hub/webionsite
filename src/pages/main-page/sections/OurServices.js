@@ -1,9 +1,10 @@
 import { Grid, Paper, Typography } from "@mui/material";
 import theme from "../../../theme/theme";
 
-import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
-import ComputerRoundedIcon from '@mui/icons-material/ComputerRounded';
-import WebAssetRoundedIcon from '@mui/icons-material/WebAssetRounded';
+import AndroidRoundedIcon from '@mui/icons-material/AndroidRounded';
+import MonitorHeartRoundedIcon from '@mui/icons-material/MonitorHeartRounded';
+import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
+
 import Page from "../../../components/page-components/Page";
 import PageContent from "../../../components/page-components/PageContent";
 
@@ -40,18 +41,18 @@ export default function OurServices() {
         >
           <CardWithIcon
             title="Applicazioni IOS & Android"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu lorem at libero commodo ultricies in vel sem."
-            Icon={PhoneIphoneRoundedIcon}
+            description="La nostra offerta comprende la creazione di applicazioni per dispositivi mobili con framework multipiattaforma come Flutter"
+            Icon={AndroidRoundedIcon}
           />
           <CardWithIcon
-            title="Applicazioni Web"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu lorem at libero commodo ultricies in vel sem."
-            Icon={ComputerRoundedIcon}
+            title="IOT per le industrie"
+            description="Sviluppo di soluzioni per la raccolta, la manipolazione e il monitoraggio dei dati in tempo reale e storicizzato, utilizzando principalmente C# e Angular."
+            Icon={MonitorHeartRoundedIcon}
           />
           <CardWithIcon
-            title="Siti Web"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu lorem at libero commodo ultricies in vel sem."
-            Icon={WebAssetRoundedIcon}
+            title="Siti & applicazioni Web"
+            description="Design e realizzazione di siti web statici e dinamici e creazione di applicazioni web (PWA), con gestione sia del frontend che del backend."
+            Icon={LanguageRoundedIcon}
           />
         </Grid>
       </PageContent>

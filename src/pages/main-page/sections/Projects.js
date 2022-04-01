@@ -205,7 +205,7 @@ function SideProjectCard({title, description, href, imgSrc}) {
             backdropFilter: "blur(8px)",
             background: alpha(theme.palette.primary.dark, 0.75),
             opacity: 0,
-            transition: "0.25s all",
+            transition: "0.25s opacity",
             padding: 1,
           }}
         >

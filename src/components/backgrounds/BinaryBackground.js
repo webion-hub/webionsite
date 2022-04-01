@@ -27,6 +27,7 @@ export default function BinaryBackground({height, elements, position, ...svgProp
 
   const getAnimation = () => {
     return {
+      willChange: "opacity",
       animation: `flicker ${Math.random() + 2}s ease-in-out alternate infinite`,
       animationDelay: `-${Math.random() * 4}s`,
       "@keyframes flicker": {

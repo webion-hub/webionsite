@@ -32,7 +32,7 @@ export default function ContactUsForm() {
       validators: [Validators.required],
     },
     privacy: {
-      value: false,
+      value: true,
       validators: [Validators.required],
     },
   })

@@ -82,8 +82,8 @@ export default function WebionFooter() {
             endIcon={<PrivacyTipRoundedIcon/>}
             color="info"
             fullWidth
-            href='/policies-licenze#sections'
-            onClick={_ => navigate('/policies-licenze#sections')}
+            href='/policies-licenze'
+            onClick={_ => navigate('/policies-licenze')}
           >
             Policies & Licenze
           </Button>

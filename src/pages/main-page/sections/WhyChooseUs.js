@@ -1,5 +1,9 @@
 import { Grid, Typography, useMediaQuery } from "@mui/material";
-import StyleRoundedIcon from '@mui/icons-material/StyleRounded';
+
+import BrushRoundedIcon from '@mui/icons-material/BrushRounded';
+import RouteRoundedIcon from '@mui/icons-material/RouteRounded';
+import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
+
 import Page from "../../../components/page-components/Page";
 import theme from "../../../theme/theme";
 import Line from "../../../components/Line";
@@ -77,17 +81,17 @@ export default function WhyChooseUs() {
           }}
         >
           <SmallParagraph
-            Icon={StyleRoundedIcon}
-            title="Versatilità"
+            Icon={RouteRoundedIcon}
+            title="Percorso"
             description="La nostra offerta comprende siti e applicazioni web, IOT per l'automazione mediante il web e software multipiattaforma."
           />
           <SmallParagraph
-            Icon={StyleRoundedIcon}
+            Icon={BrushRoundedIcon}
             title="Personalizzazione"
             description="Offriamo una completa personalizzazione dell'interfaccia grafica e facciamo tutto su misura del cliente."
           />
           <SmallParagraph
-            Icon={StyleRoundedIcon}
+            Icon={BoltRoundedIcon}
             title="Ottimizzazione"
             description="Crediamo sia fondamentale consegnare risultati di alta qualità. Per questo motivo ci concentriamo su una totale ottimizzazione ed un perfezionamento del prodotto finale."
           />

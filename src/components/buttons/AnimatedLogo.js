@@ -27,7 +27,7 @@ export default function AnimatedLogo({label, open, ...others}) {
         paddingRight: 2,
         "& .webion-logo--label": {
           paddingLeft: 1,
-          transition: `${theme.transitions.duration.short}ms all`,
+          transition: `${theme.transitions.duration.short}ms opacity, ${theme.transitions.duration.short}ms transform`,
           ...getMainStyle(),
         },
         "&:hover > .webion-logo--label": openStyle,
