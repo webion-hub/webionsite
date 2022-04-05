@@ -20,7 +20,7 @@ export default function BinaryBackground({height, elements, position, ...svgProp
     })
 
     setRefresh(!refresh)
-  }, [])
+  }, [elements, position, height])
 
   const getWidth = () => elements.length * columnStep
   const isPosBottom = () => position == "bottom"

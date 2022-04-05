@@ -6,7 +6,6 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { ButtonBase, Divider, Grid, IconButton, Paper, Typography, useMediaQuery } from "@mui/material";
 import Page from "../../../components/page-components/Page";
-import { alpha } from '@mui/system';
 import PageContent from '../../../components/page-components/PageContent';
 import theme from '../../../theme/theme';
 import Slider from '../../../components/Slider';
@@ -177,36 +176,35 @@ function SideProjectCard({title, description, href, imgSrc}) {
       sx={{
         borderRadius: 2,
         display: "block",
+        height: "100%"
       }}
       href={href}
       target="_blank"
     >
-      <Paper
-        sx={{
-          borderRadius: 2,
-          backgroundImage: `url('${imgSrc}')`,
-          backgroundSize: "cover",
-          aspectRatio: `${16/9}`,
-          "&:hover > .card-overlay": {
-            opacity: 1,
-          },
-        }}
+      <Grid
+        style={{height: "100%"}}
+        component={Paper}
+        container
+        direction="column"
       >
+        <Paper
+          sx={{
+            width: "100%",
+            backgroundImage: `url('${imgSrc}')`,
+            backgroundSize: "cover",
+            aspectRatio: `${16/9}`,
+          }}
+        ></Paper>
         <Grid
-          className="card-overlay"
           container
           direction="column"
           alignItems="center"
           sx={{
             whiteSpace: "normal",
             width: "100%",
-            height: "100%",
-            borderRadius: 2,
-            backdropFilter: "blur(8px)",
-            background: alpha(theme.palette.primary.dark, 0.75),
-            opacity: 0,
-            transition: "0.25s opacity",
-            padding: 1,
+            paddingInline: 2,
+            paddingTop: 1,
+            paddingBottom: 3,
           }}
         >
           <Typography
@@ -224,7 +222,7 @@ function SideProjectCard({title, description, href, imgSrc}) {
             {description}
           </Typography>
         </Grid>
-      </Paper>
+      </Grid>
     </ButtonBase>
   )
 }

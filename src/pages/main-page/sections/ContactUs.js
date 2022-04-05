@@ -8,7 +8,7 @@ import RotatingCirleGroup from "../../../components/svgs/RotatingCirlceGroup";
 import ContactUsCard from "../../../components/contact-components/ContactUsCard";
 
 export default function ContactUs() {
-  const isMd = useMediaQuery(theme.breakpoints.down('md'))
+  const isMd = useMediaQuery(theme.breakpoints.down('md'), {noSsr: true})
 
   return (
     <Page
