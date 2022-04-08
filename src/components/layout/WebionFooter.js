@@ -1,5 +1,4 @@
 import { alpha, Button, Grid, IconButton, Link, Stack } from '@mui/material';
-import { useNavigate } from "react-router";
 
 import Footer from "../footer/Footer";
 import FooterColumn from "../footer/FooterColumn";
@@ -19,8 +18,6 @@ import { openEmail, openTelephone } from '../../lib/openContact';
 import theme from '../../theme/theme';
 
 export default function WebionFooter() {
-  const navigate = useNavigate();
-
   return (
     <Footer>
       <FooterContent>
@@ -30,7 +27,7 @@ export default function WebionFooter() {
             color="info"
             fullWidth
             href="/#servizi"
-            onClick={_ => navigate("/#servizi")}
+            onClick={_ => window.location = "/#servizi"}
           >
             Servizi
           </Button>
@@ -39,7 +36,7 @@ export default function WebionFooter() {
             color="info"
             fullWidth
             href="/#progetti"
-            onClick={_ => navigate("/#progetti")}
+            onClick={_ => window.location = "/#progetti"}
           >
             Progetti
           </Button>
@@ -48,7 +45,7 @@ export default function WebionFooter() {
             color="info"
             fullWidth
             href="/#contattaci"
-            onClick={_ => navigate("/#contattaci")}
+            onClick={_ => window.location = "/#contattaci"}
           >
             Contattaci
           </Button>
@@ -72,7 +69,7 @@ export default function WebionFooter() {
             </IconButton>
             <Logo
               href="/#home"
-              onClick={_ => navigate("/#home")}
+              onClick={_ => window.location = "/#home"}
               ButtonComponent={IconButton}
               color="info"
             />
@@ -83,7 +80,7 @@ export default function WebionFooter() {
             color="info"
             fullWidth
             href='/policies-licenze'
-            onClick={_ => navigate('/policies-licenze')}
+            onClick={_ => window.location = "/policies-licenze"}
           >
             Policies & Licenze
           </Button>

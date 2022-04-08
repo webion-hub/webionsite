@@ -10,7 +10,7 @@ export default function MainPage() {
   return (
     <Sections>
       <section id="home">
-        <Home/>
+        <Home id="home"/>
       </section>
 
       <section id="servizi">

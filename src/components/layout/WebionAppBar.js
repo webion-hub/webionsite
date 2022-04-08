@@ -1,5 +1,4 @@
-import { Button } from '@mui/material';
-import { useNavigate } from "react-router";
+import { Button, useScrollTrigger } from '@mui/material';
 
 import SideBarButton from "../side_bar/SidebarButton";
 import AnimatedLogo from '../buttons/AnimatedLogo';
@@ -7,28 +6,12 @@ import AnimatedLogo from '../buttons/AnimatedLogo';
 import AppBar from "../app_bar/AppBar";
 import AppBarContent from "../app_bar/AppBarContent";
 import AppBarSection from "../app_bar/AppBarSection";
-import { useEffect, useState } from 'react';
 
 export default function WebionAppBar() {
-  const [openLogo, setOpenLogo] = useState(false)
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    window.addEventListener("scroll", updateAppBar);
-
-    return () => window.removeEventListener("scroll", updateAppBar)
-  }, [])
-  
-  const updateAppBar = () => {
-    const screenHeight = window.outerHeight / 2
-    const yPos = window.scrollY
-
-    const normalizedPos = yPos / screenHeight;
-
-    normalizedPos > 1
-      ? setOpenLogo(true)
-      : setOpenLogo(false)
-  }
+  const trigger = useScrollTrigger({
+    target: window,
+    threshold: 200,
+  });
 
   return (
     <AppBar>
@@ -36,10 +19,10 @@ export default function WebionAppBar() {
 
         <AppBarSection alignment="start" spacing={0}>
           <AnimatedLogo
-            open={openLogo}
+            open={trigger}
             label="Webion"
             href="/#home"
-            onClick={_ => navigate("/#home")}
+            onClick={_ => window.location = "/#home"}
           />
         </AppBarSection>
 
@@ -48,14 +31,14 @@ export default function WebionAppBar() {
             <Button
               color="info"
               href="/#servizi"
-              onClick={_ => navigate("/#servizi")}
+              onClick={_ => window.location = "/#servizi"}
             >
               Servizi
             </Button>
             <Button
               color="info"
               href="/#progetti"
-              onClick={_ => navigate("/#progetti")}
+              onClick={_ => window.location = "/#progetti"}
             >
               Progetti
             </Button>
@@ -63,7 +46,7 @@ export default function WebionAppBar() {
               color="info"
               variant="outlined"
               href="/#contattaci"
-              onClick={_ => navigate("/#contattaci")}
+              onClick={_ => window.location = "/#contattaci"}
             >
               Contattaci
             </Button>

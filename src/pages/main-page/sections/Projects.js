@@ -61,19 +61,19 @@ export default function Projects() {
 
             <Slider elementsShown={getSliderElements()}>
               <SideProjectCard
-                imgSrc="./images/mentorz.png"
+                imgSrc="./images/mentorz.webp"
                 href="https://mentorz.fr/"
                 title="Mentorz"
                 description="Mentorz è una startup francese che offre  agli influencer gli strumenti di cui hanno bisogno per avere consultazioni 1-1 con i loro follower."
               />
               <SideProjectCard
-                imgSrc="./images/yoga.png"
+                imgSrc="./images/yoga.webp"
                 href="https://www.yogacorfuholidays.com/"
                 title="Yoga Holidays"
                 description="Yoga holidays è un sito per viaggi a Corfu. I loro pacchetti vacanza danno l'opportunità di ritrovarti sul tappetino da yoga circondato da un paesaggio mozzafiato."
               />
               <SideProjectCard
-                imgSrc="./images/kaire.png"
+                imgSrc="./images/kaire.webp"
                 href="https://kaire-automation.it/"
                 title="Kaire automation (sito)"
                 description="Kaire automation è una azienda specializzata nella reaizzazione e supervisione di impianti industriali"

@@ -1,9 +1,6 @@
 import { Button, Grid, Typography } from "@mui/material";
-import { useNavigate } from "react-router";
 
 export default function AreYouInterested() {
-  const navigate = useNavigate()
-
   return (
     <Grid
       container
@@ -21,7 +18,7 @@ export default function AreYouInterested() {
       <Button
         variant="contained"
         href="/#contattaci"
-        onClick={_ => navigate("/#contattaci")}
+        onClick={_ => window.location = "/#contattaci"}
       >
         Contattaci
       </Button>

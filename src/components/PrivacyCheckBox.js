@@ -1,9 +1,7 @@
 import { Checkbox, Grid, Link, Typography } from "@mui/material";
 import React from "react";
-import { useNavigate } from "react-router";
 
 export default function PrivacyCheckBox({onChange, value, error}) {
-  const navigate = useNavigate();
 
   const getTextColor = () => {
     return error
@@ -41,7 +39,7 @@ export default function PrivacyCheckBox({onChange, value, error}) {
         <Link
           color="inherit"
           href='/policies-licenze'
-          onClick={_ => navigate('/policies-licenze')}
+          onClick={_ => window.location = "/policies-licenze"}
         >
           informativa sull privacy
         </Link>
