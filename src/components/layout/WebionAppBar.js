@@ -11,6 +11,7 @@ export default function WebionAppBar() {
   const trigger = useScrollTrigger({
     target: window,
     threshold: 200,
+    disableHysteresis: true
   });
 
   return (
