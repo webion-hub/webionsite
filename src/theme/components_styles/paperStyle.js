@@ -5,7 +5,6 @@ const paperStyle = {
   styleOverrides: {
     root: {
       backgroundImage: "none",
-      backdropFilter: "blur(16px)",
     },
     rounded: {
       borderRadius: shape.borderRadius * spacing,
