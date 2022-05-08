@@ -174,9 +174,9 @@ function SideProjectCard({title, description, href, imgSrc}) {
   return (
     <ButtonBase
       sx={{
-        borderRadius: 2,
         display: "block",
-        height: "100%"
+        height: "100%",
+        borderRadius: '24px'
       }}
       href={href}
       target="_blank"
