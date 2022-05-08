@@ -15,6 +15,9 @@ export default function ButtonCircled({children, sx, ...props}) {
     >
       <Button
         {...props}
+        sx={{
+          zIndex: 1,
+        }}
         onMouseEnter={_ => setHover(true)}
         onMouseLeave={_ => setHover(false)}
         onTouchStart={_ => setHover(true)}
@@ -27,7 +30,7 @@ export default function ButtonCircled({children, sx, ...props}) {
           position: "absolute",
           top: "50%",
           left: "50%",
-          zIndex: -1,
+          zIndex: 0,
           display: "flex",
           transition: "0.5s transform ease-in-out",
           transform: `
