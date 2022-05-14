@@ -1,4 +1,5 @@
 import { Grid, Typography, useMediaQuery } from "@mui/material";
+import GapUtils from "../../lib/GapUtils";
 import theme from "../../theme/theme";
 
 export default function SmallParagraph({title, Icon, description}) {
@@ -9,8 +10,8 @@ export default function SmallParagraph({title, Icon, description}) {
       container
       direction="column"
       alignItems={isMd ? "center" : "flex-start"}
-      gap={2}
       sx={{
+        ...GapUtils.gap(2, "column"),
         maxWidth: 500,
       }}
     >
@@ -19,7 +20,7 @@ export default function SmallParagraph({title, Icon, description}) {
         direction="row"
         alignItems="center"
         justifyContent={isMd ? "center" : "flex-start"}
-        gap={1}
+        sx={GapUtils.gap(1, "row")}
       >
         <Icon/>
         <Typography variant="h5">

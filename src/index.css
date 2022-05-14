@@ -5,6 +5,7 @@ html {
 body {
   margin: 0;
   overflow: overlay;
+  gap: 8px;
 }
 
 code {

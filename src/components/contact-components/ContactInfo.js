@@ -3,6 +3,7 @@ import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
 import ContactItem from "./ContactItem";
 import { openEmail } from "../../lib/openContact";
+import GapUtils from "../../lib/GapUtils";
 
 
 export default function ContactInfo() {
@@ -10,7 +11,7 @@ export default function ContactInfo() {
     <Grid
       container
       direction="column"
-      gap={1}
+      sx={GapUtils.gap(1, 'column')}
     >
       <Divider/>
       <ContactItem

@@ -1,11 +1,12 @@
 import { Grid, Link } from "@mui/material";
+import GapUtils from "../../lib/GapUtils";
 
 export default function ContactItem({Icon, label, onClick}) {
   return (
     <Grid
       container
       direction="row"
-      gap={1}
+      sx={GapUtils.gap(1, "row")}
     >
       <Icon/>
       <Link

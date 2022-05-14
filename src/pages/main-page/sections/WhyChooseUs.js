@@ -9,6 +9,7 @@ import theme from "../../../theme/theme";
 import Line from "../../../components/Line";
 import SmallParagraph from "../../../components/text-boxes/SmallParagraph";
 import AreYouInterested from "../../../components/buttons/AreYouIntersted";
+import GapUtils from "../../../lib/GapUtils";
 
 export default function WhyChooseUs() {
   const isLg = useMediaQuery(theme.breakpoints.down('lg'))
@@ -74,8 +75,8 @@ export default function WhyChooseUs() {
           alignItems={{sm: "center", md: "flex-start"}}
           md={6}
           xs={12}
-          gap={6}
           sx={{
+            ...GapUtils.gap(6, "column"),
             paddingBlock: isMd ? 4 : 8,
             paddingInline: 4,
           }}

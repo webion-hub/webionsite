@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@mui/material";
+import GapUtils from "../../lib/GapUtils";
 import theme from "../../theme/theme";
 
 export default function IconWithDescription({Icon, title, description}) {
@@ -7,8 +8,8 @@ export default function IconWithDescription({Icon, title, description}) {
       container
       direction="column"
       alignItems="center"
-      gap={1}
       sx={{
+        ...GapUtils.gap(1, 'column'),
         maxWidth: 180,
       }}
     >

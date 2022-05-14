@@ -16,6 +16,7 @@ import { GitHubIcon, LinkedinIcon } from "../illustrations/illustrations";
 import Logo from "../buttons/Logo";
 import { openEmail, openTelephone } from '../../lib/openContact';
 import theme from '../../theme/theme';
+import GapUtils from '../../lib/GapUtils';
 
 export default function WebionFooter() {
   return (
@@ -123,6 +124,7 @@ function FooterLink({label, Icon, onClick}) {
       component={Link}
       href=""
       sx={{
+        ...GapUtils.gap(1, "row"),
         color: theme.palette.info.main,
         textDecorationColor: alpha(theme.palette.info.main, 0.4),
       }}
@@ -131,7 +133,6 @@ function FooterLink({label, Icon, onClick}) {
       direction="row"
       justifyContent="flex-end"
       alignItems="center"
-      gap={1}
     >
       {label}
       <Icon

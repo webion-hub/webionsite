@@ -1,9 +1,11 @@
-import { Grid, Paper, Typography } from "@mui/material";
+import { alpha, Grid, Paper, Typography } from "@mui/material";
 import theme from "../../../theme/theme";
 
 import AndroidRoundedIcon from '@mui/icons-material/AndroidRounded';
 import MonitorHeartRoundedIcon from '@mui/icons-material/MonitorHeartRounded';
 import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
+
+import GapUtils from "../../../lib/GapUtils";
 
 import Page from "../../../components/page-components/Page";
 import PageContent from "../../../components/page-components/PageContent";
@@ -13,8 +15,8 @@ export default function OurServices() {
     <Page
       justifyContent="center"
       alignItems="center"
-      gap={4}
       sx={{
+        ...GapUtils.gap(4, 'both'),
         background: theme.palette.background.paper,
         paddingBlock: 6,
       }}
@@ -37,7 +39,7 @@ export default function OurServices() {
           direction="row"
           justifyContent="center"
           alignItems="stretch"
-          gap={4}
+          sx={GapUtils.gap(4, 'both')}
         >
           <CardWithIcon
             title="Applicazioni IOS & Android"
@@ -66,6 +68,7 @@ function CardWithIcon({Icon, title, description}) {
       sx={{
         maxWidth: 250,
         width: "100%",
+        background: alpha(theme.palette.background.default, 0.5)
       }}
     >
       <Grid
@@ -89,8 +92,8 @@ function CardWithIcon({Icon, title, description}) {
       <Grid
         container
         direction="column"
-        gap={1}
         sx={{
+          ...GapUtils.gap(1, 'column'),
           padding: 2,
         }}
       >

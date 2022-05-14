@@ -5,6 +5,7 @@ import Page from "../../../components/page-components/Page";
 import PageContent from "../../../components/page-components/PageContent";
 import theme from "../../../theme/theme";
 import EmptyComponent from "../../../components/utils/EmptyComponent";
+import GapUtils from "../../../lib/GapUtils";
 
 export default function HowWeWork() {
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
@@ -23,7 +24,7 @@ export default function HowWeWork() {
         direction="column"
         justifyContent="center"
         alignItems="center"
-        gap={10}
+        sx={GapUtils.gap(10, 'column')}
       >
         <Typography
           variant={isMd ? "h3" : "h2"}
@@ -36,7 +37,7 @@ export default function HowWeWork() {
           direction={isSm ? "column" : "row"}
           alignItems={isSm ? "center" : ""}
           justifyContent="center"
-          gap={2}
+          sx={GapUtils.gap(2, "both")}
         >
           <IconWithDescription
             Icon={FlagRounded}
