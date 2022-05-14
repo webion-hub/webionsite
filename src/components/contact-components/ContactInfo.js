@@ -13,7 +13,7 @@ export default function ContactInfo() {
       direction="column"
       sx={GapUtils.gap(1, 'column')}
     >
-      <Divider/>
+      <Divider sx={{paddingTop: "8px !important"}}/>
       <ContactItem
         Icon={EmailRoundedIcon}
         label="amministrazione@webion.it"
