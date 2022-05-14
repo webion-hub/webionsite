@@ -2,6 +2,7 @@ import { ButtonBase, Grid, Paper, Typography } from "@mui/material";
 import { Box } from '@mui/system';
 import theme from "../../theme/theme";
 import { GitHubIcon } from "../illustrations/illustrations";
+import GapUtils from "../../lib/GapUtils";
 
 export default function DiscoverOnGitHub() {
   return (
@@ -22,10 +23,10 @@ export default function DiscoverOnGitHub() {
         href="https://github.com/webion-hub"
         target="_blank"
         sx={{
+          ...GapUtils.gap(1, 'row'),
           padding: 2,
           borderRadius: theme.components.MuiPaper.styleOverrides.rounded.borderRadius + "px",
         }}
-        gap={1}
       >
         <Box>
           <GitHubIcon skeletonProps={{sx: {width: 'auto'}}}/>

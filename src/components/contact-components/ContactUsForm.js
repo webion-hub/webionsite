@@ -9,6 +9,7 @@ import useForm from "../../hooks/useForm";
 import Validators from "../../lib/Validators";
 import FormGroup from "../FormGroup";
 import PrivacyCheckBox from "../PrivacyCheckBox";
+import GapUtils from "../../lib/GapUtils";
 
 export default function ContactUsForm() {
   const form = useForm({
@@ -48,8 +49,8 @@ export default function ContactUsForm() {
       onSubmit={handleSubmit}
       container
       direction="column"
-      gap={1}
       sx={{
+        ...GapUtils.gap(1, 'column'),
         maxWidth: 460,
       }}
     >

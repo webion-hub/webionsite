@@ -13,6 +13,7 @@ import { TimelineOppositeContent } from '@mui/lab';
 import { CodeRounded } from '@mui/icons-material';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import DiscoverOnGitHub from '../../../components/buttons/DiscoverOnGitHub';
+import GapUtils from '../../../lib/GapUtils';
 
 export default function Projects() {
   const isLg = useMediaQuery(theme.breakpoints.down('lg'))
@@ -53,9 +54,12 @@ export default function Projects() {
             container
             direction="column"
             wrap="nowrap"
-            gap={2}
             alignItems="center"
-            sx={{width: "auto", marginBottom: 16}}
+            sx={{
+              ...GapUtils.gap(2, 'column'), 
+              width: "auto",
+              paddingBottom: 16
+            }}
           >
             <MainProjectCard></MainProjectCard>
 
@@ -103,7 +107,7 @@ function MainProjectCard() {
         container
         direction="row"
         alignItems="center"
-        gap={1}
+        sx={GapUtils.gap(1, "row")}
       >
         <Typography
           variant="h5"
