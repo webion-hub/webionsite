@@ -9,8 +9,11 @@ import GapUtils from "../../../lib/GapUtils";
 
 import Page from "../../../components/page-components/Page";
 import PageContent from "../../../components/page-components/PageContent";
+import { useTranslation } from "react-i18next";
 
 export default function OurServices() {
+  const { t } = useTranslation() 
+
   return (
     <Page
       justifyContent="center"
@@ -26,7 +29,7 @@ export default function OurServices() {
         align="center"
       >
         <strong>
-          I nostri servizi
+          {t('services-title')}
         </strong>
       </Typography>
       <PageContent
@@ -42,18 +45,18 @@ export default function OurServices() {
           sx={GapUtils.gap(4, 'both')}
         >
           <CardWithIcon
-            title="Applicazioni IOS & Android"
-            description="La nostra offerta comprende la creazione di applicazioni per dispositivi mobili con framework multipiattaforma come Flutter"
+            title={t('services-service-1-title')}
+            description={t('services-service-1-description')}
             Icon={AndroidRoundedIcon}
           />
           <CardWithIcon
-            title="IOT per le industrie"
-            description="Sviluppo di soluzioni per la raccolta, la manipolazione e il monitoraggio dei dati in tempo reale e storicizzato, utilizzando principalmente C# e Angular."
+            title={t('services-service-2-title')}
+            description={t('services-service-2-description')}
             Icon={MonitorHeartRoundedIcon}
           />
           <CardWithIcon
-            title="Siti & applicazioni Web"
-            description="Design e realizzazione di siti web statici e dinamici e creazione di applicazioni web (PWA), con gestione sia del frontend che del backend."
+            title={t('services-service-3-title')}
+            description={t('services-service-3-description')}
             Icon={LanguageRoundedIcon}
           />
         </Grid>

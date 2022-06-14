@@ -1,7 +1,9 @@
 import { Checkbox, Grid, Link, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function PrivacyCheckBox({onChange, value, error}) {
+  const { t } = useTranslation() 
 
   const getTextColor = () => {
     return error
@@ -35,13 +37,13 @@ export default function PrivacyCheckBox({onChange, value, error}) {
           width: "calc(100% - 42px)",
         }}
       >
-        Ho preso visione dell&apos;
+        {t('privacy')}
         <Link
           color="inherit"
           href='/policies-licenze'
           onClick={_ => window.location = "/policies-licenze"}
         >
-          informativa sull privacy
+          {t('privacy-link')}
         </Link>
       </Typography>
     </Grid>

@@ -14,8 +14,10 @@ import { CodeRounded } from '@mui/icons-material';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import DiscoverOnGitHub from '../../../components/buttons/DiscoverOnGitHub';
 import GapUtils from '../../../lib/GapUtils';
+import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
+  const { t } = useTranslation() 
   const isLg = useMediaQuery(theme.breakpoints.down('lg'))
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
 
@@ -48,7 +50,7 @@ export default function Projects() {
             variant="h3"
             sx={{marginBlock: 4}}
           >
-            <strong>Progetti</strong>
+            <strong>{t('projects-title')}</strong>
           </Typography>
           <Grid
             container
@@ -61,26 +63,25 @@ export default function Projects() {
               paddingBottom: 16
             }}
           >
-            <MainProjectCard></MainProjectCard>
-
+            {false && <MainProjectCard></MainProjectCard>}
             <Slider elementsShown={getSliderElements()}>
               <SideProjectCard
                 imgSrc="./images/mentorz.webp"
                 href="https://mentorz.fr/"
-                title="Mentorz"
-                description="Mentorz è una startup francese che offre  agli influencer gli strumenti di cui hanno bisogno per avere consultazioni 1-1 con i loro follower."
+                title={t('project-1-title')}
+                description={t('project-1-description')}
               />
               <SideProjectCard
                 imgSrc="./images/yoga.webp"
                 href="https://www.yogacorfuholidays.com/"
-                title="Yoga Holidays"
-                description="Yoga holidays è un sito per viaggi a Corfu. I loro pacchetti vacanza danno l'opportunità di ritrovarti sul tappetino da yoga circondato da un paesaggio mozzafiato."
+                title={t('project-2-title')}
+                description={t('project-2-description')}
               />
               <SideProjectCard
                 imgSrc="./images/kaire.webp"
                 href="https://kaire-automation.it/"
-                title="Kaire automation (sito)"
-                description="Kaire automation è una azienda specializzata nella reaizzazione e supervisione di impianti industriali"
+                title={t('project-3-title')}
+                description={t('project-3-description')}
               />
             </Slider>
           </Grid>
@@ -94,6 +95,7 @@ export default function Projects() {
 }
 
 function MainProjectCard() {
+  const { t } = useTranslation() 
   return (
     <Paper
       sx={{
@@ -112,7 +114,7 @@ function MainProjectCard() {
         <Typography
           variant="h5"
         >
-          <strong>Kaire Automation</strong>
+          <strong>{t('case-study-1-title')}</strong>
         </Typography>
         <IconButton
           color="secondary"
@@ -128,12 +130,13 @@ function MainProjectCard() {
         variant="body2"
         color="textSecondary"
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nibh quam, gravida vel facilisis quis, sollicitudin vel dui. Suspendisse a semper metus.
+        {t('case-study-1-description')}
       </Typography>
       <Divider/>
       <Timeline>
-        <TimelineStep Icon={CodeRounded} description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nibh quam, gravida vel facilisis quis, sollicitudin vel dui. Suspendisse a semper metus." stepTitle="step1"/>
-        <TimelineStep Icon={CodeRounded} description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nibh quam, gravida vel facilisis quis, sollicitudin vel dui. Suspendisse a semper metus." stepTitle="step2" lastStep/>
+        <TimelineStep Icon={CodeRounded} description={t('case-study-1-step-1')} stepTitle={t('case-study-1-step-1-title')}/>
+        <TimelineStep Icon={CodeRounded} description={t('case-study-1-step-2')} stepTitle={t('case-study-1-step-2-title')}/>
+        <TimelineStep Icon={CodeRounded} description={t('case-study-1-step-3')} stepTitle={t('case-study-1-step-3-title')} lastStep/>
       </Timeline>
     </Paper>
   )

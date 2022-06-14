@@ -10,8 +10,11 @@ import Validators from "../../lib/Validators";
 import FormGroup from "../FormGroup";
 import PrivacyCheckBox from "../PrivacyCheckBox";
 import GapUtils from "../../lib/GapUtils";
+import { useTranslation } from "react-i18next";
 
 export default function ContactUsForm() {
+  const { t } = useTranslation() 
+
   const form = useForm({
     name: {
       value: '',
@@ -52,13 +55,26 @@ export default function ContactUsForm() {
       sx={{
         ...GapUtils.gap(1, 'column'),
         maxWidth: 460,
+        position: 'relative',
+        '&::after': {
+          content: "'Work in progress...'",
+          textAlign: 'center',
+          fontSize: '32px',
+          marginTop: '-8px',
+          marginLeft: '-16px',
+          width: 'calc(100% + 32px)',
+          height: 'calc(100% + 16px)',
+          backdropFilter: 'blur(4px)',
+          zIndex: 1,
+          position: 'absolute'
+        },
       }}
     >
       <Typography
         variant="body2"
         color="textSecondary"
       >
-        Contattaci per una qualsiasi domanda o per ricevere un preventivo gratuito.
+        {t('contact-us-description')}
       </Typography>
       <Divider></Divider>
       <TextField
@@ -67,7 +83,7 @@ export default function ContactUsForm() {
         required
         variant="outlined"
         color="primary"
-        label="Nome e cognome"
+        label={t('name-and-surname')}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -81,7 +97,7 @@ export default function ContactUsForm() {
         type="text"
         variant="outlined"
         color="primary"
-        label="Azienda"
+        label={t('company')}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -95,7 +111,7 @@ export default function ContactUsForm() {
         type="tel"
         variant="outlined"
         color="primary"
-        label="Numero di telefono"
+        label={t('phone-number')}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -110,7 +126,7 @@ export default function ContactUsForm() {
         required
         variant="outlined"
         color="primary"
-        label="Email"
+        label={t('email')}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -123,7 +139,7 @@ export default function ContactUsForm() {
         formcontrolname="message"
         type="text"
         required
-        label="Messaggio"
+        label={t('message')}
         multiline
         rows={4}
         variant="outlined"
@@ -146,7 +162,7 @@ export default function ContactUsForm() {
           variant="contained"
           endIcon={<SendRoundedIcon/>}
         >
-          Invia
+          {t('send')}
         </Button>
       </Grid>
     </FormGroup>

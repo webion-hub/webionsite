@@ -17,8 +17,11 @@ import Logo from "../buttons/Logo";
 import { openEmail, openTelephone } from '../../lib/openContact';
 import theme from '../../theme/theme';
 import GapUtils from '../../lib/GapUtils';
+import { useTranslation } from 'react-i18next';
 
 export default function WebionFooter() {
+  const { t } = useTranslation() 
+
   return (
     <Footer>
       <FooterContent>
@@ -30,7 +33,7 @@ export default function WebionFooter() {
             href="/#servizi"
             onClick={_ => window.location = "/#servizi"}
           >
-            Servizi
+            {t('navbar-button1')}
           </Button>
           <Button
             startIcon={<DesignServicesRoundedIcon/>}
@@ -39,7 +42,7 @@ export default function WebionFooter() {
             href="/#progetti"
             onClick={_ => window.location = "/#progetti"}
           >
-            Progetti
+            {t('navbar-button2')}
           </Button>
           <Button
             startIcon={<ContactPageRoundedIcon/>}
@@ -48,7 +51,7 @@ export default function WebionFooter() {
             href="/#contattaci"
             onClick={_ => window.location = "/#contattaci"}
           >
-            Contattaci
+            {t('navbar-button3')}
           </Button>
         </FooterColumn>
 
@@ -83,7 +86,7 @@ export default function WebionFooter() {
             href='/policies-licenze'
             onClick={_ => window.location = "/policies-licenze"}
           >
-            Policies & Licenze
+            {t('policies')}
           </Button>
 
           <FooterLink
@@ -102,7 +105,7 @@ export default function WebionFooter() {
       <FooterBottomLabel
         variant="body2"
       >
-        C.F. e P. Iva 04013210366, PEC
+        {t('p-iva')}
         <Link
           href=""
           sx={{

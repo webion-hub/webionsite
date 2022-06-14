@@ -3,8 +3,11 @@ import { Box } from '@mui/system';
 import theme from "../../theme/theme";
 import { GitHubIcon } from "../illustrations/illustrations";
 import GapUtils from "../../lib/GapUtils";
+import { useTranslation } from "react-i18next";
 
 export default function DiscoverOnGitHub() {
+  const { t } = useTranslation() 
+
   return (
     <Paper
       sx={{
@@ -23,7 +26,7 @@ export default function DiscoverOnGitHub() {
         href="https://github.com/webion-hub"
         target="_blank"
         sx={{
-          ...GapUtils.gap(1, 'row'),
+          ...GapUtils.gap(2, 'row'),
           padding: 2,
           borderRadius: theme.components.MuiPaper.styleOverrides.rounded.borderRadius + "px",
         }}
@@ -35,8 +38,7 @@ export default function DiscoverOnGitHub() {
           variant="body2"
           color="textSecondary"
         >
-          Visualizza il codice di <br/>
-          questo sito su github
+          {t('github-button')}
         </Typography>
       </Grid>
     </Paper>

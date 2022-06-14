@@ -6,8 +6,10 @@ import theme from "../../../theme/theme";
 import RotatingDashedCirlce from "../../../components/svgs/RotatingDashedCirlce";
 import RotatingCirleGroup from "../../../components/svgs/RotatingCirlceGroup";
 import ContactUsCard from "../../../components/contact-components/ContactUsCard";
+import { useTranslation } from "react-i18next";
 
 export default function ContactUs() {
+  const { t } = useTranslation() 
   const isMd = useMediaQuery(theme.breakpoints.down('md'), {noSsr: true})
 
   return (
@@ -43,7 +45,7 @@ export default function ContactUs() {
               textOrientation: {xs: 'none', sm: 'mixed'},
             }}
           >
-            Contattaci
+            {t('contact-us-title')}
           </Typography>
           <ContactUsCard/>
         </Grid>

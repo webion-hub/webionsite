@@ -8,8 +8,11 @@ import PrivacyPolicy from "./sections/PrivacyPolicy";
 
 import theme from "../../theme/theme";
 import { ExpandMoreRounded } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 export default function PoliciesAndLicenses() {
+  const { t } = useTranslation() 
+
   return (
     <Page
       justifyContent="flex-start"
@@ -21,7 +24,7 @@ export default function PoliciesAndLicenses() {
     >
       <PageContent>
         <Typography variant="h3" sx={{marginBlock: 4}}>
-          Policies e licenze
+          {t('policies')}
         </Typography>
         <SimpleAccordion title="Privay Policy">
           <PrivacyPolicy/>
@@ -29,7 +32,7 @@ export default function PoliciesAndLicenses() {
         <SimpleAccordion title="Cookie Policy">
           <CookiePolicy/>
         </SimpleAccordion>
-        <SimpleAccordion title="Licenze">
+        <SimpleAccordion title={t('licenses')}>
           <Licenses/>
         </SimpleAccordion>
       </PageContent>

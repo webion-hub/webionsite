@@ -4,20 +4,20 @@ export default class GapUtils {
   static gap(size, direction) {
     const realSize = (size * spacing) / 2;
     const firstExtremist = direction == "row"
-      ? 'margin-left'
-      : 'margin-top'
+      ? 'marginLeft'
+      : 'marginTop'
 
     const secondExtremist = direction == "row"
-      ? 'margin-right'
-      : 'margin-bottom'
+      ? 'marginRight'
+      : 'marginBottom'
 
     if (direction == "both") {
       return {
         "& > *": {
-          'margin-left': `${realSize}px !important`,
-          'margin-right': `${realSize}px !important`,
-          'margin-top': `${realSize}px !important`,
-          'margin-bottom': `${realSize}px !important`,
+          'marginLeft': `${realSize}px !important`,
+          'marginRight': `${realSize}px !important`,
+          'marginTop': `${realSize}px !important`,
+          'marginBottom': `${realSize}px !important`,
         },
       }
     }
@@ -27,7 +27,7 @@ export default class GapUtils {
         [firstExtremist]: `${realSize}px !important`,
         [secondExtremist]: `${realSize}px !important`,
       },
-      "& > *:first-child": {
+      "& > *:first-of-type": {
         [firstExtremist]: `0px !important`,
         [secondExtremist]: `${realSize}px !important`,
       },

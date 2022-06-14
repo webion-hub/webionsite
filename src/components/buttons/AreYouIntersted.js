@@ -1,7 +1,10 @@
 import { Button, Grid, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import GapUtils from "../../lib/GapUtils";
 
 export default function AreYouInterested() {
+  const { t } = useTranslation() 
+
   return (
     <Grid
       container
@@ -9,19 +12,19 @@ export default function AreYouInterested() {
       alignItems="center"
       justifyContent="center"
       sx={{
-        ...GapUtils.gap(1, 'row'),
+        ...GapUtils.gap(1, 'both'),
         marginTop: 6,
       }}
     >
       <Typography>
-        Sei interessato?
+        {t('AIDA-action')}
       </Typography>
       <Button
         variant="contained"
         href="/#contattaci"
         onClick={_ => window.location = "/#contattaci"}
       >
-        Contattaci
+        {t('contact-us-button')}
       </Button>
     </Grid>
   )

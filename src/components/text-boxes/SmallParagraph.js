@@ -22,7 +22,7 @@ export default function SmallParagraph({title, Icon, description}) {
         justifyContent={isMd ? "center" : "flex-start"}
         sx={GapUtils.gap(1, "row")}
       >
-        <Icon/>
+        {Icon && <Icon/>}
         <Typography variant="h5">
           <strong>
             {title}

@@ -1,6 +1,7 @@
 import { Paper, Typography, useMediaQuery } from "@mui/material";
 import { alpha } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import BinaryBackground from "../../../components/backgrounds/BinaryBackground.js";
 import ButtonCircled from "../../../components/buttons/ButtonCircled";
 import Page from "../../../components/page-components/Page.js";
@@ -9,6 +10,7 @@ import RotatingDashedCirlce from "../../../components/svgs/RotatingDashedCirlce"
 import theme from "../../../theme/theme";
 
 export default function Home() {
+  const { t } = useTranslation() 
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
@@ -32,14 +34,14 @@ export default function Home() {
           component="h1"
           align={isMd ? "center" : "left"}
         >
-          <strong>Webion,</strong>
+          <strong>{t('title-bold')}</strong>
         </Typography>
         <Typography
           variant={isMd ? "h4" : "h2"}
           component="h1"
           align={isMd ? "center" : "left"}
         >
-          gli artigiani del software
+          {t('title')}
         </Typography>
         <Typography
           variant="subtitle1"
@@ -48,7 +50,7 @@ export default function Home() {
           sx={{marginTop: 2}}
           align={isMd ? "center" : "left"}
         >
-          Sviluppiamo con accuratezza e minuziosità, il software di cui hai bisogno.
+          {t('subtitle')}
         </Typography>
         <ButtonCircled
           size="large"
@@ -62,7 +64,7 @@ export default function Home() {
             borderRadius: 26,
           }}
         >
-         Scopri perché
+          {t('main-button')}
         </ButtonCircled>
       </Paper>
       <BinaryBackground

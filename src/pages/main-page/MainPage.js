@@ -13,12 +13,12 @@ export default function MainPage() {
         <Home id="home"/>
       </section>
 
-      <section id="servizi">
-        <OurServices/>
-      </section>
-
       <section id="sceglierci">
         <WhyChooseUs/>
+      </section>
+
+      <section id="servizi">
+        <OurServices/>
       </section>
 
       <section id="progetti">

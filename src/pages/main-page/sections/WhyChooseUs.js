@@ -1,29 +1,15 @@
 import { Grid, Typography, useMediaQuery } from "@mui/material";
 
-import BrushRoundedIcon from '@mui/icons-material/BrushRounded';
-import RouteRoundedIcon from '@mui/icons-material/RouteRounded';
-import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
-
 import Page from "../../../components/page-components/Page";
 import theme from "../../../theme/theme";
-import Line from "../../../components/Line";
-import SmallParagraph from "../../../components/text-boxes/SmallParagraph";
 import AreYouInterested from "../../../components/buttons/AreYouIntersted";
+import { useTranslation } from "react-i18next";
+import Line from "../../../components/Line";
 import GapUtils from "../../../lib/GapUtils";
 
 export default function WhyChooseUs() {
-  const isLg = useMediaQuery(theme.breakpoints.down('lg'))
+  const { t } = useTranslation() 
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
-
-  const getTitleVariant = () => {
-    if (isMd)
-      return "h3"
-
-    if (isLg)
-      return "h2"
-
-    return "h1"
-  }
 
   return (
     <Page
@@ -36,67 +22,32 @@ export default function WhyChooseUs() {
     >
       <Grid
         container
-        direction="row"
+        direction="column"
         justifyContent="center"
+        alignItems="center"
+        sx={{
+          ...GapUtils.gap(4),
+          width: "80vw",
+          maxWidth: "900px"
+        }}
       >
-        <Grid
-          item
-          container
-          justifyContent={isMd ? "center" : "flex-end"}
-          alignItems="center"
-          md={6}
-          xs={12}
-        >
-          <Typography
-            component="h2"
-            variant={getTitleVariant()}
-            align={isMd ? "center" : "right"}
-          >
-            <strong>
-              Perché <br/>
-              sceglierci?
-            </strong>
-          </Typography>
-          <Line
-            orientation={isMd ? "horizontal" : "vertical"}
-            sx={{
-              maxWidth: isMd ? "80% !important" : "100% !important",
-              marginLeft: isMd ? 0 : 4,
-              marginTop: isMd ? 2 : 0,
-            }}
-          />
-        </Grid>
+        <Typography variant="h4" align="center">{t('AIDA-attention')}</Typography>
+        <Line></Line>
 
         <Grid
-          item
           container
-          direction="column"
-          justifyContent="center"
-          alignItems={{sm: "center", md: "flex-start"}}
-          md={6}
-          xs={12}
+          direction="row"
+          justifyContent="space-between"
           sx={{
-            ...GapUtils.gap(6, "column"),
-            paddingBlock: isMd ? 4 : 8,
-            paddingInline: 4,
+            "& > *": {
+              width: isMd ? "100%" : "40%"
+            }
           }}
         >
-          <SmallParagraph
-            Icon={RouteRoundedIcon}
-            title="Percorso"
-            description="La nostra offerta comprende siti e applicazioni web, IOT per l'automazione mediante il web e software multipiattaforma."
-          />
-          <SmallParagraph
-            Icon={BrushRoundedIcon}
-            title="Personalizzazione"
-            description="Offriamo una completa personalizzazione dell'interfaccia grafica e facciamo tutto su misura del cliente."
-          />
-          <SmallParagraph
-            Icon={BoltRoundedIcon}
-            title="Ottimizzazione"
-            description="Crediamo sia fondamentale consegnare risultati di alta qualità. Per questo motivo ci concentriamo su una totale ottimizzazione ed un perfezionamento del prodotto finale."
-          />
+          <Typography variant="p" align="center">{t('AIDA-interest')}</Typography>
+          <Typography variant="p" align="center" sx={{marginTop: isMd ? 4 : 0}}>{t('AIDA-desire')}</Typography>
         </Grid>
+
       </Grid>
       <AreYouInterested/>
     </Page>

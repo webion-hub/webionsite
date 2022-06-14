@@ -1,4 +1,4 @@
-import { Button, useScrollTrigger } from '@mui/material';
+import { Button, ToggleButton, useScrollTrigger } from '@mui/material';
 
 import SideBarButton from "../side_bar/SidebarButton";
 import AnimatedLogo from '../buttons/AnimatedLogo';
@@ -6,13 +6,26 @@ import AnimatedLogo from '../buttons/AnimatedLogo';
 import AppBar from "../app_bar/AppBar";
 import AppBarContent from "../app_bar/AppBarContent";
 import AppBarSection from "../app_bar/AppBarSection";
+import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 
 export default function WebionAppBar() {
+  const { t, i18n } = useTranslation() 
+  const [lang, setLang] = useState('it')
   const trigger = useScrollTrigger({
     target: window,
     threshold: 200,
     disableHysteresis: true
   });
+
+  const handleChangeLanguage = () => {
+    const newLanguage = lang == 'it' 
+      ? 'en' 
+      : 'it'
+
+    i18n.changeLanguage(newLanguage)
+    setLang(newLanguage)
+  }
 
   return (
     <AppBar>
@@ -34,14 +47,14 @@ export default function WebionAppBar() {
               href="/#servizi"
               onClick={_ => window.location = "/#servizi"}
             >
-              Servizi
+              {t('navbar-button1')}
             </Button>
             <Button
               color="info"
               href="/#progetti"
               onClick={_ => window.location = "/#progetti"}
             >
-              Progetti
+              {t('navbar-button2')}
             </Button>
             <Button
               color="info"
@@ -49,8 +62,15 @@ export default function WebionAppBar() {
               href="/#contattaci"
               onClick={_ => window.location = "/#contattaci"}
             >
-              Contattaci
+              {t('navbar-button3')}
             </Button>
+
+            <ToggleButton
+              size='small'
+              onClick={handleChangeLanguage}
+            >
+              {lang}
+            </ToggleButton>
           </AppBarSection>
           <SideBarButton/>
         </AppBarSection>

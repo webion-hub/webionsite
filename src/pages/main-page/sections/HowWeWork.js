@@ -6,8 +6,10 @@ import PageContent from "../../../components/page-components/PageContent";
 import theme from "../../../theme/theme";
 import EmptyComponent from "../../../components/utils/EmptyComponent";
 import GapUtils from "../../../lib/GapUtils";
+import { useTranslation } from "react-i18next";
 
 export default function HowWeWork() {
+  const { t } = useTranslation() 
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
 
@@ -30,7 +32,7 @@ export default function HowWeWork() {
           variant={isMd ? "h3" : "h2"}
           align="center"
         >
-          <strong>Come lavoriamo?</strong>
+          <strong>{t('how-we-work')}</strong>
         </Typography>
         <Grid
           container
@@ -41,26 +43,26 @@ export default function HowWeWork() {
         >
           <IconWithDescription
             Icon={FlagRounded}
-            title="Obiettivi"
-            description="Individuiamo il tuo problema e definiamo chiaramente quali sono i tuoi obiettivi."
+            title={t('step-1-title')}
+            description={t('step-1-description')}
           />
           <DynamicArrow/>
           <IconWithDescription
             Icon={EditRounded}
-            title="Bozza"
-            description="Realizziamo prima una bozza low-fidelity continuando a refinirlo fino ad arrivare alla tua UI ideale."
+            title={t('step-2-title')}
+            description={t('step-2-description')}
           />
           <DynamicArrow/>
           <IconWithDescription
             Icon={CodeRounded}
-            title="Sviluppo"
-            description="Iniziamo lo sviluppo step-by-step, continuando a rimanere in contatto per non uscire dalle linee guida."
+            title={t('step-3-title')}
+            description={t('step-3-description')}
           />
           <DynamicArrow/>
           <IconWithDescription
             Icon={CheckCircleRounded}
-            title="Consegna"
-            description="Dopo un riscontro finale ti consegnamo il prodotto finito, rimanendo disponibili per un'assistenza post-vendita. "
+            title={t('step-4-title')}
+            description={t('step-4-description')}
           />
         </Grid>
       </PageContent>
