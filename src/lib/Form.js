@@ -26,7 +26,12 @@ export default class Form {
     return this.values[key]?.value
   }
 
-  getValues = () => this.values
+  getValues = () => {
+    const values = Object.entries(this.values)
+      .map(e => [e[0], e[1].value])
+
+    return Object.fromEntries(values)
+  }
 
   isValid = (key) => {
     return this.values[key]?.isValid ?? true

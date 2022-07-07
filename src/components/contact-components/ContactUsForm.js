@@ -33,7 +33,7 @@ export default function ContactUsForm() {
     },
     message: {
       value: '',
-      validators: [Validators.required],
+      validators: [Validators.required, Validators.max(512)],
     },
     privacy: {
       value: true,
@@ -44,6 +44,24 @@ export default function ContactUsForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
     form.validate()
+    console.log(form.getValues())
+
+    if (!form.isValid())
+      return
+
+    const recipeUrl = 'https://webion.it/api/email/send';
+    const postBody = form.getValues()
+
+    const requestMetadata = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postBody)
+    };
+
+    fetch(recipeUrl, requestMetadata)
+      .then(res => res.json())
   }
 
   return (
@@ -56,18 +74,6 @@ export default function ContactUsForm() {
         ...GapUtils.gap(1, 'column'),
         maxWidth: 460,
         position: 'relative',
-        '&::after': {
-          content: "'Work in progress...'",
-          textAlign: 'center',
-          fontSize: '32px',
-          marginTop: '-8px',
-          marginLeft: '-16px',
-          width: 'calc(100% + 32px)',
-          height: 'calc(100% + 16px)',
-          backdropFilter: 'blur(4px)',
-          zIndex: 1,
-          position: 'absolute'
-        },
       }}
     >
       <Typography
@@ -139,7 +145,7 @@ export default function ContactUsForm() {
         formcontrolname="message"
         type="text"
         required
-        label={t('message')}
+        label={`${t('message')} ${form.getValue('message').length} / 512`}
         multiline
         rows={4}
         variant="outlined"

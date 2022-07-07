@@ -33,10 +33,16 @@ export default class Validators {
   }
 
   static max = (maxValue) => (value) => {
+    if (!value)
+      return true
+      
     return value.length < maxValue
   }
 
   static min = (minValue) => (value) => {
+    if (!value)
+      return true
+
     return value.length > minValue
   }
 }

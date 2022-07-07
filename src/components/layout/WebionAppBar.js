@@ -67,6 +67,7 @@ export default function WebionAppBar() {
 
             <ToggleButton
               size='small'
+              value={lang}
               onClick={handleChangeLanguage}
             >
               {lang}
